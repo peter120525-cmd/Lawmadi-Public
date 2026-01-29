@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software or whitepaper, please cite it as below."
+authors:
+  - family-names: "Choe"
+    given-names: "Jainam"
+    email: "choepeter@outlook.kr"
+    job-title: "Project Lead"
+title: "Lawmadi OS: Convert Anxiety into Actionable Logic"
+version: 40.3.1p4r1
+date-released: 2026-01-28
+url: "https://lawmadi.com"
+repository-code: "https://github.com/peter120525-cmd/Lawmadi-Public"
+keywords:
+  - "legal-tech"
+  - "ssot"
+  - "hallucination-free"
+  - "oracle-dba"
+  - "korean-law"
