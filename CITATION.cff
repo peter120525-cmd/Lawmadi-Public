@@ -1,18 +1,24 @@
 cff-version: 1.2.0
-message: "If you use this software or whitepaper, please cite it as below."
+message: "If you need to reference this proprietary software, please use the following metadata."
+title: "Lawmadi OS"
+version: "50.2.3-PATCH-2.1"
+abstract: "A high-integrity, SSOT-based AI Legal Operating System for South Korean Law."
 authors:
   - family-names: "Choe"
     given-names: "Jainam"
     email: "choepeter@outlook.kr"
-    job-title: "Project Lead"
-title: "Lawmadi OS: Convert Anxiety into Actionable Logic"
-version: 40.3.1p4r1
-date-released: 2026-01-28
+    affiliation: "Lawmadi Project"
+date-released: "2026-01-31"
 url: "https://lawmadi.com"
-repository-code: "https://github.com/peter120525-cmd/Lawmadi-Public"
+repository-code: "https://github.com/peter120525-cmd/Lawmadi-Private"
+license: "Proprietary"
 keywords:
-  - "legal-tech"
-  - "ssot"
-  - "hallucination-free"
-  - "oracle-dba"
-  - "korean-law"
+  - "Legal-Tech"
+  - "AI-Integrity"
+  - "SSOT"
+  - "South-Korean-Law"
+  - "Evidence-Only"
+type: "software"
+contact:
+  - email: "choepeter@outlook.kr"
+    name: "Lawmadi Support Team"
