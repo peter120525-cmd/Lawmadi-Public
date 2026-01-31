@@ -1,10 +1,13 @@
-Proprietary License
+Proprietary License Copyright (c) 2026 Lawmadi Project (Jainam Choe). All Rights Reserved.
 
-Copyright (c) 2026 Lawmadi Project (Jainam Choe). All Rights Reserved.
+NOTICE: This repository contains the core logic, technical documentation, and architectural specifications of Lawmadi OS. All intellectual property, including but not limited to source code, internal system instructions (prompts), and temporal logic concepts, remains the exclusive property of Jainam Choe.
 
-NOTICE: This repository contains technical documentation and architectural specifications for Lawmadi OS. 
-All intellectual property, source code, and technical concepts remain the exclusive property of Jainam Choe.
+1. Permitted Use: You are granted a limited right to read, cite, and link to this documentation for educational, research, or non-commercial evaluation purposes only.
 
-You are free to read, cite, and link to this documentation for educational or evaluation purposes.
-However, copying, reproducing, or using any part of the concepts to build a competing service 
-without prior written permission is strictly forbidden.
+2. Strict Prohibitions: * No Reproduction: Copying, reproducing, or redistributing any part of this code or documentation is strictly prohibited.
+
+No Competing Services: Using any part of the concepts, including the "SWARM Engine" or "Temporal Engine v2.0" logic, to build a competing service is strictly forbidden without prior written permission.
+
+No Reverse Engineering: Any attempt to reverse engineer, decompile, or extract the underlying logic of the Lawmadi OS v50 kernel is a violation of this license.
+
+3. Confidentiality: Some technical specifications within this repository are considered trade secrets. Unauthorized disclosure may lead to legal action under applicable intellectual property laws.
