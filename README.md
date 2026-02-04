@@ -1,11 +1,17 @@
 Lawmadi OS (v50.2.3-PATCH-2.1) ⚖️
+
 ​Convert Anxiety into Actionable Logic 법률적 무결성(Integrity)과 보안(Security)을 강화한 생산 환경 최적화 AI 리걸 OS
+
 ​📖 프로젝트 소개
 ​Lawmadi OS v50은 "AI가 법을 지어내는 시대"를 기술적으로 종식시키기 위해 설계된 Evidence-Base Jurisprudence Engine입니다. 단순한 텍스트 생성을 넘어, 대한민국 **국가법령정보센터(DRF)**와의 실시간 동기화 및 2단계 데이터 검증(Verify-Before-Generate) 프로세스를 통해 법적 사실만을 전달하는 고가용성 인프라를 구축합니다.
 ​v50 시리즈는 특히 서버 환경에서의 Non-Blocking 안정성과 Anti-Leak 보안 기술을 적용하여 엔터프라이즈급 인프라 환경에서 즉시 가동될 수 있도록 설계되었습니다.
+
 ​👉 공식 서비스: lawmadi.com
+
 ​🏗️ 핵심 기술 아키텍처 (Core IT Architecture v50)
+
 ​v50.2.3은 다음과 같은 독보적인 3중 보안 및 무결성 하드닝을 기반으로 작동합니다.
+
 ​1. SSOT_FACT_ONLY (DRF Real-time Integration)
 ​IT 기술: 결정론적 데이터 수집 (Deterministic Data Acquisition)
 ​DRF API에 존재하지 않는 법령명이나 판례 번호는 시스템 커널 레벨에서 인용을 차단합니다.
