@@ -1,24 +1,37 @@
 cff-version: 1.2.0
-message: "If you need to reference this proprietary software, please use the following metadata."
-title: "Lawmadi OS"
-version: "50.2.3-PATCH-2.1"
-abstract: "A high-integrity, SSOT-based AI Legal Operating System for South Korean Law."
+message: "If you use this software, please cite it as below."
+type: software
+title: "Lawmadi OS Decision Kernel"
+version: "v1.2 FINAL"
+date-released: "2026-01-27"
+license: "All rights reserved"
 authors:
   - family-names: "Choe"
     given-names: "Jainam"
+    name: "Jainam Choe"
     email: "choepeter@outlook.kr"
-    affiliation: "Lawmadi Project"
-date-released: "2026-01-31"
-url: "https://lawmadi.com"
-repository-code: "https://github.com/peter120525-cmd/Lawmadi-Private"
-license: "Proprietary"
+repository-code: "https://github.com/peter120525-cmd/lawmadi-os-v50"
 keywords:
-  - "Legal-Tech"
-  - "AI-Integrity"
-  - "SSOT"
-  - "South-Korean-Law"
-  - "Evidence-Only"
-type: "software"
-contact:
-  - email: "choepeter@outlook.kr"
-    name: "Lawmadi Support Team"
+  - "legal decision operating system"
+  - "decision kernel"
+  - "ssot"
+  - "fail-closed"
+  - "zero inference"
+  - "evidence verification"
+  - "decision token"
+  - "reproducibility"
+abstract: >
+  Lawmadi OS Decision Kernel is the deterministic runtime core of a Legal Decision Operating System (LDOS).
+  It structures user case inputs, validates authoritative legal evidence under SSOT and temporal validity rules,
+  enforces a fail-closed policy when verification fails, and mints reproducible Decision Tokens with integrity hashes
+  and a signature interface boundary for external trust systems.
+preferred-citation:
+  type: software
+  title: "Lawmadi OS Decision Kernel"
+  authors:
+    - family-names: "Choe"
+      given-names: "Jainam"
+      name: "Jainam Choe"
+  version: "v1.2 FINAL"
+  date-released: "2026-01-27"
+  repository-code: "https://github.com/peter120525-cmd/lawmadi-os-v50"
