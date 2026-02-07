@@ -1,13 +1,89 @@
-Proprietary License Copyright (c) 2026 Lawmadi Project (Jainam Choe). All Rights Reserved.
+LAWMADI OS — PROPRIETARY LICENSE (PUBLIC/SANITIZED DISTRIBUTION)
+Version: 1.0
+Effective date: 2026-01-27
 
-NOTICE: This repository contains the core logic, technical documentation, and architectural specifications of Lawmadi OS. All intellectual property, including but not limited to source code, internal system instructions (prompts), and temporal logic concepts, remains the exclusive property of Jainam Choe.
+Copyright (c) 2026 Jainam Choe (최재남). All rights reserved.
 
-1. Permitted Use: You are granted a limited right to read, cite, and link to this documentation for educational, research, or non-commercial evaluation purposes only.
+--------------------------------------------------------------------------------
+1. PURPOSE
+--------------------------------------------------------------------------------
+This repository/package (the “Software”) is provided for public technical review,
+evaluation, and demonstration of authorship and architecture. It is NOT an open
+source license.
 
-2. Strict Prohibitions: * No Reproduction: Copying, reproducing, or redistributing any part of this code or documentation is strictly prohibited.
+--------------------------------------------------------------------------------
+2. GRANT OF PERMISSION (LIMITED)
+--------------------------------------------------------------------------------
+Subject to the terms below, you are granted a limited, non-exclusive, non-
+transferable, revocable permission to:
 
-No Competing Services: Using any part of the concepts, including the "SWARM Engine" or "Temporal Engine v2.0" logic, to build a competing service is strictly forbidden without prior written permission.
+  (a) View and read the Software and accompanying documentation;
+  (b) Download a copy for evaluation and internal review purposes only;
+  (c) Run the Software locally for non-production evaluation and testing.
 
-No Reverse Engineering: Any attempt to reverse engineer, decompile, or extract the underlying logic of the Lawmadi OS v50 kernel is a violation of this license.
+No other rights are granted.
 
-3. Confidentiality: Some technical specifications within this repository are considered trade secrets. Unauthorized disclosure may lead to legal action under applicable intellectual property laws.
+--------------------------------------------------------------------------------
+3. RESTRICTIONS
+--------------------------------------------------------------------------------
+Unless you have PRIOR WRITTEN PERMISSION from the copyright holder, you may NOT:
+
+  (a) Use the Software in production or provide it as a service to third parties;
+  (b) Modify, adapt, translate, or create derivative works from the Software;
+  (c) Distribute, publish, sublicense, sell, rent, lease, or otherwise transfer
+      the Software (or any part of it) to any third party;
+  (d) Reverse engineer, decompile, or attempt to extract proprietary logic,
+      except where such restriction is prohibited by applicable law;
+  (e) Use the Software to train machine learning models (including LLMs),
+      fine-tune, distill, or create embeddings from it or its outputs;
+  (f) Remove or alter copyright notices, attribution, or license terms.
+
+--------------------------------------------------------------------------------
+4. INTELLECTUAL PROPERTY
+--------------------------------------------------------------------------------
+All title, ownership rights, and intellectual property rights in and to the
+Software, including but not limited to:
+
+  - Constitution rule sets / policy logic
+  - Leader routing strategies and algorithms
+  - Decision graph generation logic
+  - Evidence orchestration and validation protocols
+  - Reproducibility and integrity mechanisms
+
+remain the exclusive property of the copyright holder.
+
+--------------------------------------------------------------------------------
+5. THIRD-PARTY SERVICES AND DATA
+--------------------------------------------------------------------------------
+The Software may describe or conceptually reference official legal-data APIs or
+other third-party services. This license grants no rights to any third-party
+APIs, datasets, trademarks, or services. You are responsible for complying with
+their terms.
+
+--------------------------------------------------------------------------------
+6. DISCLAIMER OF WARRANTY
+--------------------------------------------------------------------------------
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+--------------------------------------------------------------------------------
+7. LIMITATION OF LIABILITY
+--------------------------------------------------------------------------------
+IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING
+FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+
+--------------------------------------------------------------------------------
+8. TERMINATION
+--------------------------------------------------------------------------------
+This permission is effective until terminated. It terminates automatically if
+you breach any term of this license. Upon termination, you must delete all
+copies of the Software in your possession.
+
+--------------------------------------------------------------------------------
+9. CONTACT
+--------------------------------------------------------------------------------
+For licensing inquiries, permissions, or commercial use:
+  Email: choepeter@outlook.kr
