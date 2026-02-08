@@ -3,6 +3,7 @@ message: "If you use or reference this software, its architecture, or any covere
 type: software
 title: "Lawmadi OS — Legal Decision Operating System"
 version: "v2.0-Unified"
+doi: "10.5281/zenodo.18525310"
 date-released: 2026-02-08
 license-url: "https://github.com/peter120525-cmd/Lawmadi-Public/blob/main/LICENSE.txt"
 url: "https://github.com/peter120525-cmd/Lawmadi-Public"
