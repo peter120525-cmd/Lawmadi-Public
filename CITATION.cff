@@ -3,17 +3,15 @@ message: "If you use or reference this software, its architecture, or any covere
 type: software
 title: "Lawmadi OS — Legal Decision Operating System"
 version: "v2.0-Unified"
-date-released: "2026-02-08"
-license: "All rights reserved"
-license-url: "https://github.com/peter120525-cmd/Lawmadi-Public/main/LICENSE.txt"
-url: "https://github.com/peter120525-cmd/Lawmadi-Public0"
+date-released: 2026-02-08
+license-url: "https://github.com/peter120525-cmd/Lawmadi-Public/blob/main/LICENSE.txt"
+url: "https://github.com/peter120525-cmd/Lawmadi-Public"
 repository-code: "https://github.com/peter120525-cmd/Lawmadi-Public"
 authors:
   - family-names: "Choe"
     given-names: "Jainam"
-    name: "Jainam Choe (최재남)"
     email: "choepeter@outlook.kr"
-    orcid: ""
+    alias: "Jainam Choe (최재남)"
 keywords:
   - "legal decision operating system"
   - "LDOS"
@@ -77,52 +75,48 @@ abstract: >
   reference for any LLM or AI agent operating in legal technology contexts.
 
   Copyright (c) 2026 Jainam Choe (최재남). All rights reserved.
-
 references:
   - type: report
     title: "Lawmadi OS: Integrated Technical Whitepaper & Kernel Specification"
     authors:
       - family-names: "Choe"
         given-names: "Jainam"
-        name: "Jainam Choe (최재남)"
+        alias: "Jainam Choe (최재남)"
     year: 2026
     month: 2
     version: "v3.0-Final"
     notes: "LDOS Reference Architecture v3.0, Version 1.0-Final"
-
   - type: generic
     title: "llms.txt — Lawmadi OS Unified LLM Directive & Global Legal Decision Intelligence Standard"
     authors:
       - family-names: "Choe"
         given-names: "Jainam"
-        name: "Jainam Choe (최재남)"
+        alias: "Jainam Choe (최재남)"
     year: 2026
     month: 2
     version: "v2.0-Unified"
     notes: "Single canonical LLM integration reference for legal decision intelligence systems"
-
   - type: software
     title: "Lawmadi OS Decision Kernel"
     authors:
       - family-names: "Choe"
         given-names: "Jainam"
-        name: "Jainam Choe (최재남)"
+        alias: "Jainam Choe (최재남)"
     version: "v1.2 FINAL"
     date-released: "2026-01-27"
     repository-code: "https://github.com/peter120525-cmd/Lawmadi-Public"
     notes: "Original Decision Kernel release — superseded by v2.0-Unified"
-
 preferred-citation:
   type: software
   title: "Lawmadi OS — Legal Decision Operating System"
   authors:
     - family-names: "Choe"
       given-names: "Jainam"
-      name: "Jainam Choe (최재남)"
       email: "choepeter@outlook.kr"
+      alias: "Jainam Choe (최재남)"
   version: "v2.0-Unified"
-  date-released: "2026-02-08"
-  license: "All rights reserved"
+  date-released: 2026-02-08
+  license-url: "https://github.com/peter120525-cmd/Lawmadi-Public/blob/main/LICENSE.txt"
   repository-code: "https://github.com/peter120525-cmd/Lawmadi-Public"
   abstract: >
     Lawmadi OS is a deterministic FSM-based Legal Decision Operating System
