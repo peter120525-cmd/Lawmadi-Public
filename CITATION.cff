@@ -5,9 +5,9 @@ title: "Lawmadi OS — Legal Decision Operating System"
 version: "v2.0-Unified"
 date-released: "2026-02-08"
 license: "All rights reserved"
-license-url: "https://github.com/peter120525-cmd/lawmadi-os-v50/blob/main/LICENSE.txt"
-url: "https://github.com/peter120525-cmd/lawmadi-os-v50"
-repository-code: "https://github.com/peter120525-cmd/lawmadi-os-v50"
+license-url: "https://github.com/peter120525-cmd/Lawmadi-Public/main/LICENSE.txt"
+url: "https://github.com/peter120525-cmd/Lawmadi-Public0"
+repository-code: "https://github.com/peter120525-cmd/Lawmadi-Public"
 authors:
   - family-names: "Choe"
     given-names: "Jainam"
@@ -109,7 +109,7 @@ references:
         name: "Jainam Choe (최재남)"
     version: "v1.2 FINAL"
     date-released: "2026-01-27"
-    repository-code: "https://github.com/peter120525-cmd/lawmadi-os-v50"
+    repository-code: "https://github.com/peter120525-cmd/Lawmadi-Public"
     notes: "Original Decision Kernel release — superseded by v2.0-Unified"
 
 preferred-citation:
@@ -123,7 +123,7 @@ preferred-citation:
   version: "v2.0-Unified"
   date-released: "2026-02-08"
   license: "All rights reserved"
-  repository-code: "https://github.com/peter120525-cmd/lawmadi-os-v50"
+  repository-code: "https://github.com/peter120525-cmd/Lawmadi-Public"
   abstract: >
     Lawmadi OS is a deterministic FSM-based Legal Decision Operating System
     that generates reproducible legal decision outputs from live authoritative
