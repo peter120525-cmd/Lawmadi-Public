@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18525310.svg)](https://doi.org/10.5281/zenodo.18525310)
+
 # Lawmadi OS — Legal Decision Operating System
 
 **v2.0-Unified (Author: 최재남 / Jainam Choe)**
