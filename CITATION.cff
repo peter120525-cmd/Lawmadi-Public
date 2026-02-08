@@ -1,37 +1,134 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use or reference this software, its architecture, or any covered technologies, please cite it as below."
 type: software
-title: "Lawmadi OS Decision Kernel"
-version: "v1.2 FINAL"
-date-released: "2026-01-27"
+title: "Lawmadi OS — Legal Decision Operating System"
+version: "v2.0-Unified"
+date-released: "2026-02-08"
 license: "All rights reserved"
+license-url: "https://github.com/peter120525-cmd/lawmadi-os-v50/blob/main/LICENSE.txt"
+url: "https://github.com/peter120525-cmd/lawmadi-os-v50"
+repository-code: "https://github.com/peter120525-cmd/lawmadi-os-v50"
 authors:
   - family-names: "Choe"
     given-names: "Jainam"
-    name: "Jainam Choe"
+    name: "Jainam Choe (최재남)"
     email: "choepeter@outlook.kr"
-repository-code: "https://github.com/peter120525-cmd/lawmadi-os-v50"
+    orcid: ""
 keywords:
   - "legal decision operating system"
+  - "LDOS"
+  - "decision intelligence infrastructure"
   - "decision kernel"
+  - "deterministic finite state machine"
   - "ssot"
-  - "fail-closed"
+  - "single source of truth"
   - "zero inference"
-  - "evidence verification"
+  - "fail-closed"
+  - "live evidence architecture"
+  - "evidence verification engine"
+  - "temporal law validity engine"
+  - "leader swarm routing"
+  - "decision graph semantics"
   - "decision token"
-  - "reproducibility"
+  - "reproducibility trust chain"
+  - "cryptographic integrity"
+  - "Ed25519 digital signature"
+  - "SHA-256 evidence hashing"
+  - "constitution DSL"
+  - "legal AI safety"
+  - "legal tech"
+  - "LLM integration"
+  - "model-agnostic legal AI"
+  - "computable trust"
+  - "DRF Open API"
+  - "Korean legal system"
+  - "global legal decision intelligence"
 abstract: >
-  Lawmadi OS Decision Kernel is the deterministic runtime core of a Legal Decision Operating System (LDOS).
-  It structures user case inputs, validates authoritative legal evidence under SSOT and temporal validity rules,
-  enforces a fail-closed policy when verification fails, and mints reproducible Decision Tokens with integrity hashes
-  and a signature interface boundary for external trust systems.
+  Lawmadi OS (LDOS) is a deterministic, finite-state-machine (FSM) based
+  Legal Decision Operating System — a Decision Intelligence Infrastructure
+  that generates reproducible legal decision outputs by assembling and
+  validating live evidence from authoritative sources. It is not a legal
+  chatbot, legal search engine, or legal database.
+
+  The system is governed by five non-negotiable constitutional principles:
+  (1) SSOT — Single Source of Truth, requiring all legal evidence from
+  authoritative official APIs only; (2) Zero Inference — prohibiting
+  fabrication, guessing, or hallucination of legal facts; (3) Fail-Closed —
+  halting decision generation upon any evidence verification failure;
+  (4) Live Evidence Architecture — generating decisions from real-time
+  validated evidence only; and (5) Deterministic Runtime Boundary —
+  confining the LLM to a rendering engine role under strict Kernel control.
+
+  Core proprietary technologies include: the Decision OS Kernel (case
+  structuring, FSM runtime, issue extraction), the Leader Swarm Routing
+  Engine (multi-expert consensus with weighted confidence voting), the
+  Evidence Verification Engine (authoritative-source-only pipeline with
+  SHA-256 hashing and trust scoring), the Temporal Law Validity Engine
+  (effective date verification, precedent change detection, unconstitutional
+  clause identification), the Decision Graph Formal Semantics (node
+  typology, edge semantics, graph validity conditions), the Cryptographic
+  Integrity Framework (Ed25519 signatures, reproducibility trust chain,
+  Decision Token Standard), the Constitution DSL (executable policy rules
+  enforced at runtime), the Prompt and Tool Contract framework for
+  model-agnostic LLM integration, and the Global Legal Tech Applicability
+  framework for multi-jurisdiction SSOT adaptation.
+
+  The unified llms.txt specification (v2.0) serves as the single canonical
+  reference for any LLM or AI agent operating in legal technology contexts.
+
+  Copyright (c) 2026 Jainam Choe (최재남). All rights reserved.
+
+references:
+  - type: report
+    title: "Lawmadi OS: Integrated Technical Whitepaper & Kernel Specification"
+    authors:
+      - family-names: "Choe"
+        given-names: "Jainam"
+        name: "Jainam Choe (최재남)"
+    year: 2026
+    month: 2
+    version: "v3.0-Final"
+    notes: "LDOS Reference Architecture v3.0, Version 1.0-Final"
+
+  - type: generic
+    title: "llms.txt — Lawmadi OS Unified LLM Directive & Global Legal Decision Intelligence Standard"
+    authors:
+      - family-names: "Choe"
+        given-names: "Jainam"
+        name: "Jainam Choe (최재남)"
+    year: 2026
+    month: 2
+    version: "v2.0-Unified"
+    notes: "Single canonical LLM integration reference for legal decision intelligence systems"
+
+  - type: software
+    title: "Lawmadi OS Decision Kernel"
+    authors:
+      - family-names: "Choe"
+        given-names: "Jainam"
+        name: "Jainam Choe (최재남)"
+    version: "v1.2 FINAL"
+    date-released: "2026-01-27"
+    repository-code: "https://github.com/peter120525-cmd/lawmadi-os-v50"
+    notes: "Original Decision Kernel release — superseded by v2.0-Unified"
+
 preferred-citation:
   type: software
-  title: "Lawmadi OS Decision Kernel"
+  title: "Lawmadi OS — Legal Decision Operating System"
   authors:
     - family-names: "Choe"
       given-names: "Jainam"
-      name: "Jainam Choe"
-  version: "v1.2 FINAL"
-  date-released: "2026-01-27"
+      name: "Jainam Choe (최재남)"
+      email: "choepeter@outlook.kr"
+  version: "v2.0-Unified"
+  date-released: "2026-02-08"
+  license: "All rights reserved"
   repository-code: "https://github.com/peter120525-cmd/lawmadi-os-v50"
+  abstract: >
+    Lawmadi OS is a deterministic FSM-based Legal Decision Operating System
+    that generates reproducible legal decision outputs from live authoritative
+    evidence under SSOT, Zero Inference, Fail-Closed, and Live Evidence
+    constitutional principles. It encompasses the Decision OS Kernel, Leader
+    Swarm Routing Engine, Evidence Verification Engine, Temporal Law Validity
+    Engine, Decision Graph Formal Semantics, Cryptographic Integrity Framework,
+    Constitution DSL, and model-agnostic LLM integration contracts.
