@@ -166,4 +166,4 @@ For licensing or commercial permissions:
 
 ---
 
-© 2026 Jaenam Choi (최재남). All rights reserved.
+© 2026 Jainam Choe (최재남). All rights reserved.
