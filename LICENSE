@@ -4,12 +4,24 @@ Covering All Technologies, Architectures, and Intellectual Property
 Enumerated in the Lawmadi OS Unified llms.txt Specification
 ================================================================================
 
-Version: 2.0
+Version: 2.1
 Effective Date: 2026-02-08
 Specification Reference: llms.txt v2.0-Unified (2026-02)
 Architecture Reference: Lawmadi_OS_통합기술백서_v3_Final.docx (LDOS v3.0)
 
 Copyright (c) 2026 Jainam Choe (최재남). All rights reserved.
+
+================================================================================
+0. NOTICE — NON-OPEN SOURCE / NO IMPLIED RIGHTS
+================================================================================
+
+THIS IS NOT AN OPEN-SOURCE LICENSE. No open-source rights are granted or implied.
+Public availability of any portion of the Software is solely for technical review,
+authorship demonstration, and evaluation. No rights are granted beyond those
+explicitly stated in Section 3.
+
+No rights are granted by implication, estoppel, exhaustion, or otherwise. All rights
+not expressly granted are reserved by the Copyright Holder.
 
 ================================================================================
 1. DEFINITIONS
@@ -39,8 +51,8 @@ Copyright (c) 2026 Jainam Choe (최재남). All rights reserved.
     Software or Covered Technologies, including but not limited to
     translations, adaptations, modifications, extensions, ports,
     reimplementations, or any work that substantially reproduces the
-    architecture, logic flow, decision methodology, or constitutional
-    framework of the Software.
+    architecture, logic flow, decision methodology, constitutional
+    framework, schemas, or operational constraints of the Software.
 
 1.6 "Commercial Use" means any use intended for or directed toward
     commercial advantage or monetary compensation, including but not
@@ -55,6 +67,47 @@ Copyright (c) 2026 Jainam Choe (최재남). All rights reserved.
     including but not limited to large language models (LLMs), foundation
     models, and domain-specific models.
 
+1.8 "Production Use" means any use that (a) serves real end users outside
+    Your personal evaluation context; (b) processes real matters, real cases,
+    or real-world decisions; (c) is integrated into operational workflows,
+    products, services, or systems; (d) is used with service-level objectives,
+    reliability requirements, or regular business operations; or (e) is used
+    to provide outputs to third parties, regardless of whether payment occurs.
+
+1.9 "Non-Production Use" means local, offline, isolated evaluation and testing
+    solely for Your internal review, without third-party access, without
+    operational integration, and without reliance for real decisions.
+
+1.10 "Internal" means within a single individual (if You are a natural person),
+     or within a single legal entity under common control, excluding affiliates,
+     contractors, customers, partners, clients, or any third party unless the
+     Copyright Holder provides prior written permission.
+
+1.11 "Distribute" (or "Distribution") means to provide, publish, share,
+     sublicense, post, upload, transmit, host, mirror, fork publicly, or otherwise
+     make available any portion of the Software, Covered Technologies, or Outputs
+     to any third party by any means, including via public repositories, websites,
+     code snippets, gists, paste services, file sharing, or documentation excerpts.
+
+1.12 "Outputs" means any output, response, rendering, token, graph, log excerpt,
+     schema expansion, tool-call transcript, evaluation trace, or any other
+     artifacts produced by running, executing, or interacting with the Software.
+
+1.13 "Competing Product" means any system, service, platform, software, or
+     offering primarily intended for legal decision support, legal verification,
+     legal reasoning assistance, legal evidence validation, or substantially
+     similar functionality where the architecture, workflow, or operational
+     constraints substantially overlap with the Software or Covered Technologies.
+
+1.14 "Substantially Similar" means similarity in purpose and core functional
+     architecture, including any meaningful reproduction of the constitutional
+     framework, DSL enforcement, FSM gating, evidence pipeline, decision graph
+     semantics, routing methodology, trust protocol, or reproducibility chain.
+
+1.15 "Confidential Elements" means proprietary weights, formulas, thresholds,
+     production endpoints, API keys, internal policy weights, security secrets,
+     and any implementation details that are excluded from public/sanitized
+     materials yet remain protected as trade secrets.
 
 ================================================================================
 2. PURPOSE
@@ -69,7 +122,6 @@ This is NOT an open-source license. No open-source rights are granted or
 implied. The mere availability of public/sanitized documentation does not
 constitute a grant of any rights beyond those explicitly stated in Section 3.
 
-
 ================================================================================
 3. GRANT OF LIMITED PERMISSION
 ================================================================================
@@ -81,21 +133,22 @@ sublicensable, revocable permission to:
   (a) VIEW AND READ the Software and accompanying documentation for
       personal educational and evaluation purposes;
 
-  (b) DOWNLOAD a single copy for internal, non-production evaluation
+  (b) DOWNLOAD a single copy for Internal, Non-Production evaluation
       and review purposes only;
 
-  (c) RUN the Software locally in a non-production, non-commercial
-      environment for evaluation and testing purposes only;
+  (c) RUN the Software locally in a Non-Production, Non-Commercial,
+      isolated environment for evaluation and testing purposes only;
 
   (d) REFERENCE the publicly available architectural principles (SSOT,
-      Zero Inference, Fail-Closed, Live Evidence) in academic or
-      technical discussions, provided that proper attribution is given
-      to Lawmadi OS and the Copyright Holder.
+      Zero Inference, Fail-Closed, Live Evidence, Deterministic Boundary)
+      in academic or technical discussions, PROVIDED THAT:
+        (i) such reference is descriptive and non-operational (no implementation);
+        (ii) proper attribution is given as required in Section 8; and
+        (iii) You do not provide implementation details that enable replication.
 
 No other rights are granted, expressly or by implication, estoppel, or
 otherwise. All rights not explicitly granted are reserved by the
 Copyright Holder.
-
 
 ================================================================================
 4. COVERED TECHNOLOGIES — EXHAUSTIVE ENUMERATION
@@ -109,269 +162,107 @@ the LDOS Reference Architecture v3.0 whitepaper:
 ────────────────────────────────────────────────────────────────────────────
 4.1 FOUNDATIONAL OPERATING CONSTITUTION & PRINCIPLES
 ────────────────────────────────────────────────────────────────────────────
-
   (a) The Lawmadi Foundational Operating Constitution framework, including
       the specific formulation and systematic integration of:
-      - SSOT (Single Source of Truth) principle as applied to legal
-        decision systems
+      - SSOT (Single Source of Truth) principle as applied to legal decision systems
       - Zero Inference Principle for legal AI
       - Fail-Closed Policy for legal decision safety
       - Live Evidence Architecture for real-time legal validation
       - Deterministic Runtime Boundary between LLM and Kernel
-
-  (b) The specific architectural methodology of combining these five
-      principles into a unified constitutional framework governing a
-      Legal Decision Operating System.
+  (b) The specific architectural methodology of combining these principles
+      into a unified constitutional framework governing a Legal Decision OS.
 
 ────────────────────────────────────────────────────────────────────────────
 4.2 CONSTITUTION DSL (DOMAIN SPECIFIC LANGUAGE)
 ────────────────────────────────────────────────────────────────────────────
-
   (a) The Lawmadi Constitution DSL specification, including rule syntax,
       enforcement gate logic, and runtime application methodology;
-
-  (b) All Constitution DSL rules, including but not limited to:
-      - Enforce_Source_Integrity rule and logic
-      - Validate_Effective_Date rule and logic
-      - Reject_Missing_Evidence rule and logic
-      - Reject_Expired_Evidence rule and logic
-      - Enforce_Zero_Inference rule and logic
-      - Enforce_Decision_Completeness rule and logic
-      - Enforce_Crypto_Integrity rule and logic
-
-  (c) The methodology of expressing legal system operational constraints
-      as executable DSL rules applied at runtime.
+  (b) All Constitution DSL rules and logic;
+  (c) The methodology of expressing operational constraints as executable DSL.
 
 ────────────────────────────────────────────────────────────────────────────
 4.3 DECISION OS KERNEL
 ────────────────────────────────────────────────────────────────────────────
-
-  (a) The Decision OS Kernel architecture, including core decision logic
-      engine design, case structuring methodology, and FSM runtime state
-      management;
-
-  (b) The Case Structure Parser, including the CaseStructure schema
-      (case_id, case_type, parties, timeline, claim_object, fact_vector)
-      and the methodology for converting natural language queries into
-      structured case objects;
-
-  (c) The Issue Extraction Engine, including the IssueGraph schema
-      (issue_nodes[], dependency_edges[]) and the methodology for
-      extracting legal issues and constructing dependency graphs;
-
-  (d) The Deterministic Finite State Machine (FSM) runtime, including:
-      - The specific state sequence: INPUT_RECEIVED → INPUT_VALIDATED →
-        CASE_STRUCTURED → ISSUE_IDENTIFIED → LEADER_ROUTED →
-        EVIDENCE_FETCHING → EVIDENCE_VALIDATED → DECISION_GRAPH_BUILT →
-        TOKEN_MINTED → TOKEN_SIGNED → RESPONSE_DELIVERED
-      - The Fail-Closed state path: EVIDENCE_VALIDATION_FAILED |
-        TEMPORAL_VALIDATION_FAILED | CONSTITUTION_VIOLATION |
-        SOURCE_INTEGRITY_FAILURE → HALT → FAIL_CLOSED_RESPONSE
-      - All FSM transition rules and enforcement logic.
+  (a) Kernel architecture, decision logic engine, case structuring, FSM runtime;
+  (b) Case structure parser & schemas; issue extraction & dependency graphs;
+  (c) Deterministic FSM state sequence and all transition rules.
 
 ────────────────────────────────────────────────────────────────────────────
 4.4 LEADER SWARM ROUTING ENGINE
 ────────────────────────────────────────────────────────────────────────────
-
-  (a) The Leader Swarm Routing Engine architecture and all routing
-      algorithms;
-
-  (b) The Routing Score Function, including the specific formula and
-      weighting methodology:
-      RoutingScore = domain_match_weight + historical_accuracy_score
-                   + evidence_dependency_score + trust_score;
-
-  (c) The Multi-Leader Consensus Model, including:
-      - Weighted Confidence Voting algorithm
-      - Decision Graph Merge algorithm
-      - Fallback Leader Escalation protocol
-
-  (d) The LeaderProfile schema (leader_id, specialization_domain,
-      capability_tags, routing_weight, trust_score,
-      supported_constitution_ver, dependency_modules);
-
-  (e) The methodology of treating specialist legal domain experts as
-      modular prompt profiles or specialist toolchains for routing.
+  (a) Routing engine architecture and routing algorithms;
+  (b) Routing score function and weighting methodology;
+  (c) Multi-leader consensus (weighted confidence, merge, escalation);
+  (d) LeaderProfile schema and specialist modular routing methodology.
 
 ────────────────────────────────────────────────────────────────────────────
 4.5 EVIDENCE VERIFICATION ENGINE
 ────────────────────────────────────────────────────────────────────────────
-
-  (a) The Evidence Verification Engine architecture and all evidence
-      processing methodologies;
-
-  (b) The Evidence Processing Pipeline:
-      Authoritative API Query → Evidence Normalization → Temporal
-      Validation → Evidence Hashing (SHA-256);
-
-  (c) The Evidence Trust Protocol, including the EvidenceTrustScore
-      formula: source_authority_weight + citation_stability_score
-              + temporal_consistency_score;
-
-  (d) The evidence_set canonical data schema and all associated
-      integrity rules;
-
-  (e) The Evidence Hashing methodology (canonical JSON serialization,
-      sort_keys, stable separators, SHA-256);
-
-  (f) The Provenance Lineage Tracking system for evidence creation,
-      modification, and validation history.
+  (a) Evidence verification architecture and methodologies;
+  (b) Evidence pipeline stages and hashing;
+  (c) Trust protocol components and provenance tracking.
 
 ────────────────────────────────────────────────────────────────────────────
 4.6 TEMPORAL LAW VALIDITY ENGINE
 ────────────────────────────────────────────────────────────────────────────
-
-  (a) The Temporal Law Validity Engine architecture and all temporal
-      validation algorithms;
-
-  (b) Statute effective date verification methodology;
-
-  (c) Precedent change detection methodology (appellate reversal,
-      superior court changes);
-
-  (d) Unconstitutional / void clause detection methodology
-      (constitutional court rulings);
-
-  (e) "As-of" time validation methodology for current or user-specified
-      dates;
-
-  (f) The integration of temporal validity checking into the evidence
-      pipeline and FSM enforcement.
+  (a) Temporal validation architecture and algorithms;
+  (b) Effective date verification; precedent change detection;
+      unconstitutional clause detection; "as-of" validation.
 
 ────────────────────────────────────────────────────────────────────────────
 4.7 DECISION GRAPH FORMAL SEMANTICS
 ────────────────────────────────────────────────────────────────────────────
-
-  (a) The Decision Graph architecture, including formal semantic design;
-
-  (b) The Node Typology: FACT_NODE, ISSUE_NODE, LAW_NODE, PRECEDENT_NODE,
-      DECISION_NODE, and their formal definitions;
-
-  (c) The Edge Semantics: SUPPORTS, CONTRADICTS, DEPENDS_ON, RESOLVES,
-      REFERENCES, APPLIES, OVERRULES, TEMPORAL_DEPENDS, and their
-      formal definitions;
-
-  (d) The Graph Validity Condition:
-      ∀ ISSUE_NODE: ∃ LAW_NODE AND ∃ EVIDENCE_NODE that SUPPORTS it;
-
-  (e) The Decision Graph Generator methodology for visual decision tree
-      and logic flow generation;
-
-  (f) The Decision Graph Merge algorithm for multi-leader consensus.
+  (a) Decision graph architecture and formal semantic design;
+  (b) Node Typology includes FACT_NODE, ISSUE_NODE, LAW_NODE, PRECEDENT_NODE,
+      EVIDENCE_NODE, DECISION_NODE, and their definitions;
+  (c) Edge semantics and formal definitions;
+  (d) Graph validity condition and graph merge methodology.
 
 ────────────────────────────────────────────────────────────────────────────
 4.8 CRYPTOGRAPHIC INTEGRITY & REPRODUCIBILITY FRAMEWORK
 ────────────────────────────────────────────────────────────────────────────
-
-  (a) The Reproducibility Trust Chain:
-      Input Hash → Evidence Hash Set → Decision Graph Hash →
-      Decision Token Signature (Ed25519);
-
-  (b) The Decision Token Standard schema (decision_id, created_at,
-      input_hash, constitution_version, drf_evidence_hash,
-      decision_graph_hash, decision_graph_summary, digital_signature);
-
-  (c) The deterministic reproducibility methodology: Same Input +
-      Same Evidence State → Same Token;
-
-  (d) The integration of Ed25519 digital signatures and SHA-256 hashing
-      into the legal decision pipeline.
+  (a) Reproducibility trust chain and deterministic methodology;
+  (b) Decision Token schema and signature/hashing integration.
 
 ────────────────────────────────────────────────────────────────────────────
 4.9 PROMPT CONTRACT & LLM INTEGRATION FRAMEWORK
 ────────────────────────────────────────────────────────────────────────────
-
-  (a) The Prompt Contract specification (System Prompt, Developer Prompt,
-      User Prompt Handling rules);
-
-  (b) The Tool / Function Calling Contract (fetch_evidence,
-      validate_evidence, temporal_validate, build_decision_graph,
-      mint_decision_token, sign_token, audit_log);
-
-  (c) The Output Schema specification (Success Response and Fail-Closed
-      Response JSON schemas);
-
-  (d) The model-agnostic LLM integration methodology, including the
-      concept of LLM as "rendering engine" under Kernel control;
-
-  (e) The multi-LLM adapter layer architecture;
-
-  (f) The safe streaming policy (no conclusions before validation,
-      atomic final output).
+  (a) Prompt contract, tool contract, output schema;
+  (b) Model-agnostic integration methodology and adapter architecture;
+  (c) Safe streaming policy and atomic final output.
 
 ────────────────────────────────────────────────────────────────────────────
 4.10 ERROR HANDLING & OBSERVABILITY FRAMEWORK
 ────────────────────────────────────────────────────────────────────────────
-
-  (a) The Standard Error Code system (LC-001 through LC-006) and their
-      stable semantic definitions;
-
-  (b) The audit-first observability architecture (Decision Trace ID,
-      Graph Debug Snapshot, Evidence Replay Mechanism, Runtime Telemetry
-      Metrics);
-
-  (c) The concurrency model (Parallel Leader Execution, Async Evidence
-      Query Queue, Circuit Breaker Protocol, Timeout Retry Policy).
+  (a) Error code system and stable semantic definitions;
+  (b) Audit-first observability and runtime telemetry;
+  (c) Concurrency model and circuit breaker / timeout policies.
 
 ────────────────────────────────────────────────────────────────────────────
 4.11 SECURITY ARCHITECTURE
 ────────────────────────────────────────────────────────────────────────────
-
-  (a) The Gateway Protection architecture (input validation, auth,
-      rate limiting, audit logging, output masking);
-
-  (b) The Prompt Injection & Tool Injection Defense methodology;
-
-  (c) The Secret Management policy and architecture;
-
-  (d) The Zero Trust Access Model as applied to the Core Layer.
+  (a) Gateway protection; injection defense; secret management;
+  (b) Zero Trust access model and output masking architecture.
 
 ────────────────────────────────────────────────────────────────────────────
 4.12 PLATFORM ARCHITECTURE & BUSINESS STRATEGY
 ────────────────────────────────────────────────────────────────────────────
-
-  (a) The Three-Layer Platform Architecture (Core Layer, Service Layer,
-      Partner/B2B Layer) and its specific role separation design;
-
-  (b) The Friendly Secretary UX concept and conversational interface
-      design methodology;
-
-  (c) The Partner/B2B API design (Decision Verification API, Evidence
-      Validation API, Case Structuring API);
-
-  (d) The strategic data asset model: Case Decision Pattern Data
-      (case type → issue structure → selected authorities → decision
-      flow → outcome pattern).
+  (a) Platform architecture role separation;
+  (b) Conversational UX methodology and partner API design;
+  (c) Strategic data asset model.
 
 ────────────────────────────────────────────────────────────────────────────
 4.13 GLOBAL LEGAL TECH FRAMEWORK
 ────────────────────────────────────────────────────────────────────────────
-
-  (a) The multi-jurisdiction SSOT adaptation methodology;
-
-  (b) The universal legal decision intelligence principles as a
-      jurisdiction-agnostic framework;
-
-  (c) The multi-jurisdiction operation rules, including conflict-of-law
-      modeling in decision graphs.
+  (a) Multi-jurisdiction SSOT adaptation methodology;
+  (b) Universal legal decision intelligence principles.
 
 ────────────────────────────────────────────────────────────────────────────
 4.14 DOCUMENTATION & SPECIFICATION ASSETS
 ────────────────────────────────────────────────────────────────────────────
-
-  (a) The llms.txt Unified LLM Directive & Global Legal Decision
-      Intelligence Standard (all versions);
-
-  (b) The LDOS Reference Architecture Whitepaper (all versions);
-
-  (c) The LLM Integration Playbook (all versions);
-
-  (d) All technical diagrams, flow charts, architectural schematics,
-      and visual representations of the Covered Technologies;
-
-  (e) The "Convert Anxiety into Actionable Logic" / "불안을 실행 가능한
-      논리로 전환하다" tagline and brand identity.
-
+  (a) llms.txt unified specification and all versions;
+  (b) Whitepapers, integration playbooks, diagrams, and schematics;
+  (c) Taglines, brand identity elements, and associated materials.
 
 ================================================================================
 5. RESTRICTIONS
@@ -384,71 +275,87 @@ You may NOT:
 5.1 GENERAL PROHIBITIONS
 ────────────────────────────────────────────────────────────────────────────
 
-  (a) USE the Software or any Covered Technology in production or provide
+  (a) USE the Software or any Covered Technology in Production Use or provide
       it as a service (SaaS, PaaS, API, or otherwise) to any third party;
 
-  (b) MODIFY, adapt, translate, port, reimplement, or create Derivative
-      Works from the Software or any Covered Technology;
+  (b) MODIFY, adapt, translate, port, reimplement, or create Derivative Works
+      from the Software, Covered Technologies, or Outputs;
 
-  (c) DISTRIBUTE, publish, sublicense, sell, rent, lease, lend, or
-      otherwise transfer the Software or any Covered Technology (or any
-      portion thereof) to any third party, by any means;
+  (c) DISTRIBUTE, publish, host, mirror, fork publicly, sublicense, sell, rent,
+      lease, lend, or otherwise transfer the Software, Covered Technologies, or
+      any portion thereof, including substantial excerpts;
 
   (d) REVERSE ENGINEER, decompile, disassemble, or attempt to extract
       proprietary logic, algorithms, or methodologies from the Software,
-      except where such restriction is prohibited by applicable mandatory
-      law;
+      except where prohibited by applicable mandatory law;
 
   (e) REMOVE OR ALTER any copyright notices, attribution, license terms,
       proprietary markings, or authorship information;
 
-  (f) REPRESENT, claim, or imply that You are the author, creator, or
-      owner of the Software or any Covered Technology;
+  (f) REPRESENT, claim, or imply that You are the author, creator, sponsor,
+      endorser, or owner of the Software or any Covered Technology;
 
-  (g) FILE any patent, trademark, design right, or other intellectual
-      property registration based on or derived from the Software or
-      any Covered Technology.
+  (g) FILE any patent, trademark, design right, or other IP registration based
+      on or derived from the Software, Covered Technologies, or Outputs.
+
+  (h) USE the Software, Covered Technologies, or Outputs to provide professional
+      legal advice or to represent that outputs are definitive legal conclusions.
 
 ────────────────────────────────────────────────────────────────────────────
-5.2 AI / MACHINE LEARNING PROHIBITIONS
+5.2 AI / MACHINE LEARNING / DATASET PROHIBITIONS
 ────────────────────────────────────────────────────────────────────────────
 
-  (a) USE the Software or any Covered Technology, in whole or in part,
-      to TRAIN, fine-tune, distill, or perform reinforcement learning on
-      any machine learning model, including but not limited to large
-      language models (LLMs), foundation models, and domain-specific
-      models;
+  (a) USE the Software, Covered Technologies, Documentation, or Outputs, in
+      whole or in part, to TRAIN, fine-tune, distill, perform RL, or otherwise
+      optimize any AI/ML model;
 
-  (b) CREATE embeddings, vector representations, or retrieval-augmented
-      generation (RAG) indexes from the Software or its outputs for use
-      in any AI system;
+  (b) CREATE embeddings, vector representations, semantic indexes, RAG corpora,
+      retrieval databases, or similarity search datasets from the Software or
+      Outputs for use in any AI/ML system;
 
   (c) USE the architectural patterns, constitutional framework, DSL rules,
-      graph semantics, routing algorithms, or any other Covered Technology
-      as training data, prompt templates, or system instructions for
-      competing products without written permission;
+      graph semantics, routing algorithms, trust protocols, or reproducibility
+      chain as training data, prompt templates, system instructions, evaluation
+      targets, synthetic data sources, or benchmarking materials for competing
+      systems without written permission;
 
-  (d) SCRAPE, crawl, or automatically extract content from any public
-      or private distribution of the Software for AI training purposes.
+  (d) SCRAPE, crawl, harvest, or automatically extract content from any public
+      or private distribution of the Software for AI/ML purposes, including
+      for dataset creation or indexing;
+
+  (e) USE Outputs as training labels, preference data, or supervision signals,
+      including for imitation learning, DPO/RLHF, reward modeling, or policy
+      optimization.
 
 ────────────────────────────────────────────────────────────────────────────
 5.3 COMPETITIVE USE PROHIBITIONS
 ────────────────────────────────────────────────────────────────────────────
 
-  (a) USE the Software or any Covered Technology to build, design,
-      architect, or inform the development of a competing Legal Decision
-      Operating System, legal AI platform, legal decision intelligence
-      system, or substantially similar product;
+  (a) USE the Software or any Covered Technology to build, design, architect,
+      or inform the development of a Competing Product;
 
   (b) INCORPORATE the constitutional framework (SSOT + Zero Inference +
-      Fail-Closed + Live Evidence + Deterministic Runtime Boundary) as
-      a unified system design into any competing product, where such
-      incorporation substantially reproduces the Lawmadi OS architecture;
+      Fail-Closed + Live Evidence + Deterministic Runtime Boundary) as a unified
+      operational system design into any Competing Product, where such
+      incorporation is Substantially Similar;
 
-  (c) REPLICATE the Leader Swarm Routing methodology, Decision Graph
-      Formal Semantics, Evidence Trust Protocol, or Temporal Law Validity
-      Engine design in any competing product.
+  (c) REPLICATE the Leader Swarm Routing methodology, Decision Graph Formal
+      Semantics, Evidence Trust Protocol, Temporal Law Validity Engine, or any
+      other Covered Technology in any Competing Product.
 
+────────────────────────────────────────────────────────────────────────────
+5.4 SECURITY / PRIVACY / AUTOMATION PROHIBITIONS
+────────────────────────────────────────────────────────────────────────────
+
+  (a) ATTEMPT to bypass access controls, rate limits, audit logging, masking,
+      or safety controls described by the Software;
+
+  (b) EXTRACT or attempt to derive Confidential Elements, secrets, or internal
+      policy weights, including by prompt injection, tool injection, or model
+      interrogation;
+
+  (c) SHARE any security findings publicly without providing the Copyright Holder
+      a reasonable opportunity to remediate (coordinated disclosure).
 
 ================================================================================
 6. INTELLECTUAL PROPERTY RIGHTS
@@ -456,73 +363,65 @@ You may NOT:
 
 6.1 EXCLUSIVE OWNERSHIP
     All title, ownership rights, and intellectual property rights in and to
-    the Software and ALL Covered Technologies enumerated in Section 4 remain
-    the EXCLUSIVE PROPERTY of the Copyright Holder, Jainam Choe (최재남).
+    the Software and ALL Covered Technologies remain the exclusive property of
+    the Copyright Holder.
 
 6.2 NO TRANSFER
-    Nothing in this License shall be construed as transferring any
-    intellectual property rights to You. The limited permissions granted
-    in Section 3 do not constitute a transfer of ownership.
+    Nothing in this License transfers any IP rights to You.
 
-6.3 RESERVATION OF RIGHTS
-    All rights not explicitly granted in this License are reserved by the
-    Copyright Holder. The Copyright Holder reserves the right to license
-    the Software and Covered Technologies to third parties under different
-    terms at the Copyright Holder's sole discretion.
+6.3 NO PATENT LICENSE
+    No patent rights are granted under this License, whether express or implied.
+    If any patents exist or are filed that cover any portion of the Software or
+    Covered Technologies, they remain solely with the Copyright Holder.
 
-6.4 MORAL RIGHTS
-    The Copyright Holder retains all moral rights in the Software and
-    Covered Technologies, including the right of attribution and the right
-    of integrity, to the maximum extent permitted by applicable law.
+6.4 NO TRADEMARK / BRAND LICENSE
+    No trademark, service mark, trade name, logo, or brand rights are granted.
+    You may not use "Lawmadi", "Lawmadi OS", "LDOS", taglines, logos, or marks
+    except as required for attribution in Section 8, and only in a manner that
+    does not imply endorsement or affiliation.
 
-6.5 TRADE SECRETS
-    The proprietary algorithms, scoring formulas, routing weights, internal
-    configurations, and implementation details of the Covered Technologies
-    constitute trade secrets of the Copyright Holder. Any unauthorized
-    disclosure, use, or appropriation of such trade secrets shall constitute
-    a breach of this License and may give rise to additional legal claims.
+6.5 MORAL RIGHTS
+    The Copyright Holder retains all moral rights to the maximum extent permitted.
 
+6.6 TRADE SECRETS
+    Confidential Elements constitute trade secrets. Unauthorized disclosure or
+    use constitutes a breach and may give rise to legal claims.
 
 ================================================================================
-7. THIRD-PARTY SERVICES AND DATA
+7. THIRD-PARTY SERVICES, DATA, AND THIRD-PARTY SOFTWARE
 ================================================================================
 
-7.1 The Software describes or conceptually references official legal-data
-    APIs (including but not limited to Korea's DRF Open API, US GovInfo,
-    EU EUR-Lex, UK legislation.gov.uk, Japan e-Gov) and other third-party
-    services.
+7.1 The Software references official legal-data APIs and third-party services.
+    This License grants NO RIGHTS to any third-party APIs, datasets, trademarks,
+    services, or IP.
 
-7.2 This License grants NO RIGHTS to any third-party APIs, datasets,
-    trademarks, services, or intellectual property.
+7.2 You are responsible for complying with third-party terms and licenses.
 
-7.3 You are solely responsible for complying with the terms, conditions,
-    and licensing requirements of any third-party services You access.
-
-7.4 The Copyright Holder makes no representations or warranties regarding
-    the availability, accuracy, or continued operation of any third-party
-    services referenced in the Software.
-
+7.3 THIRD-PARTY SOFTWARE COMPONENTS
+    If the Software distribution includes or depends on third-party software
+    components, those components remain governed by their own licenses. Nothing
+    in this License eliminates Your obligations under applicable third-party
+    licenses. The Copyright Holder provides no warranty regarding third-party
+    software.
 
 ================================================================================
 8. ATTRIBUTION REQUIREMENTS
 ================================================================================
 
-8.1 Any permitted use of the Software or reference to the Covered
-    Technologies MUST include clear and prominent attribution to:
+8.1 Any permitted reference MUST include clear attribution to:
 
     "Lawmadi OS — Legal Decision Operating System
      Copyright (c) 2026 Jainam Choe (최재남). All rights reserved."
 
-8.2 Academic, research, or technical publications that reference the
-    architectural principles or Covered Technologies must cite:
+8.2 Academic or technical publications that reference the principles must cite:
 
     Choe, Jainam (최재남). "Lawmadi OS: Legal Decision Operating System —
     Integrated Technical Whitepaper & Kernel Specification." LDOS Reference
     Architecture v3.0, Version 1.0-Final. Lawmadi Project, February 2026.
 
-8.3 Failure to provide proper attribution constitutes a breach of this
-    License.
-
+8.3 No Endorsement
+    Attribution does not grant permission to imply endorsement, partnership,
+    sponsorship, or certification by the Copyright Holder.
 
 ================================================================================
 9. DISCLAIMER OF WARRANTY
@@ -533,16 +432,8 @@ WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
 WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-
 INFRINGEMENT, ACCURACY, COMPLETENESS, OR RELIABILITY.
 
-THE COPYRIGHT HOLDER DOES NOT WARRANT THAT:
-  (a) THE SOFTWARE WILL MEET YOUR REQUIREMENTS;
-  (b) THE SOFTWARE WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE;
-  (c) THE RESULTS OBTAINED FROM THE SOFTWARE WILL BE ACCURATE OR RELIABLE;
-  (d) ANY LEGAL INFORMATION OR DECISION OUTPUT IS CORRECT OR SUITABLE FOR
-      ANY PARTICULAR PURPOSE.
-
-THE SOFTWARE IS NOT A SUBSTITUTE FOR PROFESSIONAL LEGAL ADVICE. USERS
-MUST CONSULT QUALIFIED LEGAL PROFESSIONALS BEFORE MAKING LEGAL DECISIONS.
-
+THE SOFTWARE IS NOT A SUBSTITUTE FOR PROFESSIONAL LEGAL ADVICE. USERS MUST
+CONSULT QUALIFIED LEGAL PROFESSIONALS BEFORE MAKING LEGAL DECISIONS.
 
 ================================================================================
 10. LIMITATION OF LIABILITY
@@ -550,127 +441,98 @@ MUST CONSULT QUALIFIED LEGAL PROFESSIONALS BEFORE MAKING LEGAL DECISIONS.
 
 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE
 COPYRIGHT HOLDER BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES (INCLUDING BUT NOT LIMITED
-TO PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, LOSS OF USE, DATA, OR
-PROFITS, BUSINESS INTERRUPTION, LEGAL LIABILITY, OR ANY OTHER PECUNIARY
-LOSS) ARISING OUT OF OR IN CONNECTION WITH THE USE OF, INABILITY TO USE,
-OR RELIANCE ON THE SOFTWARE OR ANY COVERED TECHNOLOGY, WHETHER BASED ON
-WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR
-ANY OTHER LEGAL THEORY, EVEN IF THE COPYRIGHT HOLDER HAS BEEN ADVISED
-OF THE POSSIBILITY OF SUCH DAMAGES.
-
+EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR ANY COVERED TECHNOLOGY, EVEN IF ADVISED OF THE POSSIBILITY.
 
 ================================================================================
 11. INDEMNIFICATION
 ================================================================================
 
 You agree to indemnify, defend, and hold harmless the Copyright Holder from
-and against any and all claims, damages, losses, liabilities, costs, and
-expenses (including reasonable attorneys' fees) arising out of or related to:
-
-  (a) Your use of the Software or Covered Technologies;
-  (b) Your breach of any term of this License;
-  (c) Any claim that Your use of the Software infringes or misappropriates
-      any third-party rights;
-  (d) Any legal decisions, actions, or outcomes resulting from Your use of
-      or reliance on the Software.
-
+and against claims, damages, losses, liabilities, costs, and expenses arising
+out of Your use, breach, or any third-party claims related to Your use.
 
 ================================================================================
 12. TERMINATION
 ================================================================================
 
 12.1 AUTOMATIC TERMINATION
-     This License and all permissions granted herein terminate AUTOMATICALLY
-     and WITHOUT NOTICE if You breach any term or condition of this License.
+     This License and all permissions terminate automatically upon breach.
 
 12.2 DISCRETIONARY TERMINATION
-     The Copyright Holder may terminate this License at any time, for any
-     reason, by providing written notice to You.
+     The Copyright Holder may terminate at any time by written notice.
 
 12.3 EFFECT OF TERMINATION
      Upon termination:
-       (a) All permissions granted under this License cease immediately;
-       (b) You must immediately DELETE all copies of the Software in Your
-           possession or control;
-       (c) You must immediately CEASE all use of any Covered Technology;
-       (d) Sections 4 (Covered Technologies), 5 (Restrictions),
-           6 (Intellectual Property), 9 (Disclaimer), 10 (Limitation of
-           Liability), 11 (Indemnification), and 13 (General Provisions)
-           survive termination indefinitely.
+       (a) Permissions cease immediately;
+       (b) You must DELETE all copies, including backups, caches, archives;
+       (c) You must CEASE all use of Covered Technologies and Outputs.
 
+12.4 CERTIFICATION OF DELETION
+     Upon request, You must provide written certification that deletion is
+     complete, including from backups, caches, CI artifacts, and logs.
 
 ================================================================================
-13. GENERAL PROVISIONS
+13. ENFORCEMENT / EQUITABLE RELIEF
 ================================================================================
 
-13.1 GOVERNING LAW
-     This License shall be governed by and construed in accordance with the
-     laws of the Republic of Korea, without regard to conflict of law
-     principles. Any dispute arising under this License shall be subject to
-     the exclusive jurisdiction of the courts of the Republic of Korea.
+13.1 IRREPARABLE HARM
+     Unauthorized use, disclosure, AI/ML use, or competitive use may cause
+     irreparable harm not adequately compensable by damages.
 
-13.2 ENTIRE AGREEMENT
-     This License constitutes the entire agreement between You and the
-     Copyright Holder regarding the Software and Covered Technologies.
-     It supersedes all prior agreements, understandings, and communications,
-     whether written or oral.
+13.2 INJUNCTIVE RELIEF
+     The Copyright Holder may seek immediate injunctive relief, temporary
+     restraining orders, and equitable remedies, in addition to all other rights.
 
-13.3 SEVERABILITY
-     If any provision of this License is held to be invalid, illegal, or
-     unenforceable, the remaining provisions shall continue in full force
-     and effect. The invalid provision shall be modified to the minimum
-     extent necessary to make it valid and enforceable while preserving the
-     Copyright Holder's original intent.
-
-13.4 NO WAIVER
-     The failure of the Copyright Holder to enforce any right or provision
-     of this License shall not constitute a waiver of such right or
-     provision. Any waiver must be in writing and signed by the Copyright
-     Holder.
-
-13.5 ASSIGNMENT
-     You may not assign or transfer this License or any rights or
-     obligations hereunder without the prior written consent of the
-     Copyright Holder. The Copyright Holder may assign this License freely.
-
-13.6 AMENDMENTS
-     This License may be amended only by a written instrument signed by the
-     Copyright Holder. The Copyright Holder reserves the right to publish
-     updated versions of this License. Your continued use of the Software
-     after the publication of an updated License constitutes acceptance of
-     the updated terms.
-
-13.7 LANGUAGE
-     This License is drafted in English. In the event of any conflict
-     between an English version and a translated version, the English
-     version shall prevail.
-
-13.8 NOTICES
-     All notices under this License shall be in writing and shall be deemed
-     given when delivered by email to the address specified in Section 14.
-
+13.3 AUDIT RIGHT (LIMITED)
+     If the Copyright Holder reasonably suspects a material breach, You agree
+     to cooperate in a limited verification process to confirm compliance with
+     Sections 5.2 and 12, including reasonable evidence of deletion/certification.
+     Any audit must be narrowly tailored and not require disclosure of Your
+     unrelated confidential information.
 
 ================================================================================
-14. CONTACT
+14. GENERAL PROVISIONS
 ================================================================================
 
-For licensing inquiries, commercial use permissions, partnership proposals,
-or any other communications:
+14.1 GOVERNING LAW
+     Governed by the laws of the Republic of Korea.
+
+14.2 JURISDICTION
+     Exclusive jurisdiction of the courts of the Republic of Korea.
+
+14.3 ENTIRE AGREEMENT
+     This License is the entire agreement.
+
+14.4 SEVERABILITY
+     If any provision is invalid, remaining provisions remain in effect.
+
+14.5 NO WAIVER
+     No waiver unless in writing.
+
+14.6 ASSIGNMENT
+     You may not assign without consent. Holder may assign freely.
+
+14.7 AMENDMENTS
+     Amendments only by signed writing. Holder may publish updated versions;
+     continued use after publication constitutes acceptance.
+
+14.8 LANGUAGE
+     English controls in case of conflict.
+
+14.9 NOTICES
+     Notices are in writing and deemed given when delivered by email to Section 15.
+
+================================================================================
+15. CONTACT
+================================================================================
+
+For licensing inquiries, commercial permissions, or partnerships:
 
   Copyright Holder: Jainam Choe (최재남)
   Email: choepeter@outlook.kr
   Project: Lawmadi OS — Legal Decision Operating System
 
-
 ================================================================================
 END OF LICENSE
 ================================================================================
-
-This License protects ALL technologies enumerated in llms.txt v2.0-Unified,
-including but not limited to the 14 technology categories defined in
-Section 4, covering 60+ individual proprietary components, algorithms,
-schemas, protocols, and methodologies that constitute the Lawmadi OS
-Legal Decision Operating System.
-
-Copyright (c) 2026 Jainam Choe (최재남). All rights reserved.
