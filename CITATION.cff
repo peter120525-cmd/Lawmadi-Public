@@ -1,34 +1,103 @@
-cff-version: 1.2.0
-message: "If you use or reference this work, please cite it as below."
+cff-version: 2.0.0
+message: "If you use or reference this software, its architecture, or any covered technologies, please cite it as below."
 type: software
-title: "Lawmadi OS (LDOS)"
-version: 2.0.0
-doi: "10.5281/zenodo.18525310"
-date-released: "2026-02-09"
+title: "Lawmadi OS — Legal Decision Operating System"
+version: "v2.0-Unified"
+date-released: "2026-02-08"
+
 license: "LicenseRef-Proprietary"
+license-url: "https://github.com/peter120525-cmd/Lawmadi-Public/blob/main/LICENSE.txt"
+
 url: "https://github.com/peter120525-cmd/Lawmadi-Public"
 repository-code: "https://github.com/peter120525-cmd/Lawmadi-Public"
+repository-artifact: "https://doi.org/10.5281/zenodo.18525310"
+doi: "10.5281/zenodo.18525310"
 
 authors:
   - family-names: "Choe"
     given-names: "Jainam"
     email: "choepeter@outlook.kr"
-    alias: "최재남"
+    alias: "Jainam Choe (최재남)"
 
 keywords:
-  - "Legal Decision Operating System"
+  - "legal decision operating system"
   - "LDOS"
-  - "Legal Tech"
-  - "Decision Intelligence"
+  - "decision intelligence infrastructure"
+  - "decision kernel"
+  - "deterministic finite state machine"
+  - "ssot"
+  - "single source of truth"
+  - "zero inference"
+  - "fail-closed"
+  - "live evidence architecture"
+  - "evidence verification engine"
+  - "temporal law validity engine"
+  - "leader swarm routing"
+  - "decision graph semantics"
+  - "decision token"
+  - "reproducibility trust chain"
+  - "cryptographic integrity"
+  - "Ed25519 digital signature"
+  - "SHA-256 evidence hashing"
+  - "constitution DSL"
+  - "legal AI safety"
+  - "legal tech"
+  - "LLM integration"
+  - "model-agnostic legal AI"
+  - "computable trust"
+  - "DRF Open API"
+  - "Korean legal system"
+  - "global legal decision intelligence"
 
-abstract: "Lawmadi OS (LDOS) is a deterministic, finite-state-machine (FSM) based Legal Decision Operating System. It functions as an engineering kernel that generates reproducible legal decision outputs by assembling and validating live evidence from authoritative sources, adhering to Single Source of Truth (SSOT) and Zero Inference principles."
+abstract: >
+  Lawmadi OS (LDOS) is a deterministic, finite-state-machine (FSM) based
+  Legal Decision Operating System — a Decision Intelligence Infrastructure
+  that generates reproducible legal decision outputs by assembling and
+  validating live evidence from authoritative sources. It is not a legal
+  chatbot, legal search engine, or legal database.
+
+  The system is governed by five non-negotiable constitutional principles:
+  (1) SSOT — Single Source of Truth, requiring all legal evidence from
+  authoritative official APIs only; (2) Zero Inference — prohibiting
+  fabrication, guessing, or hallucination of legal facts; (3) Fail-Closed —
+  halting decision generation upon any evidence verification failure;
+  (4) Live Evidence Architecture — generating decisions from real-time
+  validated evidence only; and (5) Deterministic Runtime Boundary —
+  confining the LLM to a rendering engine role under strict Kernel control.
 
 references:
   - type: report
-    title: "Lawmadi OS: Integrated Technical Whitepaper & Kernel Specification"
+    titleading-names: "Jainam"
+        alias: "Jainam Choe (최재남)"
+    year: 2026
+    month: 2
+    version: "v3.0-Final"
+    notes: "LDOS Reference Architecture v3.0, Version 1.0-Final"
+    url: "https://github.com/peter120525-cmd/Lawmadi-Public/tree/main/docs"
+
+  - type: generic
+    title: "llms.txt — Lawmadi OS Unified LLM Directive & Global Legal Decision Intelligence Standard"
     authors:
       - family-names: "Choe"
         given-names: "Jainam"
+        alias: "Jainam Choe (최재남)"
     year: 2026
-    version: "v3.0-Final"
-    url: "https://github.com/peter120525-cmd/Lawmadi-Public/tree/main/docs"
+    month: 2
+    version: "v2.0-Unified"
+    notes: "Single canonical LLM integration reference for legal decision intelligence systems"
+    url: "https://github.com/peter120525-cmd/Lawmadi-Public/blob/main/llms.txt"
+
+preferred-citation:
+  type: software
+  title: "Lawmadi OS — Legal Decision Operating System"
+  authors:
+    - family-names: "Choe"
+      given-names: "Jainam"
+      email: "choepeter@outlook.kr"
+      alias: "Jainam Choe (최재남)"
+  version: "v2.0-Unified"
+  date-released: "2026-02-08"
+  doi: "10.5281/zenodo.18525310"
+  url: "https://github.com/peter120525-cmd/Lawmadi-Public"
+  license: "LicenseRef-Proprietary"
+  license-url: "https://github.com/peter120525-cmd/Lawmadi-Public/blob/main/LICENSE.txt"
