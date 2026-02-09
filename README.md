@@ -1,6 +1,6 @@
 # Lawmadi OS — Legal Decision Operating System (LDOS)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18525310.svg)](https://doi.org/10.5281/zenodo.18525310)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18551976.svg)](https://doi.org/10.5281/zenodo.18551976)
 
 **Version:** v2.0.0 *(Public / Sanitized Showcase)*
 **Author:** Jainam Choe (최재남)
