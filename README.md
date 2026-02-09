@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18551976.svg)](https://doi.org/10.5281/zenodo.18551976)
 
-**Version:** v2.0.0 *(Public / Sanitized Showcase)*
+**Version:** v2.0.1 *(Public / Sanitized Showcase)*
 **Author:** Jainam Choe (최재남)
 **Tagline:** “Convert Anxiety into Actionable Logic.” / “불안을 실행 가능한 논리로 전환하다”
 
