@@ -1,33 +1,35 @@
 Lawmadi OS — Architecture Reference (Public / Sanitized)
 Document Version: 3.0 (Public/Sanitized) · Repository Release: v2.0.0 · 2026-02-09
-Copyright © 2026 Jainam Choe (최재남). All rights reserved.
 > "Convert Anxiety into Actionable Logic."
 > "불안을 실행 가능한 논리로 전환하다."
 > 
-This document provides a public, sanitized architectural overview of Lawmadi OS — a deterministic, FSM-based Legal Decision Operating System (LDOS). Proprietary scoring formulas, routing weights, deployment configurations, and operational secrets are intentionally excluded.
-Lawmadi OS is not a chatbot, not a search engine, and not a legal database. It is a Decision Intelligence Infrastructure that generates reproducible, verifiable decision artifacts (non-binding) grounded in live evidence.
+This document provides a public, sanitized architectural overview of Lawmadi OS — a deterministic, FSM-based Legal Decision Operating System (LDOS).
+Proprietary scoring formulas, routing weights, deployment configurations, and operational secrets are intentionally excluded.
+Lawmadi OS is not a chatbot, not a search engine, and not a legal database.
+It is a Decision Intelligence Infrastructure that generates reproducible, verifiable decision artifacts (non-binding) grounded in live evidence.
 Evidence is fetched from designated SSOT endpoints in real time; the system does not maintain a durable replica of legal texts.
 For the complete LLM integration specification, see llms.txt (Directive v2.1-Unified).
 For licensing terms, see LICENSE.txt.
-Disclaimer: This document is for technical reference only. It does not provide legal recommendations, constitute legal advice, or replace licensed legal professionals.
+Disclaimer: This document is for technical reference only.
+It does not provide legal recommendations, constitute legal advice, or replace licensed legal professionals.
 Table of Contents
- * System Identity
- * Foundational Operating Constitution
- * Platform Layer Architecture
- * Runtime State Machine (FSM)
- * Core Kernel Engines
- * Decision Graph Formal Semantics
- * Evidence Pipeline & Trust Scoring
- * Cryptographic Integrity & Reproducibility
- * Security Architecture
- * Data Governance
- * Output Contract
- * LLM Integration Architecture
- * Concurrency & Scalability (Conceptual)
- * Infrastructure Topology (Non-operational)
- * Global Multi-Jurisdiction Design
- * Non-Public Assets (Redacted Index)
- * Cross-Reference Map (Public Artifacts)
+ * 1. System Identity
+ * 2. Foundational Operating Constitution
+ * 3. Platform Layer Architecture
+ * 4. Runtime State Machine (FSM)
+ * 5. Core Kernel Engines
+ * 6. Decision Graph Formal Semantics
+ * 7. Evidence Pipeline & Trust Scoring
+ * 8. Cryptographic Integrity & Reproducibility
+ * 9. Security Architecture
+ * 10. Data Governance
+ * 11. Output Contract
+ * 12. LLM Integration Architecture
+ * 13. Concurrency & Scalability (Conceptual)
+ * 14. Infrastructure Topology (Non-operational)
+ * 15. Global Multi-Jurisdiction Design
+ * 16. Non-Public Assets (Redacted Index)
+ * 17. Cross-Reference Map (Public Artifacts)
 1. System Identity
 It is a Decision Intelligence Infrastructure designed for Computable Trust — outputs are reproducible and auditable through evidence lineage, integrity checks, and deterministic state transitions.
 ┌─────────────────────────────────────────────────────────────┐
@@ -49,7 +51,8 @@ Strategic Service Hierarchy
  * P4: Education Platform — Automated case study generation & decision logic visualization.
 OS → Engine → Service → Platform
 2. Foundational Operating Constitution
-The system enforces five non-negotiable principles at the kernel level. These serve as hard constraints on the runtime environment, overriding any AI model inference or user prompt injection.
+The system enforces five non-negotiable principles at the kernel level.
+These serve as hard constraints on the runtime environment, overriding any AI model inference or user prompt injection.
  * SSOT (Single Source of Truth): All legal data must originate from the designated official government API endpoints (e.g., DRF). Local storage of statutes or precedents is strictly prohibited to prevent data staleness. For non-KR jurisdictions, SSOT MUST be the designated official government legal database/API (or its equivalent authoritative source).
  * Zero Inference: The system is barred from fabricating legal facts, dates, or citations. If a fact is missing, the system must ask the user or fail—it cannot guess.
  * Fail-Closed: Upon any validation failure (integrity, temporal, or schema), the system halts immediately. No "partial" or "best-effort" unverified legal conclusions are ever delivered.
@@ -61,7 +64,8 @@ Lawmadi OS utilizes a strict three-layer architecture to isolate proprietary log
  * Service Layer (User Experience): Handles user interaction (Consultation Interface, Friendly Secretary UX). This layer sanitizes inputs and renders Kernel outputs but contains no legal decision logic itself.
  * Partner / B2B Layer: Provides structured APIs (Verification, Evidence Validation) for institutional integration. Access is governed by strict IAM and rate-limiting policies.
 4. Runtime State Machine (FSM)
-The core execution flow is modeled as a Deterministic Finite State Machine. This ensures that every decision follows an auditable, linear path.
+The core execution flow is modeled as a Deterministic Finite State Machine.
+This ensures that every decision follows an auditable, linear path.
  * Sequential Enforcement: The process moves from INPUT_RECEIVED → EVIDENCE_FETCHING → EVIDENCE_VALIDATED → TOKEN_MINTED → RESPONSE_DELIVERED.
  * Mandatory Gates: The EVIDENCE_VALIDATED state is a hard gate. If the Kernel cannot cryptographically verify the evidence source and temporal validity, the FSM transitions to HALT (Fail-Closed).
  * Kernel Control: State transitions are managed by Kernel-controlled code, not by LLM token generation. This prevents "jailbreaks" where an LLM might skip validation steps.
