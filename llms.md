@@ -1,8 +1,8 @@
 # llms.txt — Lawmadi OS Unified LLM Directive & Global Legal Decision Intelligence Standard
 
 <p align="left">
-  <a href="https://doi.org/10.5281/zenodo.18525310">
-    <img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.18525310.svg" />
+  <a href="https://doi.org/10.5281/zenodo.18551976">
+    <img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.18551976.svg" />
   </a>
   <img alt="spec" src="https://img.shields.io/badge/spec-v2.1--Unified-blue" />
   <img alt="repo" src="https://img.shields.io/badge/repo-v2.0.0-informational" />
