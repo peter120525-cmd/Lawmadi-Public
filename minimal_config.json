@@ -1,14 +1,13 @@
 {
   "$meta": {
-    "config_version": "2.0.0",
-    "schema_version": "2.0.0",
-    "constitution_version": "2.0",
+    "config_version": "2.1.0",
+    "schema_version": "2.1.0",
+    "constitution_version": "2.1",
     "environment": "public-sandbox",
-    "last_updated": "2026-02-08T00:00:00Z",
+    "last_updated": "2026-02-09T00:00:00Z",
     "updated_by": "public-release",
     "changelog_url": "https://github.com/peter120525-cmd/Lawmadi-Public"
   },
-
   "constitution": {
     "ssot": {
       "enabled": true,
@@ -47,7 +46,6 @@
       "enforcement_mode": "reject"
     }
   },
-
   "fsm": {
     "states": [
       "INPUT_RECEIVED",
@@ -73,7 +71,6 @@
     "max_state_transition_time_ms": 30000,
     "total_session_timeout_ms": 120000
   },
-
   "evidence": {
     "sources": {
       "default_jurisdiction": "KR",
@@ -99,7 +96,10 @@
       "hash_algorithm": "SHA-256",
       "canonicalization": {
         "sort_keys": true,
-        "separators": [",", ":"],
+        "separators": [
+          ",",
+          ":"
+        ],
         "ensure_ascii": false
       }
     },
@@ -108,7 +108,12 @@
       "reject_missing_evidence": true,
       "reject_temporal_failure": true,
       "reject_invalid_status": {
-        "statuses": ["REPEALED", "UNCONSTITUTIONAL", "INVALIDATED", "OVERRULED"]
+        "statuses": [
+          "REPEALED",
+          "UNCONSTITUTIONAL",
+          "INVALIDATED",
+          "OVERRULED"
+        ]
       }
     },
     "trust_score": {
@@ -122,7 +127,6 @@
       "provenance_tracking": true
     }
   },
-
   "temporal": {
     "enabled": true,
     "checks": {
@@ -133,15 +137,28 @@
     },
     "unknown_temporal_status_action": "fail_closed"
   },
-
   "decision_graph": {
-    "node_types": ["FACT_NODE", "ISSUE_NODE", "LAW_NODE", "PRECEDENT_NODE", "DECISION_NODE"],
-    "edge_types": ["SUPPORTS", "CONTRADICTS", "DEPENDS_ON", "RESOLVES", "REFERENCES", "APPLIES", "OVERRULES", "TEMPORAL_DEPENDS"],
+    "node_types": [
+      "FACT_NODE",
+      "ISSUE_NODE",
+      "LAW_NODE",
+      "PRECEDENT_NODE",
+      "DECISION_NODE"
+    ],
+    "edge_types": [
+      "SUPPORTS",
+      "CONTRADICTS",
+      "DEPENDS_ON",
+      "RESOLVES",
+      "REFERENCES",
+      "APPLIES",
+      "OVERRULES",
+      "TEMPORAL_DEPENDS"
+    ],
     "validity_condition_enabled": true,
     "max_nodes": 500,
     "max_depth": 20
   },
-
   "decision_token": {
     "enabled": true,
     "fields": [
@@ -162,7 +179,6 @@
     },
     "hash_algorithm": "SHA-256"
   },
-
   "leader_swarm": {
     "enabled": true,
     "max_concurrent_leaders": 3,
@@ -179,7 +195,6 @@
     },
     "leader_timeout_ms": 15000
   },
-
   "cache": {
     "enabled": true,
     "backend": "redis",
@@ -188,7 +203,6 @@
     "key_prefix": "lawmadi:evidence:",
     "revalidate_on_as_of_mismatch": true
   },
-
   "security": {
     "prompt_injection_defense": {
       "enabled": true,
@@ -219,7 +233,6 @@
       "mask_raw_evidence_payload": true
     }
   },
-
   "gateway": {
     "input_validation": {
       "json_schema_validation": true,
@@ -236,7 +249,6 @@
     },
     "audit_logging": true
   },
-
   "observability": {
     "audit_log": {
       "enabled": true,
@@ -263,7 +275,6 @@
       "graph_debug_snapshot": true
     }
   },
-
   "output": {
     "format": "JSON",
     "error_codes": {
@@ -284,7 +295,6 @@
       "atomic_final_output": true
     }
   },
-
   "llm_integration": {
     "role": "rendering_engine",
     "contracts": [
@@ -300,13 +310,12 @@
     ],
     "adapter": {
       "system_prompt_format": "text",
-      "function_calling_schema": "anthropic_tools",
+      "function_calling_schema": "custom",
       "max_output_tokens": 8192,
       "validate_output_json": true
     },
     "no_function_calling_fallback": true
   },
-
   "safety": {
     "mode": "informational_decision_support",
     "encourage_professional_consultation": true,
