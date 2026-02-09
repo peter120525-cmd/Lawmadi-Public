@@ -1,7 +1,6 @@
 # LAWMADI OS — COMPREHENSIVE PROPRIETARY LICENSE (EXPANDED & DEFENSIVE)
 
 # Covering All Technologies, Architectures, and Intellectual Property
-
 # Enumerated in the Lawmadi OS Unified llms.txt Specification
 
 ================================================================================
@@ -43,15 +42,15 @@ It does not constitute legal advice.
 Consult qualified counsel for jurisdiction-specific enforceability.
 
 ================================================================================
-
 1. DEFINITIONS
-   ================================================================================
-   1.1 “Software” means the Lawmadi OS Legal Decision Operating System (LDOS) in its entirety.
-   1.2 “Software” includes all source code, object code, scripts, binaries, artifacts, and build outputs.
-   1.3 “Software” includes all configuration files, schemas, manifests, policy files, and runtime parameters.
-   1.4 “Software” includes all specifications, technical whitepapers, and architecture references.
-   1.5 “Software” includes the llms.txt unified specification and all derivatives and versions.
-   1.6 “Software” includes any updates, patches, fixes, or variants released by the Copyright Holder.
+================================================================================
+
+1.1 “Software” means the Lawmadi OS Legal Decision Operating System (LDOS) in its entirety.
+1.2 “Software” includes all source code, object code, scripts, binaries, artifacts, and build outputs.
+1.3 “Software” includes all configuration files, schemas, manifests, policy files, and runtime parameters.
+1.4 “Software” includes all specifications, technical whitepapers, and architecture references.
+1.5 “Software” includes the llms.txt unified specification and all derivatives and versions.
+1.6 “Software” includes any updates, patches, fixes, or variants released by the Copyright Holder.
 
 1.7 “Covered Technologies” means all technologies, systems, algorithms, architectures, protocols, engines, schemas,
 specifications, logic, methodologies, and intellectual property enumerated in Section 4.
@@ -134,7 +133,7 @@ whether public or private.
 
 ================================================================================
 2. PURPOSE
-==========
+================================================================================
 
 2.1 This License governs all rights pertaining to the Software and Covered Technologies.
 2.2 The Software is provided for public technical review, evaluation, authorship demonstration, and reference only.
@@ -144,7 +143,7 @@ whether public or private.
 
 ================================================================================
 3. GRANT OF LIMITED PERMISSION (NARROW, REVOCABLE)
-==================================================
+================================================================================
 
 3.1 Grant is limited, non-exclusive, non-transferable, non-sublicensable, and revocable.
 3.2 Grant is conditioned on strict compliance.
@@ -174,15 +173,18 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ================================================================================
 4. COVERED TECHNOLOGIES — EXHAUSTIVE ENUMERATION (EXPANDED)
-===========================================================
+================================================================================
 
-4.0 The enumeration below is illustrative and non-limiting.
-4.0.1 Any technology described in llms.txt v2.0-Unified is covered.
-4.0.2 Any future updates and versions remain covered.
+4.0 SCOPE OF COVERED TECHNOLOGIES (CATEGORIES ARE EXHAUSTIVE; EXAMPLES ARE NON-LIMITING)
+
+4.0.1 The technology CATEGORIES enumerated in Sections 4.1 through 4.14 are EXHAUSTIVE categories of Covered Technologies.
+4.0.2 Within each category, any listed items are examples and are NON-LIMITING.
+4.0.3 Any implementation, adaptation, variant, or functional equivalent that falls within any category is Covered Technology.
+4.0.4 llms.txt v2.0-Unified and any successor specification is incorporated by reference for category scope.
 
 ---
 
-## 4.1 FOUNDATIONAL OPERATING CONSTITUTION & PRINCIPLES
+4.1 FOUNDATIONAL OPERATING CONSTITUTION & PRINCIPLES
 
 4.1.1 SSOT (Single Source of Truth) applied to legal decision systems.
 4.1.2 Zero Inference principle for legal outputs.
@@ -196,7 +198,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.2 CONSTITUTION DSL (DOMAIN SPECIFIC LANGUAGE)
+4.2 CONSTITUTION DSL (DOMAIN SPECIFIC LANGUAGE)
 
 4.2.1 Constitution DSL specification and syntax.
 4.2.2 Rule enforcement modes and gating methodology.
@@ -217,7 +219,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.3 DECISION OS KERNEL
+4.3 DECISION OS KERNEL
 
 4.3.1 Kernel architecture and orchestration methodology.
 4.3.2 Input validation pipeline.
@@ -238,7 +240,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.4 LEADER SWARM ROUTING ENGINE
+4.4 LEADER SWARM ROUTING ENGINE
 
 4.4.1 Routing engine design.
 4.4.2 Leader selection algorithms.
@@ -255,7 +257,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.5 EVIDENCE VERIFICATION ENGINE
+4.5 EVIDENCE VERIFICATION ENGINE
 
 4.5.1 Evidence pipeline: authoritative query → normalization → temporal validation → hashing.
 4.5.2 Evidence normalization/canonicalization rules.
@@ -269,7 +271,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.6 TEMPORAL LAW VALIDITY ENGINE
+4.6 TEMPORAL LAW VALIDITY ENGINE
 
 4.6.1 Effective date verification.
 4.6.2 Expiry/abolition/repeal detection.
@@ -281,7 +283,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.7 DECISION GRAPH FORMAL SEMANTICS
+4.7 DECISION GRAPH FORMAL SEMANTICS
 
 4.7.1 Decision graph architecture.
 4.7.2 Node types and definitions.
@@ -294,7 +296,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.8 CRYPTOGRAPHIC INTEGRITY & REPRODUCIBILITY FRAMEWORK
+4.8 CRYPTOGRAPHIC INTEGRITY & REPRODUCIBILITY FRAMEWORK
 
 4.8.1 Input hashing methodology.
 4.8.2 Evidence hash sets.
@@ -307,7 +309,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.9 PROMPT CONTRACT & LLM INTEGRATION FRAMEWORK
+4.9 PROMPT CONTRACT & LLM INTEGRATION FRAMEWORK
 
 4.9.1 System prompt / developer prompt / user prompt handling rules.
 4.9.2 Tool/function calling contract.
@@ -320,7 +322,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.10 ERROR HANDLING & OBSERVABILITY FRAMEWORK
+4.10 ERROR HANDLING & OBSERVABILITY FRAMEWORK
 
 4.10.1 Standard error codes.
 4.10.2 Audit-first design.
@@ -332,7 +334,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.11 SECURITY ARCHITECTURE
+4.11 SECURITY ARCHITECTURE
 
 4.11.1 Gateway protection.
 4.11.2 Input validation.
@@ -347,7 +349,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.12 PLATFORM ARCHITECTURE & BUSINESS STRATEGY
+4.12 PLATFORM ARCHITECTURE & BUSINESS STRATEGY
 
 4.12.1 Three-layer platform architecture.
 4.12.2 Service layer integration methodologies.
@@ -360,7 +362,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.13 GLOBAL LEGAL TECH FRAMEWORK
+4.13 GLOBAL LEGAL TECH FRAMEWORK
 
 4.13.1 Multi-jurisdiction adaptation.
 4.13.2 Jurisdiction-agnostic principles.
@@ -369,7 +371,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 4.14 DOCUMENTATION & SPECIFICATION ASSETS
+4.14 DOCUMENTATION & SPECIFICATION ASSETS
 
 4.14.1 llms.txt unified directive.
 4.14.2 Technical whitepapers.
@@ -379,7 +381,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ================================================================================
 5. RESTRICTIONS (STRICT, EXPANDED, ANTI-CIRCUMVENTION)
-======================================================
+================================================================================
 
 5.0 Unless you have Written Permission, you may NOT engage in any restricted act.
 5.0.1 “Restricted act” includes direct, indirect, assisted, or attempted acts.
@@ -387,7 +389,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 5.1 GENERAL PROHIBITIONS
+5.1 GENERAL PROHIBITIONS
 
 5.1.1 No Production use.
 5.1.2 No Commercial Use.
@@ -405,7 +407,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 5.2 AI / MACHINE LEARNING PROHIBITIONS (AGGRESSIVE)
+5.2 AI / MACHINE LEARNING PROHIBITIONS (AGGRESSIVE)
 
 5.2.1 No AI Training Use.
 5.2.2 No fine-tuning, distillation, RL, or teacher-student training using any part of the Software or Outputs.
@@ -425,7 +427,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 5.3 OUTPUT REUSE PROHIBITIONS
+5.3 OUTPUT REUSE PROHIBITIONS
 
 5.3.1 Outputs are restricted.
 5.3.2 You may not publish Outputs that reveal reimplementable details.
@@ -438,7 +440,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 5.4 BENCHMARKING & EVALUATION PROHIBITIONS
+5.4 BENCHMARKING & EVALUATION PROHIBITIONS
 
 5.4.1 No benchmarking LLMs or systems using the Software/Outputs.
 5.4.2 No comparison reports, leaderboards, or public evaluations.
@@ -448,7 +450,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 5.5 COMPETITIVE USE PROHIBITIONS (EXPANDED)
+5.5 COMPETITIVE USE PROHIBITIONS (EXPANDED)
 
 5.5.1 No use to build, design, architect, or inform a Competitive Product.
 5.5.2 No incorporation of the unified constitution as a system design.
@@ -463,7 +465,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 5.6 CLEAN-ROOM, REWRITE, RENAMING NOT A DEFENSE
+5.6 CLEAN-ROOM, REWRITE, RENAMING NOT A DEFENSE
 
 5.6.1 Renaming components does not avoid breach.
 5.6.2 Translating text does not avoid breach.
@@ -473,7 +475,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 5.7 REPOSITORY PLATFORM TERMS (NO RIGHTS GRANTED)
+5.7 REPOSITORY PLATFORM TERMS (NO RIGHTS GRANTED)
 
 5.7.1 Forking/cloning is a technical feature; it grants no additional rights.
 5.7.2 Mirrors are prohibited.
@@ -483,7 +485,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 5.8 ANTI-SCRAPING, ANTI-EXTRACTION
+5.8 ANTI-SCRAPING, ANTI-EXTRACTION
 
 5.8.1 No scraping, crawling, automated extraction, or bulk copying.
 5.8.2 No OCR extraction from screenshots.
@@ -493,7 +495,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 5.9 SECURITY MISUSE PROHIBITED
+5.9 SECURITY MISUSE PROHIBITED
 
 5.9.1 No use to facilitate unauthorized access.
 5.9.2 No use to evade safeguards.
@@ -501,14 +503,14 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ---
 
-## 5.10 EXPORT, SANCTIONS, AND COMPLIANCE
+5.10 EXPORT, SANCTIONS, AND COMPLIANCE
 
 5.10.1 You must comply with applicable laws.
 5.10.2 This License grants no rights to third-party data/services.
 
 ================================================================================
 6. INTELLECTUAL PROPERTY RIGHTS
-===============================
+================================================================================
 
 6.1 Exclusive ownership remains with the Copyright Holder.
 6.2 No transfer of ownership.
@@ -521,7 +523,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ================================================================================
 7. OUTPUTS, DATA, AND CONFIDENTIALITY (DEFENSIVE)
-=================================================
+================================================================================
 
 7.1 You retain ownership of Your own pre-existing input content.
 7.2 The Software and Covered Technologies remain owned by the Copyright Holder.
@@ -536,7 +538,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ================================================================================
 8. THIRD-PARTY SERVICES AND DATA
-================================
+================================================================================
 
 8.1 The Software may reference third-party APIs and datasets.
 8.2 This License grants no rights to third-party APIs/datasets/trademarks.
@@ -545,7 +547,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ================================================================================
 9. ATTRIBUTION REQUIREMENTS
-===========================
+================================================================================
 
 9.1 Any permitted reference must include Attribution.
 9.2 Attribution text:
@@ -555,7 +557,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ================================================================================
 10. DISCLAIMER OF WARRANTY
-==========================
+================================================================================
 
 10.1 Provided AS IS.
 10.2 No warranties of merchantability, fitness, non-infringement, accuracy, completeness, or reliability.
@@ -564,7 +566,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ================================================================================
 11. LIMITATION OF LIABILITY
-===========================
+================================================================================
 
 11.1 No liability to the maximum extent permitted by law.
 11.2 No liability for indirect, incidental, special, exemplary, consequential, or punitive damages.
@@ -572,7 +574,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ================================================================================
 12. ENFORCEMENT, AUDIT, AND REMEDIES (AGGRESSIVE)
-=================================================
+================================================================================
 
 12.1 Breach causes irreparable harm.
 12.2 Injunctive relief is appropriate.
@@ -584,9 +586,20 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 12.8 You must preserve evidence upon notice of dispute (anti-spoliation).
 12.9 Attorney fees and enforcement costs may be recoverable where allowed.
 
+12.10 SAVING CLAUSE; MAXIMUM ENFORCEABLE EFFECT
+To the maximum extent permitted by applicable law, the restrictions and remedies herein shall be enforced as written.
+If any restriction is found unenforceable in a particular scope, duration, or jurisdiction, it shall be reformed to
+the minimum extent necessary to be enforceable while preserving the Copyright Holder’s protective intent.
+
+12.11 AUDIT PROCEDURE (MINIMUM NECESSARY)
+(a) Audit requests shall be limited to the Minimum Necessary to verify compliance.
+(b) Written certification and deletion attestations shall be the primary method of verification.
+(c) No request shall require disclosure of unrelated confidential information of You.
+(d) Refusal to provide Minimum Necessary compliance verification constitutes a material breach.
+
 ================================================================================
 13. TERMINATION
-===============
+================================================================================
 
 13.1 Automatic termination upon breach, without notice.
 13.2 The Copyright Holder may terminate at any time by written notice.
@@ -599,7 +612,7 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ================================================================================
 14. GENERAL PROVISIONS
-======================
+================================================================================
 
 14.1 Governing law: Republic of Korea.
 14.2 Exclusive jurisdiction: Courts of the Republic of Korea.
@@ -613,15 +626,15 @@ in academic or technical discussions, with proper Attribution and Minimum Necess
 
 ================================================================================
 15. CONTACT
-===========
+================================================================================
 
 Copyright Holder: Jainam Choe (최재남)
-Email: [choepeter@outlook.kr](mailto:choepeter@outlook.kr)
+Email: choepeter@outlook.kr
 Project: Lawmadi OS — Legal Decision Operating System
 
 ================================================================================
 ANNEX A — DEFINITIONS EXTENSION (EXPANDED LIST)
-===============================================
+================================================================================
 
 A.1 “Reimplementation” includes implementing the same concepts with different names.
 A.2 “Functional Equivalence” means a system achieving the same enforcement gates and outputs.
@@ -636,7 +649,7 @@ A.10 “Circumvention” includes indirect acts to bypass restrictions.
 
 ================================================================================
 ANNEX B — PROHIBITED AI/ML OPERATIONS (EXHAUSTIVE LIST)
-=======================================================
+================================================================================
 
 B.1 Training on source code.
 B.2 Training on documentation.
@@ -666,7 +679,7 @@ B.25 Using token schema as scoring template.
 
 ================================================================================
 ANNEX C — ATTRIBUTION TEMPLATE
-==============================
+================================================================================
 
 C.1 Required attribution line:
 C.1.1 Lawmadi OS — Legal Decision Operating System.
@@ -675,7 +688,7 @@ C.1.3 All rights reserved.
 
 ================================================================================
 ANNEX D — NOTICE TEMPLATE
-=========================
+================================================================================
 
 D.1 Subject: Lawmadi OS License Inquiry / Permission Request
 D.2 Include requested scope, duration, commercial terms, and technical use case.
@@ -683,7 +696,7 @@ D.3 Include contact details.
 
 ================================================================================
 ANNEX E — COMPLIANCE CHECKLIST
-==============================
+================================================================================
 
 E.1 You are in non-production.
 E.2 You are non-commercial.
@@ -698,7 +711,7 @@ E.10 You will delete upon termination.
 
 ================================================================================
 ANNEX F — OUTPUT HANDLING POLICY (SAFE EVALUATION)
-==================================================
+================================================================================
 
 F.1 Keep Outputs local.
 F.2 Do not publish Outputs.
@@ -709,7 +722,7 @@ F.6 Redact architecture details when reporting bugs.
 
 ================================================================================
 ANNEX G — SECURITY DISCLOSURE (SAFE HARBOR)
-===========================================
+================================================================================
 
 G.1 If you discover exposed secrets, do not exploit.
 G.2 Report immediately to the contact in Section 15.
@@ -717,5 +730,357 @@ G.3 Provide minimum necessary proof.
 G.4 Do not publish the secret.
 
 ================================================================================
+ANNEX H — PROHIBITED ACTS CATALOG (LINE-EXPANSION + DEFENSIVE CLARITY)
+================================================================================
+
+H.0 This Annex enumerates prohibited acts in granular form.
+H.0.1 This Annex is non-limiting and expands Section 5.
+H.0.2 Any substantially similar act is also prohibited.
+
+H.1 Do not copy the Software into any training corpus.
+H.2 Do not copy documentation into any training corpus.
+H.3 Do not copy schemas into any training corpus.
+H.4 Do not copy prompts into any training corpus.
+H.5 Do not copy Outputs into any training corpus.
+H.6 Do not fine-tune any model on the Software.
+H.7 Do not fine-tune any model on documentation.
+H.8 Do not fine-tune any model on schemas.
+H.9 Do not fine-tune any model on prompts.
+H.10 Do not fine-tune any model on Outputs.
+H.11 Do not distill any model using the Software.
+H.12 Do not distill any model using documentation.
+H.13 Do not distill any model using schemas.
+H.14 Do not distill any model using prompts.
+H.15 Do not distill any model using Outputs.
+H.16 Do not perform RLHF using any portion of the Software.
+H.17 Do not perform RLHF using any portion of the Outputs.
+H.18 Do not perform DPO using any portion of the Software.
+H.19 Do not perform DPO using any portion of the Outputs.
+H.20 Do not perform reward modeling using any portion of the Software.
+H.21 Do not perform reward modeling using any portion of the Outputs.
+H.22 Do not generate embeddings from source code.
+H.23 Do not generate embeddings from documentation.
+H.24 Do not generate embeddings from schemas.
+H.25 Do not generate embeddings from Outputs.
+H.26 Do not store embeddings in any vector database.
+H.27 Do not store embeddings in any retrieval system.
+H.28 Do not store embeddings in any “memory” feature.
+H.29 Do not build a vector index over the Software.
+H.30 Do not build a vector index over the documentation.
+H.31 Do not build a vector index over the schemas.
+H.32 Do not build a vector index over the Outputs.
+H.33 Do not build a sparse index over the Software.
+H.34 Do not build a sparse index over the documentation.
+H.35 Do not build a sparse index over the schemas.
+H.36 Do not build a sparse index over the Outputs.
+H.37 Do not construct a RAG corpus from the Software.
+H.38 Do not construct a RAG corpus from documentation.
+H.39 Do not construct a RAG corpus from schemas.
+H.40 Do not construct a RAG corpus from Outputs.
+H.41 Do not retrieve fragments of the Software to guide generation.
+H.42 Do not retrieve fragments of documentation to guide generation.
+H.43 Do not retrieve fragments of schemas to guide generation.
+H.44 Do not retrieve fragments of Outputs to guide generation.
+H.45 Do not create Q/A datasets from the Software.
+H.46 Do not create Q/A datasets from documentation.
+H.47 Do not create Q/A datasets from schemas.
+H.48 Do not create Q/A datasets from Outputs.
+H.49 Do not create benchmark suites derived from the Software.
+H.50 Do not create benchmark suites derived from Outputs.
+
+H.51 Do not publish any “how to implement LDOS” guide.
+H.52 Do not publish any step-by-step reproduction instructions.
+H.53 Do not publish any pseudo-code that maps to Covered Technologies.
+H.54 Do not publish any “drop-in replacement” architecture.
+H.55 Do not publish any interface-compatible clone.
+H.56 Do not publish any “compatibility layer” replicating tool contracts.
+H.57 Do not publish any “constitution template” reproducing the unified five principles as a system.
+H.58 Do not publish any DSL interpreter replicating enforcement gates.
+H.59 Do not publish any rule engine replicating rule evaluation flow.
+H.60 Do not publish any routing engine replicating leader scoring.
+
+H.61 Do not sell consulting services to reimplement Covered Technologies.
+H.62 Do not provide architecture consulting based on the Software.
+H.63 Do not provide code reviews aimed at cloning Covered Technologies.
+H.64 Do not provide “design patterns” aimed at cloning Covered Technologies.
+H.65 Do not provide training sessions aimed at cloning Covered Technologies.
+H.66 Do not provide internal workshops aimed at cloning Covered Technologies.
+H.67 Do not provide template repos based on Covered Technologies.
+H.68 Do not provide SDKs replicating Covered Technologies.
+H.69 Do not provide SaaS services based on Covered Technologies.
+H.70 Do not provide APIs based on Covered Technologies.
+
+H.71 Do not mirror the repository.
+H.72 Do not re-upload the repository.
+H.73 Do not package the repository in other repos.
+H.74 Do not create “excerpt” repositories.
+H.75 Do not create “documentation mirrors.”
+H.76 Do not publish the Software to package registries.
+H.77 Do not distribute compiled binaries.
+H.78 Do not distribute Docker images.
+H.79 Do not distribute deployment manifests.
+H.80 Do not distribute configuration templates enabling reimplementation.
+
+H.81 Do not use screenshots to extract text for reimplementation.
+H.82 Do not use OCR to extract text for reimplementation.
+H.83 Do not use translation pipelines to extract design details.
+H.84 Do not use summarization tools to generate implementation guidance.
+H.85 Do not use “rewrite” techniques to avoid similarity detection.
+H.86 Do not use “clean-room” claims to justify Substantial Similarity.
+H.87 Do not use “inspired by” claims to justify Substantial Similarity.
+H.88 Do not use “general knowledge” claims to justify copying unique structure.
+H.89 Do not use “public domain” claims for public/sanitized materials.
+H.90 Do not remove any notice or marking.
+
+H.91 Do not attempt to obtain secrets.
+H.92 Do not attempt to infer secrets.
+H.93 Do not attempt to locate secure endpoints.
+H.94 Do not attempt to bypass authentication.
+H.95 Do not attempt to bypass rate limits.
+H.96 Do not attempt to bypass output masking.
+H.97 Do not attempt to bypass prompt/tool injection defenses.
+H.98 Do not attempt to disable fail-closed behavior.
+H.99 Do not attempt to forge decision tokens.
+H.100 Do not attempt to spoof signatures.
+
+H.101 Do not use error codes as a public “standard” for competing systems.
+H.102 Do not adopt identical error semantics in competing systems.
+H.103 Do not adopt identical state names in competing FSMs.
+H.104 Do not adopt identical gate ordering to replicate behavior.
+H.105 Do not adopt identical decision token fields for compatibility.
+H.106 Do not adopt identical decision graph node/edge sets for compatibility.
+H.107 Do not adopt identical evidence pipeline stage names for compatibility.
+H.108 Do not adopt identical trust chain naming for compatibility.
+H.109 Do not adopt identical DSL rule identifiers for compatibility.
+H.110 Do not adopt identical routing consensus semantics for compatibility.
+
+H.111 Do not use Outputs to create marketing claims of legal correctness.
+H.112 Do not claim Outputs are legal advice.
+H.113 Do not imply endorsement by the Copyright Holder.
+H.114 Do not imply partnership.
+H.115 Do not imply certification.
+H.116 Do not imply the Software is open source.
+H.117 Do not apply open-source headers to the Software.
+H.118 Do not remove proprietary notices.
+H.119 Do not add misleading license statements.
+H.120 Do not misattribute authorship.
+
+H.121 Do not file patents derived from the Software.
+H.122 Do not file design rights derived from the Software.
+H.123 Do not file trademarks derived from the Marks without permission.
+H.124 Do not register domains confusingly similar to the Marks to impersonate.
+H.125 Do not create social media accounts impersonating the project.
+H.126 Do not publish “official” claims.
+H.127 Do not distribute modified copies.
+H.128 Do not distribute partial copies.
+H.129 Do not distribute redlined copies.
+H.130 Do not distribute “annotated” copies that enable reimplementation.
+
+H.131 Do not use the Software in production internal systems.
+H.132 Do not use the Software to support customer decisions.
+H.133 Do not use the Software to provide third-party services.
+H.134 Do not embed the Software into products.
+H.135 Do not integrate the Software into commercial workflows.
+H.136 Do not run the Software on shared servers.
+H.137 Do not run the Software on public endpoints.
+H.138 Do not expose the Software behind a VPN to third parties.
+H.139 Do not grant contractors access.
+H.140 Do not grant affiliates access.
+
+H.141 Do not keep persistent logs containing Outputs.
+H.142 Do not store Outputs in ticketing systems.
+H.143 Do not store Outputs in shared knowledge bases.
+H.144 Do not store Outputs in wikis.
+H.145 Do not store Outputs in documentation portals.
+H.146 Do not store Outputs in searchable chat archives.
+H.147 Do not store Outputs in email threads to third parties.
+H.148 Do not store Outputs in public issue trackers.
+H.149 Do not store Outputs in public pull requests.
+H.150 Do not store Outputs in public paste services.
+
+H.151 Do not attempt to measure system internals for replication.
+H.152 Do not attempt to replicate latency profiles.
+H.153 Do not attempt to replicate FSM transition timing.
+H.154 Do not attempt to infer routing weights.
+H.155 Do not attempt to infer trust thresholds.
+H.156 Do not attempt to infer policy values.
+H.157 Do not attempt to infer secure config contents.
+H.158 Do not attempt to infer evidence normalization rules beyond high-level.
+H.159 Do not attempt to infer graph merge rules beyond high-level.
+H.160 Do not attempt to infer signature key handling.
+
+H.161 Do not publish derivative diagrams reproducing detailed flows.
+H.162 Do not publish comprehensive flow charts enabling rebuild.
+H.163 Do not publish state transition tables.
+H.164 Do not publish rule-by-rule enforcement tables.
+H.165 Do not publish leader scoring matrices.
+H.166 Do not publish detailed schema mappings.
+H.167 Do not publish compatibility specs.
+H.168 Do not publish “clone checklists.”
+H.169 Do not publish “LDOS starter kits.”
+H.170 Do not publish “LDOS boilerplates.”
+
+H.171 Do not create “standards” documents that replicate LDOS specs.
+H.172 Do not submit LDOS-like specs to standards bodies.
+H.173 Do not claim LDOS-like specs are yours.
+H.174 Do not embed LDOS-like specs into other licenses.
+H.175 Do not publish “reference-only” content that is actually reimplementable.
+H.176 Do not publish “conceptual” content that contains detailed steps.
+H.177 Do not publish “educational” content that includes code-level logic.
+H.178 Do not publish “blog posts” with reconstructable internal rules.
+H.179 Do not publish “tutorials” that walk through full implementation.
+H.180 Do not publish “videos” that disclose reimplementable details.
+
+H.181 Do not use the Software to create regulatory/compliance products.
+H.182 Do not use the Software to create law firm automation products.
+H.183 Do not use the Software to create legal decision engines.
+H.184 Do not use the Software to create legal evidence engines.
+H.185 Do not use the Software to create legal tokenization standards.
+H.186 Do not use the Software to create signature-based legal audit systems.
+H.187 Do not use the Software to create constitution-enforced legal chatbots.
+H.188 Do not use the Software to create deterministic LLM-boundary systems.
+H.189 Do not use the Software to create multi-leader routing frameworks.
+H.190 Do not use the Software to create graph-based legal reasoning engines.
+
+H.191 Do not export the Software to prohibited jurisdictions if applicable law restricts.
+H.192 Do not violate sanctions laws.
+H.193 Do not violate third-party service terms.
+H.194 Do not misuse official data sources.
+H.195 Do not impersonate official sources.
+H.196 Do not claim official endorsement.
+H.197 Do not misrepresent evidence provenance.
+H.198 Do not forge citations.
+H.199 Do not forge temporal validity.
+H.200 Do not forge provenance.
+
+H.201 Any prohibited act not listed but substantially similar is also prohibited.
+H.202 This Annex does not narrow the scope of Section 5.
+H.203 This Annex may be updated in future versions.
+
+================================================================================
+ANNEX I — OPTIONAL KOREAN SUMMARY CLAUSES (REFERENCE)
+================================================================================
+
+I.1 본 라이선스는 오픈소스가 아닙니다.
+I.2 평가 목적의 열람/다운로드/로컬 실행만 허용됩니다.
+I.3 수정/재배포/상용 사용/서비스 제공은 금지됩니다.
+I.4 AI 학습/파인튜닝/임베딩/벡터DB/RAG/벤치마킹 목적 사용은 금지됩니다.
+I.5 경쟁 제품 설계/구현/컨설팅 목적 사용은 금지됩니다.
+I.6 위반 시 자동 종료되며, 모든 사본/파생물/인덱스/임베딩 삭제 및 삭제 확인이 요구될 수 있습니다.
+
+================================================================================
+ANNEX J — DERIVATIVE WORKS & FUNCTIONAL EQUIVALENCE TEST (ENFORCEMENT STANDARD)
+================================================================================
+
+J.1 PURPOSE
+This Annex provides objective tests for determining whether a work is a Derivative Work, a Reimplementation,
+or a Competitive Product under Sections 1, 5, and 12.
+
+J.2 FUNCTIONAL EQUIVALENCE (GATE-AND-OUTPUT TEST)
+A system is deemed Functionally Equivalent if it substantially reproduces any TWO OR MORE of the following:
+(a) Evidence-gated output delivery (no conclusion without validation / mandatory gate behavior);
+(b) Fail-closed behavior on missing/invalid evidence or temporal uncertainty;
+(c) Decision graph semantics (nodes/edges/validity constraints) used to structure outputs;
+(d) Token trust chain (input/evidence/graph hashing + signature or equivalent reproducibility proof);
+(e) Constitution-style constraint enforcement (rules that reject or constrain outputs at runtime);
+(f) Multi-expert routing/consensus mechanism functionally similar to Leader Swarm.
+
+J.3 ARCHITECTURE EXTRACTION (RECONSTRUCTABILITY TEST)
+Content constitutes Architecture Extraction if it enables a reasonably skilled engineer to reproduce:
+(a) the FSM gate order, (b) the evidence pipeline stages, (c) the graph semantics,
+(d) the token chain, or (e) the DSL enforcement flow—whether via prose, diagrams, tables, pseudo-code,
+or step-by-step guides.
+
+J.4 SUBSTANTIAL SIMILARITY (STRUCTURE-AND-FLOW TEST)
+Substantial Similarity exists where the overall structure, flow, and enforcement gates are materially similar,
+even if names, frameworks, or implementation languages differ.
+
+J.5 INTENT IS IRRELEVANT
+Good faith, “inspiration,” “clean-room,” or “educational use” does not negate breach where the result meets
+J.2–J.4.
+
+J.6 BURDEN OF CLARITY
+If You are uncertain whether a use is prohibited, You must treat it as prohibited unless Written Permission
+is obtained in advance.
+
+================================================================================
+ANNEX K — OUTPUT CLASSIFICATION & HANDLING (RESTRICTED OUTPUT POLICY)
+================================================================================
+
+K.1 RESTRICTED OUTPUT
+All Outputs are deemed “Restricted Output” unless explicitly designated otherwise in writing.
+
+K.2 NO PUBLICATION / NO SHARING
+Restricted Output may not be published, posted, uploaded, pasted, emailed to third parties, or shared in any
+public or private forum, including issue trackers, chat rooms, wikis, ticketing systems, or knowledge bases.
+
+K.3 NO DATASETIFICATION
+Restricted Output may not be transformed into datasets, labels, rubrics, examples, benchmarks, “gold answers,”
+prompt libraries, or evaluation harnesses for any system.
+
+K.4 NO RETRIEVAL STORAGE
+Restricted Output may not be stored in any retrieval system, including vector databases, embeddings stores,
+search indexes, “memory” features, long-term logs, or any system designed to recall or reconstruct content.
+
+K.5 MINIMUM NECESSARY BUG REPORTING
+Bug reports may include only Minimum Necessary Disclosure. You must redact implementation-reconstructable details,
+including full state flows, rule tables, and reproducible token chain parameters.
+
+K.6 AUTOMATIC DELETION RECOMMENDATION
+You should delete Restricted Output promptly after evaluation. Upon termination, deletion is mandatory.
+
+================================================================================
+ANNEX L — FEEDBACK & CONTRIBUTIONS (NO OBLIGATION; LICENSE TO FEEDBACK)
+================================================================================
+
+L.1 NO OBLIGATION
+The Copyright Holder has no obligation to use, implement, or respond to Feedback or Contributions.
+
+L.2 LICENSE TO FEEDBACK (DEFENSIVE)
+To the maximum extent permitted by law, You grant the Copyright Holder a perpetual, worldwide, irrevocable,
+royalty-free license to use, reproduce, modify, create derivative works from, publish, distribute, and
+commercialize any Feedback, suggestions, or ideas You provide, without compensation or attribution.
+
+L.3 NO TRANSFER OF YOUR SEPARATE IP
+This Annex does not transfer Your pre-existing intellectual property unrelated to the Software.
+
+================================================================================
+ANNEX M — LIQUIDATED DAMAGES (OPTIONAL; SUBJECT TO LEGAL LIMITS)
+================================================================================
+
+M.1 ACKNOWLEDGMENT
+You acknowledge that breaches involving AI Training Use, Indexing, RAG, redistribution, or competitive use
+cause harm that is difficult to quantify, including loss of trade secret value and loss of exclusivity.
+
+M.2 LIQUIDATED DAMAGES (REASONABLE ESTIMATE)
+Where permitted by law, You agree to pay liquidated damages as a reasonable pre-estimate of harm:
+(a) For AI Training Use, Indexing, embeddings, or RAG corpus creation: an amount equal to the greater of
+    (i) direct profits attributable to the breach, or (ii) a reasonable commercial license fee that would
+    have been charged for such use, multiplied by a factor of 3.
+(b) For redistribution/mirroring/hosting to third parties: the greater of
+    (i) direct profits attributable to the breach, or (ii) a reasonable commercial license fee, multiplied by 2.
+(c) For competitive-use breaches: the greater of
+    (i) direct profits attributable to the breach, or (ii) a reasonable commercial license fee, multiplied by 4.
+
+M.3 COURT ADJUSTMENT
+If a court finds any amount excessive, the amount shall be reduced to the maximum enforceable level that
+still reflects the Copyright Holder’s protective intent.
+
+================================================================================
+ANNEX N — MARKS, PRESS, AND BRAND CONTROL
+================================================================================
+
+N.1 NO MARKS LICENSE
+No rights are granted to use the Marks. You may not use names, logos, taglines, or branding in any manner
+that suggests endorsement, partnership, certification, or official affiliation.
+
+N.2 NO PRESS / NO PUBLIC ANNOUNCEMENTS
+You may not publish press releases, marketing materials, or public statements about any evaluation results
+without Written Permission.
+
+N.3 NO CONFUSION
+You may not register domains, social accounts, or identifiers confusingly similar to the Marks.
+
+================================================================================
 END OF LICENSE
-==============
+================================================================================
