@@ -7,9 +7,9 @@
 VERSION & STATUS
 ================
 
-Version: 2.1-EXPANDED+ (Public Release / Defensive Draft)
+Version: 2.0.0(Public Release / Defensive Draft)
 Effective Date: 2026-02-09
-Specification Reference: llms.txt v2.0-Unified (2026-02)
+Specification Reference: llms.txt v2.0.0 (Unified)
 Architecture Reference: LDOS Reference Architecture v3.x (Public/Sanitized)
 Copyright (c) 2026 Jainam Choe (최재남). All rights reserved.
 
@@ -970,6 +970,8 @@ I.6 위반 시 자동 종료되며, 모든 사본/파생물/인덱스/임베딩 
 
 ================================================================================
 ANNEX J — DERIVATIVE WORKS & FUNCTIONAL EQUIVALENCE TEST (ENFORCEMENT STANDARD)
+
+
 ================================================================================
 
 J.1 PURPOSE
@@ -1002,6 +1004,98 @@ J.2–J.4.
 J.6 BURDEN OF CLARITY
 If You are uncertain whether a use is prohibited, You must treat it as prohibited unless Written Permission
 is obtained in advance.
+
+J.7 SCHEMA & STRUCTURE MIMICRY TEST (SCHEMA-LEVEL FINGERPRINT)
+A work is deemed to replicate proprietary LDOS data structures if ANY ONE of the following is true, regardless
+of different naming, languages, frameworks, or “clean-room” claims:
+
+(a) Canonical Serialization Logic: You adopt substantially the same canonical (deterministic) JSON serialization,
+    normalization, key-ordering, or hashing-input preparation rules used to produce reproducible hashes.
+
+(b) Decision Graph Node/Edge Set: You reproduce 80% or more of the node-type set and edge-semantics set that
+    express LDOS decision-graph meaning (e.g., FACT_NODE, ISSUE_NODE, LAW_NODE or equivalent; and edge semantics such as
+    TEMPORAL_DEPENDS, EVIDENCE_SUPPORTS or equivalent), including materially equivalent constraints and invariants.
+
+(c) Decision Token Field Composition: You replicate the Decision Token fieldset’s structural combination and/or order
+    such that a token is interoperable, easily mapped, or functionally substitutable, including (by example) fields like
+    input_hash, drf_evidence_hash, decision_graph_hash, policy_hash, signature, trace_id, or materially equivalent fields.
+
+(d) Schema Isomorphism: Your schemas are isomorphic to LDOS core schemas (including CaseStructure, IssueGraph,
+    EvidenceSet, DecisionGraph, DecisionToken, or equivalents), meaning there exists a one-to-one semantic mapping that
+    preserves meaning, constraints, and validation gates.
+
+(e) Compatibility-Oriented Structuring: You intentionally structure data to enable drop-in compatibility with LDOS
+    responses, logs, traces, tokens, or config-driven behavior, even if field names differ.
+
+Notes:
+(i) The “80%” threshold is an objective indicator and is non-limiting; courts may find substantial similarity at lower
+    percentages where the replicated elements constitute the “core fingerprint” of the system.
+(ii) Renaming, reordering, translating, or minor refactoring does not avoid a finding of mimicry where semantics match.
+
+
+J.8 STATE TRANSITION & GATE SEQUENCE TEST (LOGIC-FLOW FINGERPRINT)
+To protect execution logic, a system is deemed substantially similar if it reproduces the LDOS gate ordering,
+state transitions, or dependency structure in whole or in material part. ANY ONE of the following is sufficient:
+
+(a) FSM Transition Matrix Match: Your kernel/runtime state-transition matrix is materially consistent with the LDOS
+    standard sequence (by example) INPUT_VALIDATED → CASE_STRUCTURED → ISSUES_EXTRACTED → EVIDENCE_COLLECTED →
+    EVIDENCE_VALIDATED → TEMPORAL_VALIDATED → DECISION_GRAPH_BUILT → OUTPUT_RENDERED → TOKEN_MINTED → TOKEN_SIGNED,
+    including materially equivalent intermediate states.
+
+(b) Enforcement Gate Dependency Replication: You replicate the logical dependency that “no output may be produced or
+    delivered before evidence validation,” and/or you replicate materially equivalent gating dependencies (e.g., temporal
+    validity checks must precede conclusion release; token signing must follow hashing; fail-closed on uncertainty).
+
+(c) Error Semantics Mapping: You adopt the LDOS error-code taxonomy, semantics, or a one-to-one mapping (including
+    compatibility mappings) such that the same operational meaning is preserved (e.g., LC-001 through LC-006 or their
+    functional equivalents), including materially equivalent exception handling and remediation advice.
+
+(d) Gate-Order Near-Match: You preserve the ordering and coupling of gates with only superficial differences (e.g.,
+    combined gates, renamed states, split states) such that a skilled engineer can align the sequence with LDOS.
+
+Notes:
+(i) “Material consistency” includes equivalent sequencing even where labels differ.
+(ii) Small, cosmetic changes do not defeat a finding of substantial similarity where the gate logic is preserved.
+
+
+J.9 INTERFACE & CONTRACT EMULATION TEST (PROTOCOL-LEVEL FINGERPRINT)
+A system is deemed to emulate LDOS contracts if it reproduces the interface constraints or protocol shape that
+binds the kernel, tools, and LLM. ANY ONE of the following is sufficient:
+
+(a) Prompt/Tool Contract Emulation: You replicate the design that constrains an LLM to a rendering-only role, while the
+    kernel enforces evidence-gated, schema-bound outputs through materially equivalent evidence_contract, tool_contract,
+    refusal_contract, or equivalent contractual interfaces.
+
+(b) Clone API Signature: You implement an API that is compatible with LDOS public configuration schema
+    (e.g., config.schema.json) or otherwise preserves materially equivalent parameter structures, routes, request/response
+    schemas, error semantics, and trace identifiers designed for drop-in replacement.
+
+(c) Wire-Format Compatibility: Your request/response JSON shapes, field semantics, status behaviors, and trace/log
+    correlation patterns are intentionally compatible or easily mappable to LDOS, enabling substitution or interoperation.
+
+(d) Contract-Driven Behavior Equivalence: You reproduce the same contract-driven behavioral guarantees (fail-closed,
+    evidence-before-output, deterministic boundary, token trust chain) through materially equivalent interface rules.
+
+Notes:
+(i) “Compatibility” includes explicit or implicit compatibility, including “migration tools” or adapters.
+(ii) Using different transports or frameworks does not avoid violation where protocol shape is preserved.
+
+
+J.10 TECHNICAL SUBSTANTIAL-SIMILARITY SCORE (NON-BINDING REFERENCE)
+For technical assessment and dispute discussions, the parties (or a court) may consider an indicative similarity score S,
+computed as a weighted combination of fingerprints:
+
+S = 0.35 * SchemaSimilarity
+  + 0.35 * GateSequenceSimilarity
+  + 0.20 * ContractSimilarity
+  + 0.10 * ErrorSemanticSimilarity
+
+Where each component is evaluated on [0, 1] based on semantic equivalence rather than names.
+As a non-binding reference, S ≥ 0.70 indicates strong evidence of Derivative Work / Reimplementation, and S ≥ 0.80
+indicates an exceptionally high likelihood of functional equivalence. This formula does not limit any other test in this
+License and is provided only as an aid to technical reasoning.
+
+
 
 ================================================================================
 ANNEX K — OUTPUT CLASSIFICATION & HANDLING (RESTRICTED OUTPUT POLICY)
