@@ -1,0 +1,316 @@
+{
+  "$meta": {
+    "config_version": "2.0.0",
+    "schema_version": "2.0.0",
+    "constitution_version": "2.0",
+    "environment": "public-sandbox",
+    "last_updated": "2026-02-08T00:00:00Z",
+    "updated_by": "public-release",
+    "changelog_url": "https://github.com/peter120525-cmd/Lawmadi-Public"
+  },
+
+  "constitution": {
+    "ssot": {
+      "enabled": true,
+      "allow_permanent_storage": false,
+      "allow_dataset_replication": false
+    },
+    "zero_inference": {
+      "enabled": true,
+      "allow_unsourced_legal_claims": false
+    },
+    "fail_closed": {
+      "enabled": true,
+      "allow_unverified_output": false,
+      "reference_only_fallback": false
+    },
+    "live_evidence": {
+      "enabled": true
+    },
+    "deterministic_boundary": {
+      "enabled": true,
+      "llm_may_control_fsm": false,
+      "llm_may_override_tools": false,
+      "llm_may_access_secrets": false
+    },
+    "dsl": {
+      "enabled": true,
+      "rules": [
+        "Enforce_Source_Integrity",
+        "Validate_Effective_Date",
+        "Reject_Missing_Evidence",
+        "Reject_Expired_Evidence",
+        "Enforce_Zero_Inference",
+        "Enforce_Decision_Completeness",
+        "Enforce_Crypto_Integrity"
+      ],
+      "enforcement_mode": "reject"
+    }
+  },
+
+  "fsm": {
+    "states": [
+      "INPUT_RECEIVED",
+      "INPUT_VALIDATED",
+      "CASE_STRUCTURED",
+      "ISSUE_IDENTIFIED",
+      "LEADER_ROUTED",
+      "EVIDENCE_FETCHING",
+      "EVIDENCE_VALIDATED",
+      "DECISION_GRAPH_BUILT",
+      "TOKEN_MINTED",
+      "TOKEN_SIGNED",
+      "RESPONSE_DELIVERED"
+    ],
+    "fail_states": [
+      "EVIDENCE_VALIDATION_FAILED",
+      "TEMPORAL_VALIDATION_FAILED",
+      "CONSTITUTION_VIOLATION",
+      "SOURCE_INTEGRITY_FAILURE"
+    ],
+    "mandatory_gate": "EVIDENCE_VALIDATED",
+    "halt_state": "HALT",
+    "max_state_transition_time_ms": 30000,
+    "total_session_timeout_ms": 120000
+  },
+
+  "evidence": {
+    "sources": {
+      "default_jurisdiction": "KR",
+      "jurisdictions": {
+        "KR": {
+          "name": "National Law Information Center DRF Open API",
+          "source_type": "REST_API",
+          "base_url_ref": "SECRET:DRF_BASE_URL",
+          "api_key_ref": "SECRET:DRF_API_KEY",
+          "timeout_ms": 10000,
+          "retry_count": 2,
+          "retry_backoff_ms": 1000
+        }
+      }
+    },
+    "pipeline": {
+      "stages": [
+        "AUTHORITATIVE_API_QUERY",
+        "EVIDENCE_NORMALIZATION",
+        "TEMPORAL_VALIDATION",
+        "EVIDENCE_HASHING"
+      ],
+      "hash_algorithm": "SHA-256",
+      "canonicalization": {
+        "sort_keys": true,
+        "separators": [",", ":"],
+        "ensure_ascii": false
+      }
+    },
+    "integrity": {
+      "reject_non_official_source": true,
+      "reject_missing_evidence": true,
+      "reject_temporal_failure": true,
+      "reject_invalid_status": {
+        "statuses": ["REPEALED", "UNCONSTITUTIONAL", "INVALIDATED", "OVERRULED"]
+      }
+    },
+    "trust_score": {
+      "enabled": true,
+      "components": [
+        "source_authority_weight",
+        "citation_stability_score",
+        "temporal_consistency_score"
+      ],
+      "minimum_threshold": 0.0,
+      "provenance_tracking": true
+    }
+  },
+
+  "temporal": {
+    "enabled": true,
+    "checks": {
+      "effective_date_verification": true,
+      "precedent_change_detection": true,
+      "unconstitutional_clause_detection": true,
+      "as_of_validation": true
+    },
+    "unknown_temporal_status_action": "fail_closed"
+  },
+
+  "decision_graph": {
+    "node_types": ["FACT_NODE", "ISSUE_NODE", "LAW_NODE", "PRECEDENT_NODE", "DECISION_NODE"],
+    "edge_types": ["SUPPORTS", "CONTRADICTS", "DEPENDS_ON", "RESOLVES", "REFERENCES", "APPLIES", "OVERRULES", "TEMPORAL_DEPENDS"],
+    "validity_condition_enabled": true,
+    "max_nodes": 500,
+    "max_depth": 20
+  },
+
+  "decision_token": {
+    "enabled": true,
+    "fields": [
+      "decision_id",
+      "created_at",
+      "input_hash",
+      "constitution_version",
+      "drf_evidence_hash",
+      "decision_graph_hash",
+      "decision_graph_summary",
+      "digital_signature"
+    ],
+    "signature": {
+      "algorithm": "Ed25519",
+      "key_source": "PLACEHOLDER",
+      "key_ref": "SECRET:ED25519_SIGNING_KEY",
+      "placeholder_value": "PLACEHOLDER_SIGNATURE_PUBLIC_BUILD"
+    },
+    "hash_algorithm": "SHA-256"
+  },
+
+  "leader_swarm": {
+    "enabled": true,
+    "max_concurrent_leaders": 3,
+    "routing_score_components": [
+      "domain_match_weight",
+      "historical_accuracy_score",
+      "evidence_dependency_score",
+      "trust_score"
+    ],
+    "consensus": {
+      "voting_method": "weighted_confidence",
+      "graph_merge_enabled": true,
+      "fallback_escalation_enabled": true
+    },
+    "leader_timeout_ms": 15000
+  },
+
+  "cache": {
+    "enabled": true,
+    "backend": "redis",
+    "ttl_seconds": 600,
+    "redis_url_ref": "SECRET:REDIS_URL",
+    "key_prefix": "lawmadi:evidence:",
+    "revalidate_on_as_of_mismatch": true
+  },
+
+  "security": {
+    "prompt_injection_defense": {
+      "enabled": true,
+      "strip_ignore_patterns": true,
+      "treat_user_input_as_untrusted": true
+    },
+    "tool_injection_defense": {
+      "enabled": true,
+      "tool_allow_list": [
+        "fetch_evidence",
+        "validate_evidence",
+        "temporal_validate",
+        "build_decision_graph",
+        "mint_decision_token",
+        "sign_token",
+        "audit_log"
+      ],
+      "allow_arbitrary_url_fetch": false
+    },
+    "secret_management": {
+      "secrets_in_prompts": false,
+      "secret_backend": "KMS",
+      "log_secret_access_attempts": true
+    },
+    "output_masking": {
+      "mask_pii": true,
+      "mask_secrets": true,
+      "mask_raw_evidence_payload": true
+    }
+  },
+
+  "gateway": {
+    "input_validation": {
+      "json_schema_validation": true,
+      "max_input_size_bytes": 1048576
+    },
+    "rate_limiting": {
+      "enabled": true,
+      "requests_per_minute": 60,
+      "burst_limit": 10
+    },
+    "authentication": {
+      "required": true,
+      "method": "IAM"
+    },
+    "audit_logging": true
+  },
+
+  "observability": {
+    "audit_log": {
+      "enabled": true,
+      "append_only": true,
+      "log_request_id": true,
+      "log_decision_id": true,
+      "log_input_hash": true,
+      "log_fsm_transitions": true,
+      "log_tool_calls": true,
+      "log_fail_closed_events": true,
+      "log_evidence_replay": true,
+      "pii_masking": true
+    },
+    "metrics": {
+      "enabled": true,
+      "evidence_fetch_success_rate": true,
+      "fail_closed_rate_by_code": true,
+      "latency_per_fsm_state": true,
+      "cache_hit_rate": true,
+      "leader_routing_accuracy": true
+    },
+    "decision_trace": {
+      "enabled": true,
+      "graph_debug_snapshot": true
+    }
+  },
+
+  "output": {
+    "format": "JSON",
+    "error_codes": {
+      "LC-001": "Evidence source unreachable",
+      "LC-002": "Evidence mismatch / non-authoritative / integrity failure",
+      "LC-003": "Constitution violation / invalid schema",
+      "LC-004": "Temporal invalidity (not effective / expired)",
+      "LC-005": "Policy restriction (disallowed category)",
+      "LC-006": "Rate limited / throttled"
+    },
+    "disclaimer": {
+      "ko": "본 답변은 일반 정보 제공 및 의사결정 지원 목적이며, 법률자문이 아닙니다. 구체적 사안은 사실관계에 따라 달라질 수 있으므로, 중요한 의사결정 전에는 전문가 상담을 권장합니다.",
+      "en": "This response is for general informational and decision-support purposes only and does not constitute legal advice. Specific outcomes depend on the facts of each case. Professional legal consultation is recommended before making important decisions."
+    },
+    "streaming": {
+      "allow_status_streaming": true,
+      "allow_conclusion_streaming": false,
+      "atomic_final_output": true
+    }
+  },
+
+  "llm_integration": {
+    "role": "rendering_engine",
+    "contracts": [
+      "prompt_contract",
+      "tool_contract",
+      "evidence_contract",
+      "decision_token_contract",
+      "error_code_contract",
+      "output_schema",
+      "evaluation_harness",
+      "security_controls",
+      "observability"
+    ],
+    "adapter": {
+      "system_prompt_format": "text",
+      "function_calling_schema": "anthropic_tools",
+      "max_output_tokens": 8192,
+      "validate_output_json": true
+    },
+    "no_function_calling_fallback": true
+  },
+
+  "safety": {
+    "mode": "informational_decision_support",
+    "encourage_professional_consultation": true,
+    "refuse_harmful_requests": true,
+    "emergency_redirect": true
+  }
+}
