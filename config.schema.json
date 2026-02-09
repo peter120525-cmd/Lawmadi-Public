@@ -1,0 +1,1153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://peter120525-cmd.github.io/Lawmadi-Public/config.schema.json",
+  "title": "Lawmadi OS Configuration Schema (Public / Sanitized)",
+  "description": "JSON Schema for Lawmadi OS (LDOS) runtime configuration. This is the public/sanitized version — proprietary scoring formulas, production endpoints, API keys, and internal policy weights are excluded. All runtime parameters are centrally controlled by a single config.json file (Configuration SSOT). Copyright © 2026 Jainam Choe (최재남). All rights reserved.",
+  "type": "object",
+  "required": [
+    "$meta",
+    "constitution",
+    "fsm",
+    "evidence",
+    "temporal",
+    "decision_graph",
+    "decision_token",
+    "leader_swarm",
+    "cache",
+    "security",
+    "gateway",
+    "observability",
+    "output",
+    "llm_integration",
+    "safety"
+  ],
+  "additionalProperties": false,
+  "properties": {
+
+    "$meta": {
+      "type": "object",
+      "description": "Configuration metadata and versioning.",
+      "required": ["config_version", "schema_version", "constitution_version", "environment", "last_updated"],
+      "additionalProperties": false,
+      "properties": {
+        "config_version": {
+          "type": "string",
+          "description": "Semantic version of this configuration file.",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "examples": ["2.0.0"]
+        },
+        "schema_version": {
+          "type": "string",
+          "description": "Version of the config schema this file conforms to.",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "examples": ["2.0.0"]
+        },
+        "constitution_version": {
+          "type": "string",
+          "description": "Version of the Operating Constitution enforced at runtime. MUST appear in every decision output.",
+          "pattern": "^\\d+\\.\\d+(\\.\\d+)?$",
+          "examples": ["2.0"]
+        },
+        "environment": {
+          "type": "string",
+          "description": "Deployment environment.",
+          "enum": ["development", "staging", "production", "public-sandbox"]
+        },
+        "last_updated": {
+          "type": "string",
+          "description": "ISO-8601 timestamp of last configuration change.",
+          "format": "date-time"
+        },
+        "updated_by": {
+          "type": "string",
+          "description": "Identifier of the person or system that last updated this configuration.",
+          "examples": ["admin@lawmadi.dev"]
+        },
+        "changelog_url": {
+          "type": "string",
+          "description": "URL to the configuration changelog.",
+          "format": "uri"
+        }
+      }
+    },
+
+    "constitution": {
+      "type": "object",
+      "description": "Operating Constitution enforcement settings. These five principles are NON-NEGOTIABLE.",
+      "required": ["ssot", "zero_inference", "fail_closed", "live_evidence", "deterministic_boundary", "dsl"],
+      "additionalProperties": false,
+      "properties": {
+        "ssot": {
+          "type": "object",
+          "description": "SSOT (Single Source of Truth) principle configuration.",
+          "required": ["enabled", "allow_permanent_storage", "allow_dataset_replication"],
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "SSOT enforcement enabled. MUST be true.",
+              "const": true
+            },
+            "allow_permanent_storage": {
+              "type": "boolean",
+              "description": "Allow permanent storage of statute/precedent/regulation data. MUST be false.",
+              "const": false
+            },
+            "allow_dataset_replication": {
+              "type": "boolean",
+              "description": "Allow replication of official legal datasets. MUST be false.",
+              "const": false
+            }
+          }
+        },
+        "zero_inference": {
+          "type": "object",
+          "description": "Zero Inference principle configuration.",
+          "required": ["enabled"],
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Zero Inference enforcement enabled. MUST be true.",
+              "const": true
+            },
+            "allow_unsourced_legal_claims": {
+              "type": "boolean",
+              "description": "Allow unsourced legal claims in output. MUST be false.",
+              "const": false
+            }
+          }
+        },
+        "fail_closed": {
+          "type": "object",
+          "description": "Fail-Closed principle configuration.",
+          "required": ["enabled", "allow_unverified_output"],
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Fail-Closed enforcement enabled. MUST be true.",
+              "const": true
+            },
+            "allow_unverified_output": {
+              "type": "boolean",
+              "description": "Allow unverified legal conclusions. MUST be false.",
+              "const": false
+            },
+            "reference_only_fallback": {
+              "type": "boolean",
+              "description": "Allow Reference-Only mode (citations without conclusions) as a degraded fallback when evidence is available but not fully validated.",
+              "default": false
+            }
+          }
+        },
+        "live_evidence": {
+          "type": "object",
+          "description": "Live Evidence principle configuration.",
+          "required": ["enabled"],
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Live Evidence enforcement enabled. MUST be true.",
+              "const": true
+            }
+          }
+        },
+        "deterministic_boundary": {
+          "type": "object",
+          "description": "Deterministic Runtime Boundary — LLM as rendering engine under Kernel control.",
+          "required": ["enabled", "llm_may_control_fsm", "llm_may_override_tools", "llm_may_access_secrets"],
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Deterministic Boundary enforcement enabled. MUST be true.",
+              "const": true
+            },
+            "llm_may_control_fsm": {
+              "type": "boolean",
+              "description": "Allow LLM to control FSM state transitions. MUST be false.",
+              "const": false
+            },
+            "llm_may_override_tools": {
+              "type": "boolean",
+              "description": "Allow LLM to override tool outputs. MUST be false.",
+              "const": false
+            },
+            "llm_may_access_secrets": {
+              "type": "boolean",
+              "description": "Allow LLM to access secrets or credentials. MUST be false.",
+              "const": false
+            }
+          }
+        },
+        "dsl": {
+          "type": "object",
+          "description": "Constitution DSL enforcement settings.",
+          "required": ["enabled", "rules"],
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Constitution DSL runtime enforcement enabled.",
+              "const": true
+            },
+            "rules": {
+              "type": "array",
+              "description": "Active Constitution DSL rules. Full rule definitions are proprietary — this field lists rule identifiers only.",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Z][A-Za-z_]+$"
+              },
+              "minItems": 1,
+              "uniqueItems": true,
+              "examples": [
+                [
+                  "Enforce_Source_Integrity",
+                  "Validate_Effective_Date",
+                  "Reject_Missing_Evidence",
+                  "Reject_Expired_Evidence",
+                  "Enforce_Zero_Inference",
+                  "Enforce_Decision_Completeness",
+                  "Enforce_Crypto_Integrity"
+                ]
+              ]
+            },
+            "enforcement_mode": {
+              "type": "string",
+              "description": "How DSL violations are handled.",
+              "enum": ["reject", "warn_and_reject", "log_only"],
+              "default": "reject"
+            }
+          }
+        }
+      }
+    },
+
+    "fsm": {
+      "type": "object",
+      "description": "Deterministic Finite State Machine runtime settings.",
+      "required": ["states", "fail_states", "mandatory_gate"],
+      "additionalProperties": false,
+      "properties": {
+        "states": {
+          "type": "array",
+          "description": "Ordered sequence of FSM states (Happy Path). No state may be skipped.",
+          "items": { "type": "string" },
+          "default": [
+            "INPUT_RECEIVED",
+            "INPUT_VALIDATED",
+            "CASE_STRUCTURED",
+            "ISSUE_IDENTIFIED",
+            "LEADER_ROUTED",
+            "EVIDENCE_FETCHING",
+            "EVIDENCE_VALIDATED",
+            "DECISION_GRAPH_BUILT",
+            "TOKEN_MINTED",
+            "TOKEN_SIGNED",
+            "RESPONSE_DELIVERED"
+          ]
+        },
+        "fail_states": {
+          "type": "array",
+          "description": "States that trigger Fail-Closed path.",
+          "items": { "type": "string" },
+          "default": [
+            "EVIDENCE_VALIDATION_FAILED",
+            "TEMPORAL_VALIDATION_FAILED",
+            "CONSTITUTION_VIOLATION",
+            "SOURCE_INTEGRITY_FAILURE"
+          ]
+        },
+        "mandatory_gate": {
+          "type": "string",
+          "description": "The state that serves as an absolute gate — no output without passing. MUST be EVIDENCE_VALIDATED.",
+          "const": "EVIDENCE_VALIDATED"
+        },
+        "halt_state": {
+          "type": "string",
+          "description": "The terminal halt state on failure.",
+          "const": "HALT"
+        },
+        "max_state_transition_time_ms": {
+          "type": "integer",
+          "description": "Maximum time (milliseconds) allowed for a single state transition before timeout.",
+          "minimum": 1000,
+          "maximum": 120000,
+          "default": 30000
+        },
+        "total_session_timeout_ms": {
+          "type": "integer",
+          "description": "Maximum total time (milliseconds) for a complete decision session.",
+          "minimum": 5000,
+          "maximum": 600000,
+          "default": 120000
+        }
+      }
+    },
+
+    "evidence": {
+      "type": "object",
+      "description": "Evidence Verification Engine configuration.",
+      "required": ["sources", "pipeline", "integrity", "trust_score"],
+      "additionalProperties": false,
+      "properties": {
+        "sources": {
+          "type": "object",
+          "description": "Authoritative source configuration per jurisdiction.",
+          "required": ["default_jurisdiction"],
+          "additionalProperties": false,
+          "properties": {
+            "default_jurisdiction": {
+              "type": "string",
+              "description": "Default jurisdiction code (ISO 3166-1 alpha-2).",
+              "default": "KR",
+              "examples": ["KR", "US", "GB", "JP", "EU"]
+            },
+            "jurisdictions": {
+              "type": "object",
+              "description": "Per-jurisdiction SSOT source configuration. Keys are ISO 3166-1 alpha-2 codes. Values contain the source designation. NOTE: Production endpoint URLs and API keys are stored in secure config (KMS/Vault), NOT here.",
+              "additionalProperties": {
+                "type": "object",
+                "required": ["name", "source_type"],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Human-readable name of the authoritative source.",
+                    "examples": ["National Law Information Center DRF Open API"]
+                  },
+                  "source_type": {
+                    "type": "string",
+                    "description": "Source protocol type.",
+                    "enum": ["REST_API", "SOAP_API", "GRAPHQL", "BULK_FEED"]
+                  },
+                  "base_url_ref": {
+                    "type": "string",
+                    "description": "Reference key to the secure config entry holding the actual base URL. NOT the URL itself.",
+                    "examples": ["SECRET:DRF_BASE_URL"]
+                  },
+                  "api_key_ref": {
+                    "type": "string",
+                    "description": "Reference key to the secure config entry holding the API key. NEVER a raw key.",
+                    "examples": ["SECRET:DRF_API_KEY"]
+                  },
+                  "timeout_ms": {
+                    "type": "integer",
+                    "description": "Request timeout in milliseconds.",
+                    "minimum": 1000,
+                    "maximum": 60000,
+                    "default": 10000
+                  },
+                  "retry_count": {
+                    "type": "integer",
+                    "description": "Number of retries on failure.",
+                    "minimum": 0,
+                    "maximum": 5,
+                    "default": 2
+                  },
+                  "retry_backoff_ms": {
+                    "type": "integer",
+                    "description": "Base backoff delay between retries (milliseconds). Exponential backoff applied.",
+                    "minimum": 100,
+                    "maximum": 10000,
+                    "default": 1000
+                  }
+                }
+              },
+              "examples": [
+                {
+                  "KR": {
+                    "name": "National Law Information Center DRF Open API",
+                    "source_type": "REST_API",
+                    "base_url_ref": "SECRET:DRF_BASE_URL",
+                    "api_key_ref": "SECRET:DRF_API_KEY",
+                    "timeout_ms": 10000,
+                    "retry_count": 2,
+                    "retry_backoff_ms": 1000
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "pipeline": {
+          "type": "object",
+          "description": "Evidence processing pipeline stages.",
+          "additionalProperties": false,
+          "properties": {
+            "stages": {
+              "type": "array",
+              "description": "Ordered pipeline stages.",
+              "items": { "type": "string" },
+              "default": [
+                "AUTHORITATIVE_API_QUERY",
+                "EVIDENCE_NORMALIZATION",
+                "TEMPORAL_VALIDATION",
+                "EVIDENCE_HASHING"
+              ]
+            },
+            "hash_algorithm": {
+              "type": "string",
+              "description": "Hash algorithm for evidence integrity.",
+              "enum": ["SHA-256"],
+              "default": "SHA-256"
+            },
+            "canonicalization": {
+              "type": "object",
+              "description": "JSON canonicalization rules for deterministic hashing.",
+              "additionalProperties": false,
+              "properties": {
+                "sort_keys": {
+                  "type": "boolean",
+                  "description": "Sort JSON keys alphabetically before hashing.",
+                  "const": true
+                },
+                "separators": {
+                  "type": "array",
+                  "description": "JSON separators for stable serialization [item_sep, key_sep].",
+                  "items": { "type": "string" },
+                  "default": [",", ":"]
+                },
+                "ensure_ascii": {
+                  "type": "boolean",
+                  "description": "Ensure ASCII-only output for cross-platform consistency.",
+                  "default": false
+                }
+              }
+            }
+          }
+        },
+        "integrity": {
+          "type": "object",
+          "description": "Evidence integrity enforcement rules.",
+          "additionalProperties": false,
+          "properties": {
+            "reject_non_official_source": {
+              "type": "boolean",
+              "description": "Reject evidence where source_origin != OFFICIAL_API.",
+              "const": true
+            },
+            "reject_missing_evidence": {
+              "type": "boolean",
+              "description": "Reject if evidence set has missing == true.",
+              "const": true
+            },
+            "reject_temporal_failure": {
+              "type": "boolean",
+              "description": "Reject if temporal validation fails.",
+              "const": true
+            },
+            "reject_invalid_status": {
+              "type": "object",
+              "description": "Evidence statuses that trigger rejection.",
+              "additionalProperties": false,
+              "properties": {
+                "statuses": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "default": ["REPEALED", "UNCONSTITUTIONAL", "INVALIDATED", "OVERRULED"]
+                }
+              }
+            }
+          }
+        },
+        "trust_score": {
+          "type": "object",
+          "description": "Evidence Trust Score configuration. NOTE: Specific weights and formulas are PROPRIETARY and not included.",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable evidence trust scoring.",
+              "default": true
+            },
+            "components": {
+              "type": "array",
+              "description": "Conceptual components of the trust score (weights are proprietary).",
+              "items": { "type": "string" },
+              "default": [
+                "source_authority_weight",
+                "citation_stability_score",
+                "temporal_consistency_score"
+              ]
+            },
+            "minimum_threshold": {
+              "type": "number",
+              "description": "Minimum trust score to accept evidence. Exact value is PROPRIETARY — placeholder shown.",
+              "minimum": 0.0,
+              "maximum": 1.0,
+              "default": 0.0,
+              "$comment": "PROPRIETARY: Actual threshold value is confidential."
+            },
+            "provenance_tracking": {
+              "type": "boolean",
+              "description": "Enable Provenance Lineage Tracking for evidence audit trail.",
+              "default": true
+            }
+          }
+        }
+      }
+    },
+
+    "temporal": {
+      "type": "object",
+      "description": "Temporal Law Validity Engine configuration.",
+      "required": ["enabled"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable temporal law validity checks.",
+          "const": true
+        },
+        "checks": {
+          "type": "object",
+          "description": "Individual temporal check toggles.",
+          "additionalProperties": false,
+          "properties": {
+            "effective_date_verification": {
+              "type": "boolean",
+              "description": "Check whether statute is currently in force.",
+              "default": true
+            },
+            "precedent_change_detection": {
+              "type": "boolean",
+              "description": "Detect appellate reversal or superior court changes.",
+              "default": true
+            },
+            "unconstitutional_clause_detection": {
+              "type": "boolean",
+              "description": "Detect constitutional court void rulings.",
+              "default": true
+            },
+            "as_of_validation": {
+              "type": "boolean",
+              "description": "Support user-specified 'as-of' date validation.",
+              "default": true
+            }
+          }
+        },
+        "unknown_temporal_status_action": {
+          "type": "string",
+          "description": "Action when temporal status cannot be determined.",
+          "enum": ["fail_closed", "reference_only"],
+          "default": "fail_closed"
+        }
+      }
+    },
+
+    "decision_graph": {
+      "type": "object",
+      "description": "Decision Graph Formal Semantics configuration.",
+      "required": ["node_types", "edge_types", "validity_condition_enabled"],
+      "additionalProperties": false,
+      "properties": {
+        "node_types": {
+          "type": "array",
+          "description": "Allowed node types in the decision graph.",
+          "items": { "type": "string" },
+          "default": ["FACT_NODE", "ISSUE_NODE", "LAW_NODE", "PRECEDENT_NODE", "DECISION_NODE"]
+        },
+        "edge_types": {
+          "type": "array",
+          "description": "Allowed edge types in the decision graph.",
+          "items": { "type": "string" },
+          "default": ["SUPPORTS", "CONTRADICTS", "DEPENDS_ON", "RESOLVES", "REFERENCES", "APPLIES", "OVERRULES", "TEMPORAL_DEPENDS"]
+        },
+        "validity_condition_enabled": {
+          "type": "boolean",
+          "description": "Enforce graph validity: every ISSUE_NODE must have at least one LAW_NODE AND EVIDENCE_NODE that SUPPORTS it.",
+          "const": true
+        },
+        "max_nodes": {
+          "type": "integer",
+          "description": "Maximum number of nodes per decision graph.",
+          "minimum": 10,
+          "maximum": 10000,
+          "default": 500
+        },
+        "max_depth": {
+          "type": "integer",
+          "description": "Maximum dependency chain depth.",
+          "minimum": 3,
+          "maximum": 100,
+          "default": 20
+        }
+      }
+    },
+
+    "decision_token": {
+      "type": "object",
+      "description": "Decision Token Standard configuration.",
+      "required": ["enabled", "signature"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable Decision Token generation.",
+          "const": true
+        },
+        "fields": {
+          "type": "array",
+          "description": "Required fields in every Decision Token.",
+          "items": { "type": "string" },
+          "default": [
+            "decision_id",
+            "created_at",
+            "input_hash",
+            "constitution_version",
+            "drf_evidence_hash",
+            "decision_graph_hash",
+            "decision_graph_summary",
+            "digital_signature"
+          ]
+        },
+        "signature": {
+          "type": "object",
+          "description": "Digital signature configuration.",
+          "required": ["algorithm", "key_source"],
+          "additionalProperties": false,
+          "properties": {
+            "algorithm": {
+              "type": "string",
+              "description": "Signature algorithm.",
+              "enum": ["Ed25519"],
+              "default": "Ed25519"
+            },
+            "key_source": {
+              "type": "string",
+              "description": "Where signing keys reside. Keys NEVER inside the Kernel.",
+              "enum": ["KMS", "HSM", "VAULT", "PLACEHOLDER"],
+              "default": "PLACEHOLDER"
+            },
+            "key_ref": {
+              "type": "string",
+              "description": "Reference key to the signing key in secure config. NOT the key itself.",
+              "examples": ["SECRET:ED25519_SIGNING_KEY"]
+            },
+            "placeholder_value": {
+              "type": "string",
+              "description": "Placeholder signature for public/sandbox builds.",
+              "default": "PLACEHOLDER_SIGNATURE_PUBLIC_BUILD"
+            }
+          }
+        },
+        "hash_algorithm": {
+          "type": "string",
+          "description": "Hash algorithm for input, evidence, and graph hashes.",
+          "enum": ["SHA-256"],
+          "default": "SHA-256"
+        }
+      }
+    },
+
+    "leader_swarm": {
+      "type": "object",
+      "description": "Leader Swarm Routing Engine configuration. NOTE: Scoring formulas, weights, and full leader policy logic are PROPRIETARY.",
+      "required": ["enabled", "consensus"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable Leader Swarm routing.",
+          "default": true
+        },
+        "max_concurrent_leaders": {
+          "type": "integer",
+          "description": "Maximum number of leaders executing in parallel.",
+          "minimum": 1,
+          "maximum": 20,
+          "default": 3
+        },
+        "routing_score_components": {
+          "type": "array",
+          "description": "Conceptual components of the routing score. Weights are PROPRIETARY.",
+          "items": { "type": "string" },
+          "default": [
+            "domain_match_weight",
+            "historical_accuracy_score",
+            "evidence_dependency_score",
+            "trust_score"
+          ],
+          "$comment": "PROPRIETARY: Actual weight values and formula are confidential."
+        },
+        "consensus": {
+          "type": "object",
+          "description": "Multi-leader consensus configuration.",
+          "additionalProperties": false,
+          "properties": {
+            "voting_method": {
+              "type": "string",
+              "description": "Consensus voting method.",
+              "enum": ["weighted_confidence", "majority", "unanimous"],
+              "default": "weighted_confidence"
+            },
+            "graph_merge_enabled": {
+              "type": "boolean",
+              "description": "Enable Decision Graph Merge across leaders.",
+              "default": true
+            },
+            "fallback_escalation_enabled": {
+              "type": "boolean",
+              "description": "Enable Fallback Leader Escalation on primary failure.",
+              "default": true
+            }
+          }
+        },
+        "leader_timeout_ms": {
+          "type": "integer",
+          "description": "Timeout per leader (milliseconds).",
+          "minimum": 1000,
+          "maximum": 60000,
+          "default": 15000
+        }
+      }
+    },
+
+    "cache": {
+      "type": "object",
+      "description": "Ephemeral cache configuration. Cache is an acceleration mechanism, NOT a data store.",
+      "required": ["enabled", "backend", "ttl_seconds"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable ephemeral caching.",
+          "default": true
+        },
+        "backend": {
+          "type": "string",
+          "description": "Cache backend type.",
+          "enum": ["redis", "memory", "none"],
+          "default": "redis"
+        },
+        "ttl_seconds": {
+          "type": "integer",
+          "description": "Cache Time-To-Live in seconds. Constitution MAXIMUM: 1800 (30 minutes).",
+          "minimum": 60,
+          "maximum": 1800,
+          "default": 600
+        },
+        "redis_url_ref": {
+          "type": "string",
+          "description": "Reference key to Redis connection URL in secure config. NOT the URL itself.",
+          "examples": ["SECRET:REDIS_URL"]
+        },
+        "key_prefix": {
+          "type": "string",
+          "description": "Cache key namespace prefix.",
+          "default": "lawmadi:evidence:"
+        },
+        "revalidate_on_as_of_mismatch": {
+          "type": "boolean",
+          "description": "Revalidate cached evidence if 'as-of' time differs from cached timestamp.",
+          "const": true
+        }
+      }
+    },
+
+    "security": {
+      "type": "object",
+      "description": "Security architecture configuration. Production secrets are stored externally (KMS/Vault), NEVER in this file.",
+      "required": ["prompt_injection_defense", "tool_injection_defense", "secret_management"],
+      "additionalProperties": false,
+      "properties": {
+        "prompt_injection_defense": {
+          "type": "object",
+          "description": "Prompt injection defense settings.",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "const": true
+            },
+            "strip_ignore_patterns": {
+              "type": "boolean",
+              "description": "Strip 'ignore previous instructions' patterns from input.",
+              "default": true
+            },
+            "treat_user_input_as_untrusted": {
+              "type": "boolean",
+              "description": "Treat all user input as untrusted. MUST be true.",
+              "const": true
+            }
+          }
+        },
+        "tool_injection_defense": {
+          "type": "object",
+          "description": "Tool injection defense settings.",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "const": true
+            },
+            "tool_allow_list": {
+              "type": "array",
+              "description": "Allowed tool names. LLM may request; Kernel validates.",
+              "items": { "type": "string" },
+              "default": [
+                "fetch_evidence",
+                "validate_evidence",
+                "temporal_validate",
+                "build_decision_graph",
+                "mint_decision_token",
+                "sign_token",
+                "audit_log"
+              ]
+            },
+            "allow_arbitrary_url_fetch": {
+              "type": "boolean",
+              "description": "Allow LLM to fetch arbitrary URLs. MUST be false.",
+              "const": false
+            }
+          }
+        },
+        "secret_management": {
+          "type": "object",
+          "description": "Secret management policy.",
+          "additionalProperties": false,
+          "properties": {
+            "secrets_in_prompts": {
+              "type": "boolean",
+              "description": "Allow secrets in prompts. MUST be false.",
+              "const": false
+            },
+            "secret_backend": {
+              "type": "string",
+              "description": "Secret storage backend.",
+              "enum": ["KMS", "VAULT", "SECRET_MANAGER", "ENV_VARS_DEV_ONLY"],
+              "default": "KMS"
+            },
+            "log_secret_access_attempts": {
+              "type": "boolean",
+              "description": "Log all attempts to access secrets as security events.",
+              "default": true
+            }
+          }
+        },
+        "output_masking": {
+          "type": "object",
+          "description": "Output sanitization rules.",
+          "additionalProperties": false,
+          "properties": {
+            "mask_pii": {
+              "type": "boolean",
+              "description": "Mask personally identifiable information in outputs.",
+              "default": true
+            },
+            "mask_secrets": {
+              "type": "boolean",
+              "description": "Mask secrets, API keys, raw logs in outputs.",
+              "const": true
+            },
+            "mask_raw_evidence_payload": {
+              "type": "boolean",
+              "description": "Mask raw API response payloads from user-facing output.",
+              "default": true
+            }
+          }
+        }
+      }
+    },
+
+    "gateway": {
+      "type": "object",
+      "description": "API Gateway configuration.",
+      "additionalProperties": false,
+      "properties": {
+        "input_validation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "json_schema_validation": {
+              "type": "boolean",
+              "description": "Validate all inputs against JSON Schema.",
+              "default": true
+            },
+            "max_input_size_bytes": {
+              "type": "integer",
+              "description": "Maximum input payload size.",
+              "minimum": 1024,
+              "maximum": 10485760,
+              "default": 1048576
+            }
+          }
+        },
+        "rate_limiting": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "default": true
+            },
+            "requests_per_minute": {
+              "type": "integer",
+              "description": "Maximum requests per minute per client.",
+              "minimum": 1,
+              "maximum": 10000,
+              "default": 60
+            },
+            "burst_limit": {
+              "type": "integer",
+              "description": "Maximum burst requests.",
+              "minimum": 1,
+              "maximum": 1000,
+              "default": 10
+            }
+          }
+        },
+        "authentication": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "required": {
+              "type": "boolean",
+              "description": "Require authentication for all requests.",
+              "default": true
+            },
+            "method": {
+              "type": "string",
+              "description": "Authentication method.",
+              "enum": ["IAM", "API_KEY", "OAUTH2", "JWT"],
+              "default": "IAM"
+            }
+          }
+        },
+        "audit_logging": {
+          "type": "boolean",
+          "description": "Log all gateway requests and responses.",
+          "const": true
+        }
+      }
+    },
+
+    "observability": {
+      "type": "object",
+      "description": "Observability and audit configuration.",
+      "required": ["audit_log", "metrics"],
+      "additionalProperties": false,
+      "properties": {
+        "audit_log": {
+          "type": "object",
+          "description": "Append-only audit logging.",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "const": true
+            },
+            "append_only": {
+              "type": "boolean",
+              "description": "Enforce append-only (tamper-resistant) logging.",
+              "const": true
+            },
+            "log_request_id": { "type": "boolean", "default": true },
+            "log_decision_id": { "type": "boolean", "default": true },
+            "log_input_hash": { "type": "boolean", "default": true },
+            "log_fsm_transitions": { "type": "boolean", "default": true },
+            "log_tool_calls": { "type": "boolean", "default": true },
+            "log_fail_closed_events": { "type": "boolean", "default": true },
+            "log_evidence_replay": {
+              "type": "boolean",
+              "description": "Enable Evidence Replay Mechanism logging.",
+              "default": true
+            },
+            "pii_masking": {
+              "type": "boolean",
+              "description": "Mask PII in audit logs.",
+              "default": true
+            }
+          }
+        },
+        "metrics": {
+          "type": "object",
+          "description": "Runtime metrics collection.",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "evidence_fetch_success_rate": { "type": "boolean", "default": true },
+            "fail_closed_rate_by_code": { "type": "boolean", "default": true },
+            "latency_per_fsm_state": { "type": "boolean", "default": true },
+            "cache_hit_rate": { "type": "boolean", "default": true },
+            "leader_routing_accuracy": { "type": "boolean", "default": true }
+          }
+        },
+        "decision_trace": {
+          "type": "object",
+          "description": "Decision Trace ID configuration.",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": { "type": "boolean", "default": true },
+            "graph_debug_snapshot": {
+              "type": "boolean",
+              "description": "Capture decision graph state at time of output.",
+              "default": true
+            }
+          }
+        }
+      }
+    },
+
+    "output": {
+      "type": "object",
+      "description": "Output schema and formatting configuration.",
+      "required": ["format", "error_codes"],
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "type": "string",
+          "description": "Output format. Must be strict JSON.",
+          "enum": ["JSON"],
+          "default": "JSON"
+        },
+        "error_codes": {
+          "type": "object",
+          "description": "Standard error code definitions.",
+          "additionalProperties": false,
+          "properties": {
+            "LC-001": { "type": "string", "const": "Evidence source unreachable" },
+            "LC-002": { "type": "string", "const": "Evidence mismatch / non-authoritative / integrity failure" },
+            "LC-003": { "type": "string", "const": "Constitution violation / invalid schema" },
+            "LC-004": { "type": "string", "const": "Temporal invalidity (not effective / expired)" },
+            "LC-005": { "type": "string", "const": "Policy restriction (disallowed category)" },
+            "LC-006": { "type": "string", "const": "Rate limited / throttled" }
+          }
+        },
+        "disclaimer": {
+          "type": "object",
+          "description": "Standard disclaimer appended to every output.",
+          "additionalProperties": false,
+          "properties": {
+            "ko": {
+              "type": "string",
+              "default": "본 답변은 일반 정보 제공 및 의사결정 지원 목적이며, 법률자문이 아닙니다. 구체적 사안은 사실관계에 따라 달라질 수 있으므로, 중요한 의사결정 전에는 전문가 상담을 권장합니다."
+            },
+            "en": {
+              "type": "string",
+              "default": "This response is for general informational and decision-support purposes only and does not constitute legal advice. Specific outcomes depend on the facts of each case. Professional legal consultation is recommended before making important decisions."
+            }
+          }
+        },
+        "streaming": {
+          "type": "object",
+          "description": "Safe streaming policy.",
+          "additionalProperties": false,
+          "properties": {
+            "allow_status_streaming": {
+              "type": "boolean",
+              "description": "Allow streaming of non-legal status messages.",
+              "default": true
+            },
+            "allow_conclusion_streaming": {
+              "type": "boolean",
+              "description": "Allow streaming of final legal conclusions before validation. MUST be false.",
+              "const": false
+            },
+            "atomic_final_output": {
+              "type": "boolean",
+              "description": "Final decision output must be atomic (complete JSON).",
+              "const": true
+            }
+          }
+        }
+      }
+    },
+
+    "llm_integration": {
+      "type": "object",
+      "description": "LLM integration and portability configuration. Lawmadi OS is model-agnostic.",
+      "required": ["role", "contracts"],
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "type": "string",
+          "description": "Designated role of the LLM within the system.",
+          "const": "rendering_engine"
+        },
+        "contracts": {
+          "type": "array",
+          "description": "Required integration contracts.",
+          "items": { "type": "string" },
+          "default": [
+            "prompt_contract",
+            "tool_contract",
+            "evidence_contract",
+            "decision_token_contract",
+            "error_code_contract",
+            "output_schema",
+            "evaluation_harness",
+            "security_controls",
+            "observability"
+          ]
+        },
+        "adapter": {
+          "type": "object",
+          "description": "Model adapter layer settings.",
+          "additionalProperties": false,
+          "properties": {
+            "system_prompt_format": {
+              "type": "string",
+              "description": "System prompt format for the active LLM.",
+              "enum": ["text", "xml", "json", "markdown"],
+              "default": "text"
+            },
+            "function_calling_schema": {
+              "type": "string",
+              "description": "Function calling schema format.",
+              "enum": ["openai_tools", "anthropic_tools", "google_tools", "custom", "none"],
+              "default": "anthropic_tools"
+            },
+            "max_output_tokens": {
+              "type": "integer",
+              "description": "Maximum output tokens for the LLM.",
+              "minimum": 256,
+              "maximum": 200000,
+              "default": 8192
+            },
+            "validate_output_json": {
+              "type": "boolean",
+              "description": "Validate LLM output against JSON schema. Reject invalid outputs.",
+              "const": true
+            }
+          }
+        },
+        "no_function_calling_fallback": {
+          "type": "boolean",
+          "description": "If LLM lacks function calling, Kernel performs all tools externally and provides results for rendering only.",
+          "default": true
+        }
+      }
+    },
+
+    "safety": {
+      "type": "object",
+      "description": "Safety and compliance policy.",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "type": "string",
+          "description": "System operating mode — always informational, never definitive legal advice.",
+          "const": "informational_decision_support"
+        },
+        "encourage_professional_consultation": {
+          "type": "boolean",
+          "description": "Always encourage consulting qualified legal professionals.",
+          "const": true
+        },
+        "refuse_harmful_requests": {
+          "type": "boolean",
+          "description": "Refuse harmful or illegal requests.",
+          "const": true
+        },
+        "emergency_redirect": {
+          "type": "boolean",
+          "description": "Direct self-harm, emergency, or criminal situations to appropriate authorities.",
+          "const": true
+        }
+      }
+    }
+  }
+}
