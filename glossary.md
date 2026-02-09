@@ -1,15 +1,45 @@
 # Lawmadi OS — Glossary / 용어집
 
+<p align="left">
+  <a href="https://doi.org/10.5281/zenodo.18525310">
+    <img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.18525310.svg" />
+  </a>
+  <img alt="glossary" src="https://img.shields.io/badge/glossary-v2.0--Unified-0ea5e9" />
+  <img alt="repo" src="https://img.shields.io/badge/repo-v2.0.0-informational" />
+  <img alt="classification" src="https://img.shields.io/badge/classification-public%20%2F%20sanitized-22c55e" />
+  <img alt="license" src="https://img.shields.io/badge/license-all%20rights%20reserved-critical" />
+</p>
+
 **Legal Decision Operating System (LDOS) · v2.0-Unified**
 **Copyright © 2026 Jainam Choe (최재남). All rights reserved.**
 
-This glossary defines every technical term, acronym, and concept used across the Lawmadi OS documentation. Terms are organized by domain and presented bilingually (English / Korean).
+This glossary defines every technical term, acronym, and concept used across the Lawmadi OS documentation.
+Terms are organized by domain and presented **bilingually (English / Korean)**.
 
-> **Cross-references:** Terms marked with → refer to other entries in this glossary.
+> **Cross-references:** Entries marked with **→** refer to other glossary entries.
+> **Tip:** Use GitHub page search: press **`t`** (file finder) and **`Ctrl/⌘ + F`** (in-page).
 
 ---
 
-## Table of Contents
+## Quick Links
+
+<p align="left">
+  <a href="./INDEX.md"><img alt="Quick Link: INDEX" src="https://img.shields.io/badge/Quick%20Link-INDEX-0ea5e9" /></a>
+  <a href="./OVERVIEW.md"><img alt="Quick Link: OVERVIEW" src="https://img.shields.io/badge/Quick%20Link-OVERVIEW-0ea5e9" /></a>
+  <a href="./README.md"><img alt="Quick Link: README" src="https://img.shields.io/badge/Quick%20Link-README-0ea5e9" /></a>
+  <a href="./ARCHITECTURE.md"><img alt="Quick Link: ARCHITECTURE" src="https://img.shields.io/badge/Quick%20Link-ARCHITECTURE-0ea5e9" /></a>
+  <a href="./llms.md"><img alt="Quick Link: llms.md" src="https://img.shields.io/badge/Quick%20Link-llms.md-2563eb" /></a>
+  <a href="./llms.txt"><img alt="Quick Link: llms.txt" src="https://img.shields.io/badge/Quick%20Link-llms.txt-2563eb" /></a>
+  <a href="./LICENSE"><img alt="Quick Link: LICENSE" src="https://img.shields.io/badge/Quick%20Link-LICENSE-ef4444" /></a>
+  <a href="./CITATION.cff"><img alt="Quick Link: CITATION.cff" src="https://img.shields.io/badge/Quick%20Link-CITATION.cff-a855f7" /></a>
+</p>
+
+---
+
+## Table of Contents (Foldable)
+
+<details>
+<summary><strong>Open / 펼치기</strong></summary>
 
 1. [Core Identity & Philosophy](#1-core-identity--philosophy)
 2. [Constitutional Principles](#2-constitutional-principles)
@@ -27,343 +57,263 @@ This glossary defines every technical term, acronym, and concept used across the
 14. [Legal Domain](#14-legal-domain)
 15. [Acronyms](#15-acronyms)
 
+</details>
+
+---
+
+## How to Use (Fast)
+
+* **Search a term quickly:** `Ctrl/⌘ + F` on this page
+* **Jump between terms:** look for **→ Cross-reference** arrows
+* **Find docs that define behavior:** go to **`llms.md` / `ARCHITECTURE.md`**
+* **Confirm binding rights/limits:** **`LICENSE` is the only legal authority**
+
 ---
 
 ## 1. Core Identity & Philosophy
 
-### Lawmadi OS
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**법률 의사결정 운영체제**
+### Lawmadi OS / 법률 의사결정 운영체제
 
-The full system name. A deterministic, FSM-based Legal Decision Operating System. Not a chatbot, not a search engine, not a legal database — a → Decision Intelligence Infrastructure.
+The full system name. A deterministic, FSM-based Legal Decision Operating System.
+Not a chatbot, not a search engine, not a legal database — a → **Decision Intelligence Infrastructure**.
 
-### LDOS
-
-**Legal Decision Operating System** (법률 의사결정 운영체제)
+### LDOS / Legal Decision Operating System (법률 의사결정 운영체제)
 
 The formal system type designation. Lawmadi OS is an instance of an LDOS.
 
-### Decision Intelligence Infrastructure
+### Decision Intelligence Infrastructure / 의사결정 인텔리전스 인프라
 
-**의사결정 인텔리전스 인프라**
+A system category that generates reproducible, verifiable decision outputs by assembling and validating live evidence from authoritative sources.
+Distinguished from “AI assistants” by deterministic processing, cryptographic integrity, and → **Fail-Closed** safety.
 
-A system category that generates reproducible, verifiable decision outputs by assembling and validating live evidence from authoritative sources. Distinguished from "AI assistants" or "chatbots" by its deterministic processing, cryptographic integrity, and → Fail-Closed safety guarantees.
+### Computable Trust / 계산 가능한 신뢰
 
-### Computable Trust
+The ability to verify, reproduce, and cryptographically prove that an output was generated correctly from validated evidence—without blind trust.
 
-**계산 가능한 신뢰**
+### “Convert Anxiety into Actionable Logic” / “불안을 실행 가능한 논리로 전환하다"
 
-The ability to verify, reproduce, and cryptographically prove that a legal decision output was generated correctly from validated evidence, without requiring blind trust in the system. Lawmadi OS's ultimate design goal.
+The Lawmadi OS tagline. Transform legal uncertainty into structured, evidence-based decision support.
 
-### "Convert Anxiety into Actionable Logic"
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
-**"불안을 실행 가능한 논리로 전환하다"**
-
-The Lawmadi OS tagline. Expresses the core mission: transforming legal uncertainty and anxiety into structured, evidence-based, actionable decision support.
+</details>
 
 ---
 
 ## 2. Constitutional Principles
 
-### SSOT (Single Source of Truth)
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**단일 진실 공급원**
+### SSOT (Single Source of Truth) / 단일 진실 공급원
 
-The principle that all legal evidence must originate from one designated authoritative source per jurisdiction (e.g., Korea's → DRF Open API). Permanent storage or replication of official legal datasets is prohibited. Every legal statement must be directly traceable to this source.
+All legal evidence must originate from **one designated authoritative source** per jurisdiction (e.g., Korea’s → **DRF Open API**).
+Permanent storage/replication of official datasets is prohibited. Every legal statement must be traceable to SSOT.
 
-### Zero Inference
+### Zero Inference / 제로 추론 원칙
 
-**제로 추론 원칙**
+The system must never fabricate, guess, infer, estimate, or “fill in” legal facts, citations, case numbers, statute refs, dates, parties, amounts, or legal conclusions.
+If evidence is missing: ask for clarification or refuse output.
 
-The principle that the system must never fabricate, guess, infer, estimate, or "fill in" any legal facts, citations, case numbers, statute references, dates, parties, amounts, or legal conclusions. If evidence is missing — ask for clarification or refuse output.
+### Fail-Closed / 페일 클로즈드 정책
 
-### Fail-Closed
+If any verification fails (retrieval/validation/temporal/integrity), the system **halts** and returns a structured refusal. Safety over responsiveness.
 
-**페일 클로즈드 정책**
+### Live Evidence Architecture / 실시간 증거 아키텍처
 
-A safety policy where the system immediately halts decision generation upon any verification failure (evidence retrieval, validation, temporal checks, integrity checks). The system returns a structured refusal rather than serving unverified legal conclusions. Safety over responsiveness.
+Legal outputs are generated from **real-time validated evidence**, not stale synced DBs. Amendments/reversals/new precedents are reflected immediately.
 
-### Live Evidence Architecture
+### Deterministic Runtime Boundary / 결정론적 런타임 경계
 
-**실시간 증거 아키텍처**
+The → **LLM** is strictly a rendering engine. The → **Kernel** owns state transitions, evidence validation, token generation, and policy enforcement.
 
-The architectural principle that legal decisions are generated from real-time validated evidence, not from stale, synced, or cached databases. Legislative amendments, appellate reversals, and new precedents are reflected immediately.
+### Operating Constitution / 운영 헌법
 
-### Deterministic Runtime Boundary
+The non-negotiable principles (SSOT, Zero Inference, Fail-Closed, Live Evidence, Deterministic Boundary), enforced at runtime via → **Constitution DSL**.
 
-**결정론적 런타임 경계**
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
-The architectural boundary that confines the → LLM to a "rendering engine" role. The → Kernel owns all state transitions, evidence retrieval/validation, token generation, and policy enforcement. The LLM cannot bypass, override, or shortcut any Kernel-controlled process.
-
-### Operating Constitution
-
-**운영 헌법**
-
-The set of non-negotiable principles (SSOT, Zero Inference, Fail-Closed, Live Evidence, Deterministic Runtime Boundary) that govern all technical and business decisions within Lawmadi OS. Enforced at runtime via → Constitution DSL.
+</details>
 
 ---
 
 ## 3. Runtime & State Machine
 
-### FSM (Finite State Machine)
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**유한 상태 기계**
+### FSM (Finite State Machine) / 유한 상태 기계
 
-A computational model where the system exists in exactly one of a finite number of states at any time, transitioning between states according to deterministic rules. Lawmadi OS processes every decision session as a deterministic FSM.
+A model where the system is always in exactly one state, transitioning deterministically.
 
-### FSM State
+### FSM State / FSM 상태
 
-**FSM 상태**
+A discrete stage in the pipeline (example sequence):
+`INPUT_RECEIVED → INPUT_VALIDATED → CASE_STRUCTURED → ISSUE_IDENTIFIED → LEADER_ROUTED → EVIDENCE_FETCHING → EVIDENCE_VALIDATED → DECISION_GRAPH_BUILT → TOKEN_MINTED → TOKEN_SIGNED → RESPONSE_DELIVERED`
 
-A discrete processing stage in the decision pipeline. The complete sequence:
+### Happy Path / 정상 경로
 
-| State | Description |
-|-------|-------------|
-| `INPUT_RECEIVED` | User query received |
-| `INPUT_VALIDATED` | Input schema and format validated |
-| `CASE_STRUCTURED` | Natural language converted to → CaseStructure |
-| `ISSUE_IDENTIFIED` | Legal issues extracted into → IssueGraph |
-| `LEADER_ROUTED` | Domain expert(s) selected via → Leader Swarm |
-| `EVIDENCE_FETCHING` | Authoritative API queries in progress |
-| `EVIDENCE_VALIDATED` | **Mandatory gate** — evidence verified |
-| `DECISION_GRAPH_BUILT` | Formal → Decision Graph constructed |
-| `TOKEN_MINTED` | → Decision Token created with hashes |
-| `TOKEN_SIGNED` | Ed25519 signature applied |
-| `RESPONSE_DELIVERED` | Strict JSON output delivered to user |
-| `HALT` | System stopped due to verification failure |
-| `FAIL_CLOSED_RESPONSE` | Structured refusal delivered |
+The successful FSM sequence when all validations pass.
 
-### Happy Path
+### Fail-Closed Path / 페일 클로즈드 경로
 
-**정상 경로**
+Failure path: `HALT → FAIL_CLOSED_RESPONSE` triggered by evidence/temporal/integrity/constitution violations.
 
-The complete FSM state sequence from `INPUT_RECEIVED` through `RESPONSE_DELIVERED` when all validations pass successfully.
+### Mandatory Gate / 필수 게이트
 
-### Fail-Closed Path
+`EVIDENCE_VALIDATED` — the hard gate that must be passed before any decision output.
 
-**페일 클로즈드 경로**
+### Deterministic Processing / 결정론적 처리
 
-The FSM path triggered by any verification failure: → `HALT` → `FAIL_CLOSED_RESPONSE`. Possible triggers: `EVIDENCE_VALIDATION_FAILED`, `TEMPORAL_VALIDATION_FAILED`, `CONSTITUTION_VIOLATION`, `SOURCE_INTEGRITY_FAILURE`.
+Same input + same evidence state → same output (enabled by FSM + → Reproducibility Trust Chain).
 
-### Mandatory Gate
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
-**필수 게이트**
-
-The `EVIDENCE_VALIDATED` state — no output can be produced without passing through this state. The single most important safety mechanism in the FSM.
-
-### Deterministic Processing
-
-**결정론적 처리**
-
-The guarantee that the same input, processed against the same evidence state, will always produce the same output. Enabled by the FSM architecture and → Reproducibility Trust Chain.
+</details>
 
 ---
 
 ## 4. Kernel Engines
 
-### Kernel
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**커널**
+### Kernel / 커널
 
-The non-LLM deterministic core of Lawmadi OS. Controls all state transitions, evidence processing, policy enforcement, and cryptographic operations. The LLM operates under Kernel authority.
+The non-LLM deterministic core. Controls state transitions, evidence processing, enforcement, cryptography.
 
-### Decision OS Kernel
+### Decision OS Kernel / 의사결정 OS 커널
 
-**의사결정 OS 커널**
+Orchestrates the pipeline: structuring → routing → evidence → graph → token → output.
 
-The central engine that orchestrates the entire decision pipeline: case structuring, FSM runtime management, and coordination of all other engines.
+### Case Structure Parser / 사건 구조 파서
 
-### Case Structure Parser
+Converts natural language into → **CaseStructure** (parties/timeline/claims/facts).
 
-**사건 구조 파서**
+### CaseStructure / 사건 구조
 
-Engine that converts natural language input into a structured → CaseStructure object, extracting parties, timeline, claims, and facts.
+Canonical structured case representation:
 
-### CaseStructure
-
-**사건 구조**
-
-The canonical structured representation of a legal case:
-
-```
+```text
 CaseStructure {
-  case_id          // Unique case identifier
-  case_type        // Case type classification
-  parties          // Parties information
-  timeline         // Chronological sequence
-  claim_object     // Claim target
-  fact_vector      // Facts vector
+  case_id
+  case_type
+  parties
+  timeline
+  claim_object
+  fact_vector
 }
 ```
 
-### Issue Extraction Engine
+### Issue Extraction Engine / 쟁점 추출 엔진
 
-**쟁점 추출 엔진**
+Builds → **IssueGraph** from a CaseStructure.
 
-Engine that analyzes a → CaseStructure to identify legal issues and construct an → IssueGraph with dependency relationships.
+### IssueGraph / 쟁점 그래프
 
-### IssueGraph
-
-**쟁점 그래프**
-
-A directed graph of legal issues and their dependencies:
-
-```
+```text
 IssueGraph {
-  issue_nodes[]         // Legal issue nodes
-  dependency_edges[]    // Inter-issue dependency edges
+  issue_nodes[]
+  dependency_edges[]
 }
 ```
 
-### Leader Swarm Routing Engine
+### Leader Swarm Routing Engine / 리더 스웜 라우팅 엔진
 
-**리더 스웜 라우팅 엔진**
+Routes cases to specialist Leaders (scoring formula proprietary). Supports → Multi-Leader Consensus.
 
-Engine that routes cases to specialist legal domain experts based on a multi-factor scoring function. Supports → Multi-Leader Consensus for complex cases.
+### Leader / 리더
 
-### Leader
+A modular specialist profile/toolchain for a legal domain. Selected via routing.
 
-**리더**
+### LeaderProfile / 리더 프로필
 
-A modular prompt profile or specialist toolchain representing domain expertise in a specific area of law. Selected via → Routing Score.
+Leader metadata schema (weights/formulas proprietary; description only in public builds).
 
-### LeaderProfile
+### Constitution Validator / 헌법 검증기
 
-**리더 프로필**
+Enforces → Constitution DSL at runtime.
 
-The metadata schema for a Leader: `leader_id`, `specialization_domain`, `capability_tags`, `routing_weight`, `trust_score`, `supported_constitution_ver`, `dependency_modules`.
+### Constitution DSL / 헌법 도메인 특화 언어
 
-### Routing Score
+Executable policy rules (e.g., source integrity, effective date checks, decision completeness).
 
-**라우팅 점수**
+### Temporal Law Validity Engine / 시간적 법령 유효성 엔진
 
-The composite score used to select Leaders, incorporating domain match, historical accuracy, evidence dependency alignment, and trust score. Specific formula is proprietary.
+Validates in-force status: effective dates, repeal/amendment, overrule, unconstitutional/void detection.
 
-### Multi-Leader Consensus
+### Decision Graph Generator / 의사결정 그래프 생성기
 
-**멀티 리더 합의**
+Constructs the formal → Decision Graph and produces its canonical structure/hashes.
 
-The process of combining judgments from multiple Leaders through three mechanisms: → Weighted Confidence Voting, → Decision Graph Merge, and → Fallback Leader Escalation.
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
-### Weighted Confidence Voting
-
-**가중 신뢰도 투표**
-
-A consensus mechanism where multiple Leaders' judgments are aggregated by confidence weights.
-
-### Decision Graph Merge
-
-**의사결정 그래프 병합**
-
-A consensus mechanism where → Decision Graphs from multiple Leaders are unified into a single coherent graph.
-
-### Fallback Leader Escalation
-
-**폴백 리더 에스컬레이션**
-
-Automatic escalation to a senior or alternative Leader when the primary Leader fails or produces insufficient confidence.
-
-### Constitution Validator
-
-**헌법 검증기**
-
-Engine that enforces → Constitution DSL rules at runtime, validating policy compliance at every stage of the decision pipeline.
-
-### Constitution DSL
-
-**헌법 도메인 특화 언어**
-
-A Domain Specific Language that encodes the → Operating Constitution as executable rules enforced at runtime. Example rules include `Enforce_Source_Integrity`, `Validate_Effective_Date`, `Enforce_Decision_Completeness`.
-
-### DSL (Domain Specific Language)
-
-**도메인 특화 언어**
-
-A programming language specialized for a particular application domain. Lawmadi's Constitution DSL is specialized for legal decision policy enforcement.
-
-### Temporal Law Validity Engine
-
-**시간적 법령 유효성 엔진**
-
-Engine that validates whether legal authorities are currently in force, detecting: statute effective dates, precedent changes (appellate reversal, superior court changes), and unconstitutional/void provisions.
-
-### Decision Graph Generator
-
-**의사결정 그래프 생성기**
-
-Engine that constructs formal semantic → Decision Graphs and generates visual decision tree representations.
+</details>
 
 ---
 
 ## 5. Decision Graph
 
-### Decision Graph
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**의사결정 그래프**
+### Decision Graph / 의사결정 그래프
 
-A formal directed graph representing the logical structure of a legal decision. Contains typed nodes (→ Node Typology) connected by semantically labeled edges (→ Edge Semantics). Subject to → Graph Validity Condition.
+A formal directed graph representing the logic of a decision, with typed nodes and labeled edges.
 
-### Node Typology
+### Node Typology / 노드 유형론
 
-**노드 유형론**
+* `FACT_NODE` / 사실관계 노드
+* `ISSUE_NODE` / 법적 쟁점 노드
+* `LAW_NODE` / 법령 노드
+* `PRECEDENT_NODE` / 판례 노드
+* `DECISION_NODE` / 의사결정 노드
 
-The five types of nodes in a Decision Graph:
+### Edge Semantics / 엣지 의미론
 
-| Node | Korean | Description |
-|------|--------|-------------|
-| `FACT_NODE` | 사실관계 노드 | Objective facts from the case |
-| `ISSUE_NODE` | 법적 쟁점 노드 | Legal issues requiring resolution |
-| `LAW_NODE` | 법령 노드 | Applicable statute provisions |
-| `PRECEDENT_NODE` | 판례 노드 | Relevant judicial precedents |
-| `DECISION_NODE` | 의사결정 노드 | Final decision output |
+* `SUPPORTS` / 지지
+* `CONTRADICTS` / 상충
+* `DEPENDS_ON` / 의존
+* `RESOLVES` / 해결
+* `REFERENCES` / 참조
+* `APPLIES` / 적용
+* `OVERRULES` / 번복
+* `TEMPORAL_DEPENDS` / 시간적 의존
 
-### Edge Semantics
+### Graph Validity Condition / 그래프 유효성 조건
 
-**엣지 의미론**
+For every `ISSUE_NODE`, there must exist at least one `LAW_NODE` **and** at least one `EVIDENCE_NODE` that supports it. Otherwise, decision rejected.
 
-The eight types of edges connecting nodes in a Decision Graph:
-
-| Edge | Korean | Meaning |
-|------|--------|---------|
-| `SUPPORTS` | 지지 | Provides grounds / backing |
-| `CONTRADICTS` | 상충 | Conflicts with target node |
-| `DEPENDS_ON` | 의존 | Prerequisite dependency |
-| `RESOLVES` | 해결 | Issue resolution link |
-| `REFERENCES` | 참조 | Reference link |
-| `APPLIES` | 적용 | Statute applies to facts |
-| `OVERRULES` | 번복 | Higher precedent overrules lower |
-| `TEMPORAL_DEPENDS` | 시간적 의존 | Depends on effective date / amendment |
-
-### Graph Validity Condition
-
-**그래프 유효성 조건**
-
-The mandatory rule: for every `ISSUE_NODE`, there must exist at least one `LAW_NODE` AND at least one `EVIDENCE_NODE` that `SUPPORTS` it. If not satisfied → decision rejected.
-
-```
+```text
 ∀ ISSUE_NODE: ∃ LAW_NODE ∧ EVIDENCE_NODE that SUPPORTS it
 ```
+
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
+
+</details>
 
 ---
 
 ## 6. Evidence & Trust
 
-### Evidence
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**증거**
+### Evidence / 증거
 
-A piece of legal information (statute, case law, regulation, guidance) retrieved from an authoritative official source, validated for integrity and temporal validity.
+Legal information (statute/case/regulation/guidance) retrieved from authoritative official sources and validated.
 
-### evidence_set
+### evidence_set / 증거 세트
 
-**증거 세트**
+Canonical evidence structure:
 
-The canonical data structure containing all evidence for a decision:
-
-```
+```json
 {
   "source_origin": "OFFICIAL_API",
-  "items": [...],
+  "items": [],
   "missing": false,
   "evidence_hash": "sha256(hex)",
   "retrieved_at": "ISO-8601",
@@ -371,472 +321,379 @@ The canonical data structure containing all evidence for a decision:
 }
 ```
 
-### Evidence Processing Pipeline
+### Evidence Processing Pipeline / 증거 처리 파이프라인
 
-**증거 처리 파이프라인**
+Authoritative API Query → Normalization → Temporal Validation → SHA-256 Hashing
 
-The four-stage process: Authoritative API Query → Evidence Normalization → Temporal Validation → Evidence Hashing (SHA-256).
+### Evidence Trust Score / 증거 신뢰도 점수
 
-### Evidence Trust Score
+Conceptual composite score (formula proprietary): source authority + citation stability + temporal consistency.
 
-**증거 신뢰도 점수**
+### Temporal Validity / 시간적 유효성
 
-A composite score evaluating evidence trustworthiness based on three conceptual components: source authority weight, citation stability score, and temporal consistency score. Specific formula is proprietary.
+Whether authority is in force at “as-of” time (effective date, repeal, overrule, unconstitutional, etc).
 
-### Source Authority Weight
+### “As-of” Validation / 기준일 검증
 
-**출처 권위 가중치**
+Temporal validation against a specific date (now or user-specified).
 
-A component of → Evidence Trust Score measuring the authoritativeness of the evidence source.
+### Provenance Lineage Tracking / 출처 계보 추적
 
-### Citation Stability Score
+Audit trail of how evidence was fetched/validated/used.
 
-**인용 안정성 점수**
+### Reference-Only Mode / 참고용 모드
 
-A component of → Evidence Trust Score measuring how stable and consistent a legal citation has been over time.
+Policy-permitted degraded mode that provides citations only (no conclusions).
 
-### Temporal Consistency Score
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
-**시간적 일관성 점수**
-
-A component of → Evidence Trust Score measuring whether evidence remains consistent across temporal checks.
-
-### Temporal Validity
-
-**시간적 유효성**
-
-The verification that a legal authority (statute, precedent, regulation) is currently in force at the relevant point in time. Includes effective date checks, repeal/amendment detection, and constitutional validity.
-
-### "As-of" Validation
-
-**기준일 검증**
-
-Temporal validation against a specific date — either the current date or a user-specified historical/future date.
-
-### Provenance Lineage Tracking
-
-**출처 계보 추적**
-
-The complete audit trail of evidence creation, modification, and validation history. Ensures full traceability of how evidence entered and was processed by the system.
-
-### Reference-Only Mode
-
-**참고용 모드**
-
-A degraded output mode (when policy permits) where the system provides citations and references without generating legal conclusions. Used when evidence is available but cannot be fully validated.
+</details>
 
 ---
 
 ## 7. Cryptographic Integrity
 
-### Reproducibility Trust Chain
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**재현성 신뢰 체인**
+### Reproducibility Trust Chain / 재현성 신뢰 체인
 
-The cryptographic chain guaranteeing deterministic reproducibility: Input Hash → Evidence Hash Set → Decision Graph Hash → Decision Token Signature. Same input + same evidence state = same token.
+Input Hash → Evidence Hash → Decision Graph Hash → Decision Token Signature
+Same input + same evidence state = same token.
 
-### Decision Token
+### Decision Token / 의사결정 토큰
 
-**의사결정 토큰**
+Cryptographic artifact attached to outputs (hashes + signature):
 
-The cryptographic artifact attached to every decision output, containing hashes and a signature that enable verification and reproducibility:
-
-```
+```text
 DecisionToken {
   decision_id, created_at, input_hash,
-  constitution_version, drf_evidence_hash,
+  constitution_version, evidence_hash,
   decision_graph_hash, decision_graph_summary,
   digital_signature
 }
 ```
 
-### Evidence Hash
+### Evidence Hash / 증거 해시
 
-**증거 해시**
+SHA-256 over canonical evidence data. Enables tamper detection.
 
-A SHA-256 hash computed over canonicalized evidence data (sorted keys, stable separators). Guarantees evidence integrity and enables tamper detection.
+### Input Hash / 입력 해시
 
-### Input Hash
+SHA-256 of original user input.
 
-**입력 해시**
+### Decision Graph Hash / 의사결정 그래프 해시
 
-A SHA-256 hash of the original user input query. Part of the → Reproducibility Trust Chain.
+SHA-256 of the decision graph structure.
 
-### Decision Graph Hash
+### Digital Signature / 디지털 서명
 
-**의사결정 그래프 해시**
-
-A SHA-256 hash of the complete → Decision Graph structure. Part of the → Reproducibility Trust Chain.
-
-### Digital Signature
-
-**디지털 서명**
-
-An Ed25519 signature applied to the → Decision Token for authenticity and non-repudiation. In production: hardware-backed via → KMS/HSM. In public builds: placeholder value.
+Ed25519 signature over token payload. Production: via → KMS/HSM. Public: placeholder allowed by policy.
 
 ### Ed25519
 
-An elliptic-curve digital signature algorithm used by Lawmadi OS for → Decision Token signing. Chosen for speed, security, and deterministic signature generation.
+Signature algorithm used for token signing (fast, secure).
 
 ### SHA-256
 
-A cryptographic hash function producing a 256-bit digest. Used for → Evidence Hash, → Input Hash, and → Decision Graph Hash throughout the system.
+Hash function used throughout for integrity.
+
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
+
+</details>
 
 ---
 
 ## 8. Security
 
-### Zero Trust Access Model
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**제로 트러스트 접근 모델**
+### Zero Trust Access Model / 제로 트러스트 접근 모델
 
-A security model where no component, user, or service is trusted by default. Every access request is verified regardless of origin. Applied to the → Core Layer.
+No component is trusted by default; every request is verified.
 
-### Gateway Protection
+### Gateway Protection / 게이트웨이 보호
 
-**게이트웨이 보호**
+Entry security: JSON Schema validation, auth, rate limiting, audit logging, output masking.
 
-The security boundary at the system's entry point: input schema validation (JSON Schema), authentication/authorization (→ IAM), rate limiting, full audit logging, and output masking (PII redaction).
+### Prompt Injection / 프롬프트 인젝션
 
-### Prompt Injection
+Attack that tries to override instructions. Defense: user input treated as untrusted; allow-list tool calls; Kernel-enforced FSM.
 
-**프롬프트 인젝션**
+### Tool Injection / 도구 인젝션
 
-An attack where malicious user input attempts to override system instructions. Lawmadi OS defenses: user input treated as untrusted, "ignore previous instructions" patterns stripped, tool call allow-list enforced by Kernel.
+Attack that attempts unauthorized tool execution. Defense: Kernel validates all tool calls and arguments.
 
-### Tool Injection
+### Signature Boundary / 서명 경계
 
-**도구 인젝션**
+Signing keys never reside in Kernel; held in external trust systems (KMS/HSM).
 
-An attack where malicious input attempts to trigger unauthorized tool calls. Defense: LLM may request tools, but Kernel validates all arguments and enforces the allow-list.
+### IAM / 신원 및 접근 관리
 
-### Signature Boundary
+Authentication/authorization system.
 
-**서명 경계**
+### Tamper-Evident / 위변조 감지
 
-The design principle that signing keys never reside inside the Kernel. They are held in external trust systems (→ KMS/HSM). Public builds use placeholder signatures.
+Audit log property: modifications are detectable (append-only).
 
-### IAM (Identity and Access Management)
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
-**신원 및 접근 관리**
-
-The system for authenticating users and authorizing their access to specific resources and operations.
-
-### Tamper-Evident
-
-**위변조 감지**
-
-A property of the audit log system: any modification to logged records is detectable. Achieved through append-only log architecture.
+</details>
 
 ---
 
 ## 9. Data & Cache
 
-### Ephemeral Cache
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**임시 캐시**
+### Ephemeral Cache / 임시 캐시
 
-Short-lived data storage (Redis or in-memory) with a TTL of 10–30 minutes maximum. Used purely for performance acceleration, never as a substitute for → SSOT evidence retrieval. Must be revalidated for temporal conditions.
+Short-lived cache (Redis/in-memory) with TTL 10–30 minutes max; acceleration only, never SSOT replacement.
 
-### TTL (Time To Live)
+### TTL (Time To Live) / 생존 시간
 
-**생존 시간**
+Max time cached data is valid before expiration.
 
-The maximum duration that cached data remains valid before automatic expiration. Lawmadi OS enforces 10–30 minutes for evidence cache.
+### Cache Key / 캐시 키
 
-### Cache Key
+Lookup identifier computed as canonical hash of query structure.
 
-**캐시 키**
+### config.json / 구성 파일
 
-The lookup identifier for cached data, computed as a canonical hash of the `query_struct`.
+Single configuration SSOT controlling runtime (endpoints, TTL, flags, constitution version).
 
-### config.json
+### Case Decision Pattern Data / 사건 의사결정 패턴 데이터
 
-**구성 파일**
+Proprietary pattern intelligence (not statute/precedent text). Allowed for storage when non-reconstructive.
 
-The single configuration file that centrally controls all runtime parameters: API endpoints, cache TTL, feature flags, constitution version, etc. Functions as the configuration → SSOT.
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
-### Case Decision Pattern Data
-
-**사건 의사결정 패턴 데이터**
-
-Proprietary strategic intelligence asset: aggregated patterns of case type → issue structure → selected legal authorities → decision flow → outcome pattern. This data is NOT statute/precedent data and IS permitted for permanent storage.
+</details>
 
 ---
 
 ## 10. LLM Integration
 
-### LLM (Large Language Model)
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**대규모 언어 모델**
+### LLM (Large Language Model) / 대규모 언어 모델
 
-An AI language model (e.g., Claude, GPT, Gemini) used as a → Rendering Engine within the Lawmadi OS architecture. Operates under strict → Kernel control.
+Used strictly as → Rendering Engine under Kernel authority.
 
-### Rendering Engine
+### Rendering Engine / 렌더링 엔진
 
-**렌더링 엔진**
+LLM formats verified evidence & outputs into human-readable language. No decision-making, no validation, no state control.
 
-The designated role of the LLM within Lawmadi OS: formatting verified evidence and decision outputs into human-readable language. The LLM does NOT make decisions, validate evidence, or control state transitions.
+### Model-Agnostic / 모델 비의존적
 
-### Model-Agnostic
+Any LLM can integrate if it follows the contracts.
 
-**모델 비의존적**
+### Integration Contracts / 통합 계약
 
-The design principle that Lawmadi OS can integrate with any LLM that follows the → Integration Contracts, without dependency on specific model features.
+Required contracts: Prompt / Tool / Evidence / Token / Error Codes / Output Schema / Security / Observability / Evaluation harness.
 
-### Integration Contracts
+### Adapter Layer / 어댑터 레이어
 
-**통합 계약**
+Maps model-specific formats (function calling, streaming, limits) to Lawmadi contracts.
 
-The nine contracts any LLM must satisfy:
+### Safe Streaming / 안전 스트리밍
 
-| Contract | Purpose |
-|----------|---------|
-| Prompt Contract | System / Developer / User prompt rules |
-| Tool Contract | Function calling schema |
-| Evidence Contract | `evidence_set` schema + hashing |
-| DecisionToken Contract | Token schema |
-| Error Code Contract | Fail-Closed codes |
-| Output Schema | Strict JSON format |
-| Evaluation Harness | Testing requirements |
-| Security Controls | Injection defense |
-| Observability | Audit and metrics |
+Never stream final conclusions before evidence validation. Final output should be atomic (complete JSON).
 
-### Prompt Contract
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
-**프롬프트 계약**
-
-Rules governing system prompt, developer prompt, and user prompt handling. Defines required instructions, forbidden operations, and the principle that user content is always untrusted input.
-
-### Tool Contract
-
-**도구 계약**
-
-The specification for function calling between the LLM and Kernel. Seven recommended tools: `fetch_evidence`, `validate_evidence`, `temporal_validate`, `build_decision_graph`, `mint_decision_token`, `sign_token`, `audit_log`.
-
-### Adapter Layer
-
-**어댑터 레이어**
-
-A software layer that maps model-specific features (prompt format, function calling schema, streaming behavior, token limits) to the Lawmadi OS standard contracts. Enables → Model-Agnostic integration.
-
-### Safe Streaming
-
-**안전 스트리밍**
-
-The policy that final legal conclusions must never be streamed before evidence validation. Allowed streaming: "working" status messages and clarifying questions. Final output must be atomic (complete JSON).
+</details>
 
 ---
 
 ## 11. Output & Error Codes
 
-### Success Response
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**성공 응답**
+### Success Response / 성공 응답
 
-A JSON output with `fail_closed: false`, containing: `request_id`, `fsm_state`, → Decision Token, summary, known/unknown facts, evidence citations, next actions, and disclaimer.
+Strict JSON output containing request id, fsm_state, token, evidence citations, summary, disclaimer.
 
-### Fail-Closed Response
+### Fail-Closed Response / 페일 클로즈드 응답
 
-**페일 클로즈드 응답**
+Strict JSON refusal including code, stage, required_user_inputs.
 
-A JSON output with `fail_closed: true`, containing: `request_id`, `fsm_state: "HALT"`, error `code`, human-readable message, the FSM stage where failure occurred, and `required_user_inputs` to unblock.
+### Error Codes / 오류 코드
 
-### Error Codes
+Stable identifiers:
 
-**오류 코드**
+* `LC-001` Evidence Unreachable / 증거 소스 연결 불가
+* `LC-002` Evidence Mismatch / 증거 불일치
+* `LC-003` Constitution Violation / 헌법 위반(스키마/필수 사실 누락 포함)
+* `LC-004` Temporal Invalidity / 시간적 무효
+* `LC-005` Policy Restriction / 정책 제한
+* `LC-006` Rate Limited / 속도 제한
 
-Stable, semantic error identifiers:
+### Disclaimer / 면책 조항
 
-| Code | Name | Korean | Meaning |
-|------|------|--------|---------|
-| `LC-001` | Evidence Unreachable | 증거 소스 연결 불가 | Authoritative source cannot be reached |
-| `LC-002` | Evidence Mismatch | 증거 불일치 | Non-authoritative source, integrity failure |
-| `LC-003` | Constitution Violation | 헌법 위반 | Invalid schema, missing required fields |
-| `LC-004` | Temporal Invalidity | 시간적 무효 | Statute not effective, expired, or repealed |
-| `LC-005` | Policy Restriction | 정책 제한 | Request in disallowed category |
-| `LC-006` | Rate Limited | 속도 제한 | Throttled, retry after delay |
+Standard disclaimer appended to every output.
 
-### Disclaimer
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
-**면책 조항**
-
-Standard text appended to every output:
-
-> "본 답변은 일반 정보 제공 및 의사결정 지원 목적이며, 법률자문이 아닙니다. 구체적 사안은 사실관계에 따라 달라질 수 있으므로, 중요한 의사결정 전에는 전문가 상담을 권장합니다."
+</details>
 
 ---
 
 ## 12. Infrastructure
 
-### Cloud Run
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**클라우드 런**
+### Cloud Run / 클라우드 런
 
-Google Cloud's containerized microservice platform used for Lawmadi OS deployment. Provides autoscaling and VPC isolation.
+Containerized microservice platform used for deployment (autoscaling, isolation).
 
-### VPC (Virtual Private Cloud)
+### VPC / 가상 사설 클라우드
 
-**가상 사설 클라우드**
+Network isolation for security boundaries.
 
-Network-level isolation for all system components, ensuring security boundaries between services.
+### KMS / 키 관리 서비스
 
-### KMS (Key Management Service)
+Hardware-backed key storage for signing keys.
 
-**키 관리 서비스**
+### HSM / 하드웨어 보안 모듈
 
-A cloud service (e.g., Google Cloud KMS) providing hardware-backed key storage for → Ed25519 signing keys. Keys never leave the HSM boundary.
+Dedicated cryptographic processor safeguarding keys.
 
-### HSM (Hardware Security Module)
+### Append-Only Audit Log / 추가 전용 감사 로그
 
-**하드웨어 보안 모듈**
+Records can be appended only; tamper-evident.
 
-A dedicated cryptographic processor that safeguards signing keys. Used in production for → Digital Signature generation.
+### Circuit Breaker / 회로 차단기
 
-### Append-Only Audit Log
+Resilience pattern to avoid cascading failures.
 
-**추가 전용 감사 로그**
+### Decision Trace ID / 의사결정 추적 ID
 
-A tamper-resistant logging system where records can only be appended, never modified or deleted. Ensures complete traceability and → Tamper-Evident properties.
+Unique ID tracing an execution across FSM, tools, evidence, outputs.
 
-### Circuit Breaker
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
-**회로 차단기**
-
-A resilience pattern that prevents cascading failures: when a downstream service (e.g., authoritative API) fails repeatedly, the circuit "opens" and requests are immediately refused rather than queued.
-
-### Decision Trace ID
-
-**의사결정 추적 ID**
-
-A unique identifier that traces the complete path of a decision through all FSM states, tool calls, and evidence operations. Enables full reproducibility and debugging.
+</details>
 
 ---
 
 ## 13. Platform & Business
 
-### Core Layer
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**코어 레이어**
+### Core Layer / 코어 레이어
 
-The innermost platform layer containing the closed proprietary kernel engine. Houses all IP and constitutional logic. Protected by → Zero Trust Access.
+Closed proprietary kernel layer containing IP & constitutional enforcement.
 
-### Service Layer
+### Service Layer / 서비스 레이어
 
-**서비스 레이어**
+User-facing UX layer; no access to Core internal logic.
 
-The user-facing platform layer providing consultation AI, → Friendly Secretary UX, and case exploration. Has no access to Core internal logic.
+### Partner / B2B Layer / 파트너·기관 서비스 레이어
 
-### Partner / B2B Layer
+Institutional APIs (verification/validation/case structuring), governed by IAM and audit.
 
-**파트너 / B2B 레이어**
+### Friendly Secretary UX / 친절한 비서 UX
 
-The institutional platform layer providing APIs for law firms, corporations, insurers, and government agencies: Decision Verification API, Evidence Validation API, Case Structuring API.
+Guided, structured, step-by-step experience for non-experts.
 
-### Friendly Secretary UX
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
-**친절한 비서 UX**
-
-The user experience design philosophy for the → Service Layer: guiding users through legal situations with a warm, structured, step-by-step conversational interface rather than exposing raw system complexity.
+</details>
 
 ---
 
 ## 14. Legal Domain
 
-### DRF (Open Data API)
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
 
-**국가법령정보센터 오픈 API**
+### DRF (Open Data API) / 국가법령정보센터 오픈 API
 
-The Korean National Law Information Center's public API providing access to statutes, precedents, and regulations. Lawmadi OS's designated → SSOT for Korean law.
+Designated SSOT for Korean law evidence retrieval.
 
-### Statute
+### Statute / 법령·법률
 
-**법령 / 법률**
+Law enacted by legislature (→ LAW_NODE).
 
-A law enacted by a legislative body. Represented as → LAW_NODE in the Decision Graph.
+### Precedent / 판례
 
-### Precedent
+Judicial decision used as authority (→ PRECEDENT_NODE).
 
-**판례**
+### Regulation / 규정·규칙
 
-A judicial decision that serves as authority for future cases. Represented as → PRECEDENT_NODE in the Decision Graph.
+Agency rules implementing statutes.
 
-### Regulation
+### Effective Date / 시행일
 
-**규정 / 규칙**
+Date a statute/regulation comes into force (key for temporal validity).
 
-A rule issued by a government agency to implement a statute.
+### Repeal / 폐지
 
-### Effective Date
+Revocation of a statute (no longer in force).
 
-**시행일**
+### Unconstitutional / 위헌
 
-The date on which a statute or regulation comes into legal force. A critical input to → Temporal Validity checking.
+Constitutional invalidation rendering a provision void.
 
-### Repeal
+### Overrule / 번복·파기
 
-**폐지**
+Higher court reversal (→ `OVERRULES` edge).
 
-The legislative act of revoking a statute, rendering it no longer in force. Detected by the → Temporal Law Validity Engine.
+### Conflict of Law / 준거법·법률 충돌
 
-### Unconstitutional
+Which jurisdiction’s law applies in multi-jurisdiction cases.
 
-**위헌**
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
-A ruling by a constitutional court that a statute or provision violates the constitution, rendering it void. Detected by the → Temporal Law Validity Engine.
-
-### Overrule
-
-**번복 / 파기**
-
-A higher court's reversal of a lower court's precedent. Represented by the `OVERRULES` edge in → Edge Semantics.
-
-### Conflict of Law
-
-**준거법 / 법률 충돌**
-
-Rules determining which jurisdiction's law applies when multiple jurisdictions are involved. Must be explicitly modeled in the → Decision Graph for multi-jurisdiction operations.
+</details>
 
 ---
 
 ## 15. Acronyms
 
-| Acronym | Full Term | Korean |
-|---------|-----------|--------|
-| LDOS | Legal Decision Operating System | 법률 의사결정 운영체제 |
-| FSM | Finite State Machine | 유한 상태 기계 |
-| SSOT | Single Source of Truth | 단일 진실 공급원 |
-| DSL | Domain Specific Language | 도메인 특화 언어 |
-| DRF | Data Request Framework (National Law Info Center API) | 국가법령정보센터 API |
-| LLM | Large Language Model | 대규모 언어 모델 |
-| KMS | Key Management Service | 키 관리 서비스 |
-| HSM | Hardware Security Module | 하드웨어 보안 모듈 |
-| IAM | Identity and Access Management | 신원 및 접근 관리 |
-| VPC | Virtual Private Cloud | 가상 사설 클라우드 |
-| TTL | Time To Live | 생존 시간 |
-| PII | Personally Identifiable Information | 개인 식별 정보 |
-| API | Application Programming Interface | 응용 프로그램 인터페이스 |
-| UX | User Experience | 사용자 경험 |
-| B2B | Business to Business | 기업 간 거래 |
-| DOI | Digital Object Identifier | 디지털 객체 식별자 |
-| RAG | Retrieval-Augmented Generation | 검색 증강 생성 |
-| SaaS | Software as a Service | 서비스형 소프트웨어 |
-| IaC | Infrastructure as Code | 코드형 인프라 |
-| CI/CD | Continuous Integration / Continuous Deployment | 지속적 통합 / 배포 |
+<details>
+<summary><strong>Expand / 펼치기</strong></summary>
+
+* **LDOS** — Legal Decision Operating System / 법률 의사결정 운영체제
+* **FSM** — Finite State Machine / 유한 상태 기계
+* **SSOT** — Single Source of Truth / 단일 진실 공급원
+* **DSL** — Domain Specific Language / 도메인 특화 언어
+* **DRF** — National Law Info Center API / 국가법령정보센터 API
+* **LLM** — Large Language Model / 대규모 언어 모델
+* **KMS** — Key Management Service / 키 관리 서비스
+* **HSM** — Hardware Security Module / 하드웨어 보안 모듈
+* **IAM** — Identity and Access Management / 신원 및 접근 관리
+* **VPC** — Virtual Private Cloud / 가상 사설 클라우드
+* **TTL** — Time To Live / 생존 시간
+* **PII** — Personally Identifiable Information / 개인 식별 정보
+* **RAG** — Retrieval-Augmented Generation / 검색 증강 생성
+* **IaC** — Infrastructure as Code / 코드형 인프라
+* **CI/CD** — Continuous Integration / Deployment / 지속적 통합·배포
+
+<p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
+
+</details>
 
 ---
 
 ## Document Cross-References
 
-| Document | Relationship |
-|----------|-------------|
-| [INDEX.md](INDEX.md) | Master navigation hub |
-| [OVERVIEW.md](OVERVIEW.md) | Plain-language introduction |
-| [README.md](README.md) | Repository overview |
-| [ARCHITECTURE.md](ARCHITECTURE.md) | Detailed architectural reference |
-| [llms.txt](llms.txt) | Canonical LLM integration specification |
-| [LICENSE.txt](LICENSE.txt) | Proprietary license terms |
-| [CITATION.cff](CITATION.cff) | Citation metadata |
+<p align="left">
+  <a href="./INDEX.md"><img alt="INDEX" src="https://img.shields.io/badge/INDEX-navigation-0ea5e9" /></a>
+  <a href="./OVERVIEW.md"><img alt="OVERVIEW" src="https://img.shields.io/badge/OVERVIEW-intro-0ea5e9" /></a>
+  <a href="./README.md"><img alt="README" src="https://img.shields.io/badge/README-repo%20overview-0ea5e9" /></a>
+  <a href="./ARCHITECTURE.md"><img alt="ARCHITECTURE" src="https://img.shields.io/badge/ARCHITECTURE-reference-0ea5e9" /></a>
+  <a href="./llms.md"><img alt="llms.md" src="https://img.shields.io/badge/llms.md-canonical%20spec-2563eb" /></a>
+  <a href="./LICENSE"><img alt="LICENSE" src="https://img.shields.io/badge/LICENSE-legal%20authority-ef4444" /></a>
+  <a href="./CITATION.cff"><img alt="CITATION.cff" src="https://img.shields.io/badge/CITATION.cff-cite-a855f7" /></a>
+</p>
 
 ---
 
