@@ -80,8 +80,7 @@ references:
     month: 2
     version: "v3.0-Final"
     url: "https://github.com/peter120525-cmd/Lawmadi-Public/tree/main/docs"
-    notes: "LDOS Reference Architecture v3.0"
-
+  
   - type: report
     title: "llms.txt — Lawmadi OS Unified LLM Directive & Global Legal Decision Intelligence Standard"
     authors:
@@ -91,7 +90,6 @@ references:
     month: 2
     version: "v2.1-Unified"
     url: "https://github.com/peter120525-cmd/Lawmadi-Public/blob/main/llms.txt"
-    notes: "Canonical operational directive for AI agents and LLM integration (Spec Minor Update)"
 
 preferred-citation:
   type: software
