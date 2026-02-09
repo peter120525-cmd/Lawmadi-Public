@@ -1,307 +1,124 @@
 # Lawmadi OS — Repository Index
 
-**Legal Decision Operating System (LDOS) · v2.0-Unified**
+<p align="left">
+  <a href="https://doi.org/10.5281/zenodo.18525310">
+    <img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.18525310.svg" />
+  </a>
+  <img alt="release" src="https://img.shields.io/badge/release-v2.0.0-informational" />
+  <img alt="ldos" src="https://img.shields.io/badge/LDOS-deterministic%20FSM-2563eb" />
+  <img alt="policy" src="https://img.shields.io/badge/policy-SSOT%20%7C%20Zero%20Inference%20%7C%20Fail--Closed-0ea5e9" />
+  <img alt="license" src="https://img.shields.io/badge/license-proprietary-critical" />
+</p>
+
+**Legal Decision Operating System (LDOS) · v2.0.0 (Public / Sanitized)**  
 **Copyright © 2026 Jainam Choe (최재남). All rights reserved.**
 
----
-
-## Quick Navigation
-
-> **First time here?** Start with [OVERVIEW.md](OVERVIEW.md).
-> **Developer / Evaluator?** Go to [README.md](README.md).
-> **Architect / Engineer?** Read [ARCHITECTURE.md](ARCHITECTURE.md).
-> **Building an LLM integration?** The canonical spec is [llms.txt](llms.txt).
-> **Looking up a term?** See [GLOSSARY.md](GLOSSARY.md).
-> **Setting up a runtime?** Start with [minimal_config.json](minimal_config.json).
+> **Lawmadi OS is NOT a chatbot, NOT a search engine, NOT a legal database.**  
+> It is a **deterministic decision infrastructure** that generates **evidence-gated outputs** under non-negotiable constitutional constraints.
 
 ---
 
-## Document Map
+## Quick Links (Start Here)
 
-### 📘 Orientation
+<p align="left">
+  <a href="./OVERVIEW.md"><img alt="OVERVIEW" src="https://img.shields.io/badge/Start-OVERVIEW.md-22c55e" /></a>
+  <a href="./README.md"><img alt="README" src="https://img.shields.io/badge/Guide-README.md-0ea5e9" /></a>
+  <a href="./ARCHITECTURE.md"><img alt="ARCHITECTURE" src="https://img.shields.io/badge/Design-ARCHITECTURE.md-6366f1" /></a>
+  <a href="./llms.md"><img alt="LLMS (Readable)" src="https://img.shields.io/badge/Human%20Spec-llms.md-a855f7" /></a>
+  <a href="./llms.txt"><img alt="LLMS (Canonical)" src="https://img.shields.io/badge/Canonical-llms.txt-111827" /></a>
+  <a href="./glossary.md"><img alt="GLOSSARY" src="https://img.shields.io/badge/Terms-glossary.md-f59e0b" /></a>
+  <a href="./minimal_config.json"><img alt="CONFIG" src="https://img.shields.io/badge/Run-minimal__config.json-64748b" /></a>
+</p>
 
-| Document | Purpose | Audience | Read Time |
-|----------|---------|----------|-----------|
-| **[INDEX.md](INDEX.md)** | This file — master navigation hub | Everyone | 3 min |
-| **[OVERVIEW.md](OVERVIEW.md)** | What Lawmadi OS is, why it matters, who it's for | Anyone (non-technical OK) | 8 min |
-| **[README.md](README.md)** | Repository overview, quick start, tech summary | Developers, evaluators | 10 min |
-| **[GLOSSARY.md](GLOSSARY.md)** | Comprehensive bilingual glossary — 100+ terms across 15 domains | Everyone | Reference |
-
-### 🏗️ Architecture & Specification
-
-| Document | Purpose | Audience | Read Time |
-|----------|---------|----------|-----------|
-| **[ARCHITECTURE.md](ARCHITECTURE.md)** | Detailed architectural reference with ASCII diagrams — platform layers, FSM, engines, pipelines, infrastructure | Architects, system engineers | 25 min |
-| **[llms.txt](llms.txt)** | **Canonical reference.** Unified LLM Directive & Global Legal Decision Intelligence Standard — all principles, contracts, schemas, error codes, security, and testing requirements | LLMs, AI agents, integration developers | 40 min |
-| **[docs/Whitepaper (PDF)](docs/)** | Public Technical Whitepaper v2.0 (Sanitized) — formal bilingual (KR/EN) document covering architecture, engines, security, data governance, global applicability, roadmap | Partners, investors, regulatory reviewers | 30 min |
-
-### ⚙️ Configuration & Schemas
-
-| Document | Purpose | Audience |
-|----------|---------|----------|
-| **[config.schema.json](config.schema.json)** | JSON Schema (Draft 2020-12) defining all 15 configurable sections of the runtime — constitution enforcement, FSM, evidence, temporal, graph, token, routing, cache, security, gateway, observability, output, LLM integration, safety | Developers, DevOps, integrators |
-| **[minimal_config.json](minimal_config.json)** | Copy-paste-ready minimal configuration example conforming to the schema — public-sandbox defaults, all constitutional constraints enforced, PLACEHOLDER signatures, SECRET: references for production values | Developers, evaluators |
-
-### ⚖️ Legal & Citation
-
-| Document | Purpose | Audience |
-|----------|---------|----------|
-| **[LICENSE.txt](LICENSE.txt)** | Comprehensive Proprietary License v2.0 — 14 IP categories, 60+ components, AI training prohibition, competitive use restrictions | Anyone using or referencing this repository |
-| **[CITATION.cff](CITATION.cff)** | Machine-readable citation metadata (CFF 1.2.0) with preferred citation format, keywords, and cross-references | Researchers, academic/technical publications |
-
-### 🔧 Runtime
-
-| File | Purpose |
-|------|---------|
-| **[self_test.py](self_test.py)** | Local smoke test — run `python self_test.py` to verify basic kernel operation |
-| **[PROGRAM_DESCRIPTION.txt](PROGRAM_DESCRIPTION.txt)** | Program description for IP submission |
-| **[README_IP_Showcase.txt](README_IP_Showcase.txt)** | IP showcase documentation |
-
-### 📁 Source Directories
-
-| Directory | Contents | Public Status |
-|-----------|----------|---------------|
-| `kernel/` | Runtime FSM & coordinator | Sanitized |
-| `constitution/` | Constitution rules & DSL validation engine | Sanitized |
-| `decision/` | Decision engine, graph semantics, token generator | Sanitized |
-| `evidence/` | Evidence builder, hashing, trust scoring scaffolds | Sanitized |
-| `swarm/` | Leader routing concept modules | Sanitized |
-| `temporal/` | Temporal law validity scaffolds | Sanitized |
-| `security/` | Audit logger + signature interface boundary | Sanitized |
-| `schemas/` | Canonical schemas (case / evidence / decision / token) | Sanitized |
-| `core/` | Parser / extractor / tree builder scaffolds | Sanitized |
-| `docs/` | Public whitepaper and supporting documents | Public |
+**What should I click?**
+- 처음 오셨다면 → **[OVERVIEW.md](OVERVIEW.md)**  
+- 빠르게 레포를 평가/실행하고 싶다면 → **[README.md](README.md)** + **[minimal_config.json](minimal_config.json)**  
+- 설계/철학/규칙(SSOT·Fail-Closed)까지 깊게 보고 싶다면 → **[ARCHITECTURE.md](ARCHITECTURE.md)**  
+- LLM 통합 스펙(사람용) → **[llms.md](llms.md)**  
+- LLM 통합 스펙(표준본, 텍스트) → **[llms.txt](llms.txt)**  
+- 용어가 헷갈리면 → **[glossary.md](glossary.md)**
 
 ---
 
-## Complete File Inventory
+## What’s Inside (At a Glance)
 
-All public repository files at a glance:
+### Orientation (비기너/비기술도 OK)
+- **[OVERVIEW.md](OVERVIEW.md)** — Lawmadi OS가 무엇인지/왜 필요한지
+- **[README.md](README.md)** — 설치/실행/구성 요약
+- **[glossary.md](glossary.md)** — 핵심 용어 사전(참조용)
 
-```
-Lawmadi-Public/
-│
-├── INDEX.md                    ← You are here (master navigation)
-├── OVERVIEW.md                 ← What & why (plain language)
-├── README.md                   ← Repo overview & quick start
-├── GLOSSARY.md                 ← 100+ terms, 15 domains, bilingual
-├── ARCHITECTURE.md             ← Detailed design with diagrams
-├── llms.txt                    ← Canonical LLM integration spec
-│
-├── config.schema.json          ← Runtime config JSON Schema
-├── minimal_config.json         ← Copy-paste config example
-│
-├── LICENSE.txt                 ← Proprietary license (14 IP categories)
-├── CITATION.cff                ← Citation metadata
-│
-├── self_test.py                ← Local smoke test
-├── PROGRAM_DESCRIPTION.txt     ← IP submission description
-├── README_IP_Showcase.txt      ← IP showcase documentation
-│
-├── Lawmadi_OS_Public_Technical_Whitepaper_v2_0_Sanitized.pdf
-│
-├── kernel/                     ← FSM & coordinator (sanitized)
-├── constitution/               ← DSL rules & validation (sanitized)
-├── decision/                   ← Graph, token generator (sanitized)
-├── evidence/                   ← Hashing, trust scoring (sanitized)
-├── swarm/                      ← Leader routing (sanitized)
-├── temporal/                   ← Temporal validity (sanitized)
-├── security/                   ← Audit, signature boundary (sanitized)
-├── schemas/                    ← Canonical data schemas (sanitized)
-├── core/                       ← Parser, extractor (sanitized)
-└── docs/                       ← Whitepaper & supporting docs
-```
+### Architecture & Specs (설계/검증/표준)
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** — 플랫폼 레이어, FSM, 엔진, 증거 파이프라인, 보안/데이터 거버넌스
+- **[llms.md](llms.md)** — GitHub 렌더링 최적화 “사람용” LLM 통합 스펙
+- **[llms.txt](llms.txt)** — “기계/에이전트용” Canonical 텍스트 표준 (렌더링 없음)
+
+### Configuration (구성/배포/통합)
+- **[config.schema.json](config.schema.json)** — 런타임 설정 스키마(전체 계약)
+- **[minimal_config.json](minimal_config.json)** — 바로 실행 가능한 최소 구성 예시(공개/샌드박스)
+
+### Legal & Citation (라이선스/인용)
+- **[LICENSE](LICENSE)** — Proprietary License (재사용/학습/경쟁 제한 포함)
+- **[CITATION.cff](CITATION.cff)** — 인용 메타데이터(학술/기술문서)
+
+### Whitepaper (PDF)
+- **Lawmadi_OS_Public_Technical_Whitepaper_… .pdf** — 공개/정제 기술백서 (레포 루트에 존재)
 
 ---
 
-## Reading Paths
+## Recommended Reading Paths
 
-Different readers need different paths through the documentation. Choose yours:
+<details>
+<summary><strong>🟢 Path A — “이게 뭔지 10분 안에 이해하고 싶어요”</strong></summary>
 
-### 🟢 Path A: "I just want to understand what this is"
+1) [OVERVIEW.md](OVERVIEW.md)  
+2) [README.md](README.md)  
+3) (필요시) [glossary.md](glossary.md)
 
-```
-INDEX.md (you are here)
-  └──> OVERVIEW.md               What & why, in plain language
-         └──> docs/Whitepaper    Formal bilingual reference (optional)
-                └──> GLOSSARY.md Look up any unfamiliar term
-```
+</details>
 
-### 🔵 Path B: "I want to evaluate the code"
+<details>
+<summary><strong>🔵 Path B — “코드/구성을 평가하고 싶어요”</strong></summary>
 
-```
-INDEX.md (you are here)
-  └──> README.md                 Quick start + repo layout
-         ├──> self_test.py       Run the smoke test
-         ├──> minimal_config.json  See the runtime config
-         └──> ARCHITECTURE.md    Understand the design
-                └──> llms.txt    Deep-dive into contracts & schemas
-```
+1) [README.md](README.md)  
+2) [minimal_config.json](minimal_config.json)  
+3) [config.schema.json](config.schema.json)  
+4) [ARCHITECTURE.md](ARCHITECTURE.md)
 
-### 🟣 Path C: "I'm building an LLM integration"
+</details>
 
-```
-INDEX.md (you are here)
-  └──> llms.txt                  THE canonical spec (start here)
-         ├──> config.schema.json Full config schema reference
-         ├──> minimal_config.json Copy-paste starting point
-         ├──> ARCHITECTURE.md    Visual architecture reference
-         ├──> schemas/           Canonical data schemas
-         └──> GLOSSARY.md        Term reference
-```
+<details>
+<summary><strong>🟣 Path C — “LLM 통합을 만들고 있어요”</strong></summary>
 
-### 🟠 Path D: "I'm a partner / investor / regulator"
+1) [llms.md](llms.md) (사람용 빠른 스캔)  
+2) [llms.txt](llms.txt) (Canonical 표준본)  
+3) [config.schema.json](config.schema.json)  
+4) [minimal_config.json](minimal_config.json)  
+5) (용어 막히면) [glossary.md](glossary.md)
 
-```
-INDEX.md (you are here)
-  └──> OVERVIEW.md               High-level value proposition
-         └──> docs/Whitepaper    Formal reference document
-                ├──> ARCHITECTURE.md    Technical depth (optional)
-                └──> LICENSE.txt        IP protection terms
-```
+</details>
 
-### 🔴 Path E: "I want to cite this work"
+<details>
+<summary><strong>🟠 Path D — “파트너/투자/리뷰 목적이에요”</strong></summary>
 
-```
-INDEX.md (you are here)
-  └──> CITATION.cff              Machine-readable citation
-         └──> LICENSE.txt        Attribution requirements (Section 8)
-```
+1) [OVERVIEW.md](OVERVIEW.md)  
+2) Whitepaper PDF (레포 루트)  
+3) (IP/제한 확인) [LICENSE](LICENSE)
 
-### 🟡 Path F: "I'm configuring or deploying the system"
+</details>
 
-```
-INDEX.md (you are here)
-  └──> config.schema.json        Full schema with all 15 sections
-         └──> minimal_config.json  Copy-paste baseline config
-                ├──> ARCHITECTURE.md § Infrastructure  Deployment topology
-                └──> llms.txt § Tool Contract          Required tools
-```
+<details>
+<summary><strong>🔴 Path E — “인용하려고 합니다”</strong></summary>
+
+1) [CITATION.cff](CITATION.cff)  
+2) [LICENSE](LICENSE) (인용/표기 조건 확인)
+
+</details>
 
 ---
 
 ## System at a Glance
 
-```
-                    ┌──────────────────────────────┐
-                    │         LAWMADI OS            │
-                    │  Legal Decision Operating     │
-                    │         System                │
-                    └──────────────┬───────────────┘
-                                   │
-                 ┌─────────────────┼─────────────────┐
-                 │                 │                 │
-          ┌──────▼──────┐  ┌──────▼──────┐  ┌──────▼──────┐
-          │   CORE      │  │  SERVICE    │  │  PARTNER    │
-          │   LAYER     │  │  LAYER      │  │  / B2B      │
-          │             │  │             │  │             │
-          │ Decision    │  │ Consultation│  │ Verification│
-          │ Kernel      │  │ AI          │  │ API         │
-          │ Evidence    │  │ Friendly    │  │ Evidence    │
-          │ Engine      │  │ Secretary   │  │ Validation  │
-          │ Routing     │  │ UX          │  │ API         │
-          │ Constitution│  │ Case        │  │ Case        │
-          │ Temporal    │  │ Explorer    │  │ Structuring │
-          │ Graph       │  │             │  │ API         │
-          │ Crypto      │  │             │  │             │
-          └─────────────┘  └─────────────┘  └─────────────┘
-               Closed          Open UX         Controlled
-            Proprietary      No Core Access     IAM + Audit
-```
-
-### Five Constitutional Principles
-
-| # | Principle | One-Liner |
-|---|-----------|-----------|
-| 1 | **SSOT** | One source. The official one. Nothing else. |
-| 2 | **Zero Inference** | If we don't have evidence, we don't say it. |
-| 3 | **Fail-Closed** | Better to refuse than to guess wrong. |
-| 4 | **Live Evidence** | The law changed today? We know. |
-| 5 | **Deterministic Boundary** | AI writes words. The Kernel makes decisions. |
-
-### Decision Flow
-
-```
-Input → Structure → Issues → Route → Fetch → Validate → Graph → Token → Sign → Deliver
-                                                  │
-                                              FAIL? → HALT → Refuse (with reason)
-```
-
----
-
-## Configuration Quick Reference
-
-The runtime is controlled by a single `config.json` (Configuration SSOT). Key sections:
-
-| Section | Controls | Constitutional Constraints |
-|---------|----------|--------------------------|
-| `constitution` | 5 principles enforcement | All `const: true` — cannot disable |
-| `fsm` | State sequence, timeouts | `mandatory_gate: EVIDENCE_VALIDATED` fixed |
-| `evidence` | SSOT sources, pipeline, integrity | `reject_non_official_source: true` fixed |
-| `temporal` | Validity checks, unknown status action | `enabled: true` fixed |
-| `decision_graph` | Node/edge types, validity condition | `validity_condition_enabled: true` fixed |
-| `decision_token` | Signature algorithm, key source | `Ed25519` fixed, key in KMS/HSM |
-| `leader_swarm` | Concurrent leaders, consensus method | Weights proprietary |
-| `cache` | Backend, TTL, revalidation | Max 1800s (30 min constitutional limit) |
-| `security` | Injection defense, secret management | `secrets_in_prompts: false` fixed |
-| `gateway` | Rate limiting, auth, input validation | `audit_logging: true` fixed |
-| `observability` | Audit log, metrics, trace | `append_only: true` fixed |
-| `output` | Format, error codes, disclaimer, streaming | `atomic_final_output: true` fixed |
-| `llm_integration` | LLM role, contracts, adapter | `role: rendering_engine` fixed |
-| `safety` | Operating mode, compliance | `informational_decision_support` fixed |
-
-→ Full schema: [config.schema.json](config.schema.json)
-→ Ready-to-use example: [minimal_config.json](minimal_config.json)
-
----
-
-## Version History
-
-| Version | Date | Changes |
-|---------|------|---------|
-| **v2.0-Unified** | 2026-02-09 | Added: GLOSSARY.md (100+ terms, 15 domains, bilingual), config.schema.json (JSON Schema Draft 2020-12, 15 configurable sections), minimal_config.json (copy-paste config). Updated INDEX.md with complete file inventory, configuration quick reference, and Path F for deployers. |
-| v2.0-Unified | 2026-02-08 | Unified all documents from whitepaper v3.0-Final + llms.txt v1.0 + index. Added: 5th constitutional principle (Deterministic Runtime Boundary), Decision Graph semantics, Evidence Trust Protocol, Constitution DSL rules, global multi-jurisdiction framework, output schema with LC-001–006, LLM integration contracts, ARCHITECTURE.md, OVERVIEW.md, INDEX.md, updated LICENSE v2.0 (14 IP categories), CITATION.cff v2.0, Public Whitepaper PDF v2.0. |
-| v1.2 FINAL | 2026-01-27 | Original Decision Kernel release. README, llms.txt v1.0, LICENSE v1.0, CITATION.cff v1.0. |
-| v1.0 | 2026-01 | Initial public/sanitized showcase. |
-
----
-
-## Excluded from Public Repository
-
-To protect security and trade secrets, this repository **does not contain**:
-
-- Routing scoring formulas, weights, and exception handling
-- Full Constitution DSL rule set and exception logic
-- Evidence Trust Score specific formulas and weights
-- Operational configs, endpoints, API keys, request patterns
-- Deployment infrastructure (IaC, CI/CD, security policies)
-- LLM provider routing logic
-- Production data, user data, evaluation datasets
-- KMS/HSM key material and production signature configurations
-
-See [Section 16 of ARCHITECTURE.md](ARCHITECTURE.md#16-non-public-assets) for the complete list.
-
----
-
-## License
-
-**Proprietary.** All technologies enumerated in [llms.txt](llms.txt) are protected under [LICENSE.txt](LICENSE.txt) — 14 IP categories covering 60+ proprietary components.
-
-- ✅ Read, review, local non-production evaluation, academic citation
-- ❌ Production use, redistribution, derivatives, AI/ML training, competitive use, commercial use
-
----
-
-## Contact
-
-**Jainam Choe (최재남)**
-**Email:** choepeter@outlook.kr
-
-For licensing, commercial permissions, partnership proposals, or technical inquiries.
-
----
-
-© 2026 Jainam Choe (최재남). All rights reserved.
-
-**Lawmadi OS** — Decision Intelligence Infrastructure for Computable Trust in Law.
-**법률 의사결정을 위한 운영체제이며, 법률 영역에서 Computable Trust를 실현한다.**
+```text
+OS (Kernel)  →  Evidence Engine (Trust)  →  Service (UX)  →  Platform (Ecosystem)
+Deterministic     Live Evidence + Hash       Conversational     Education / B2B
+FSM Runtime       SSOT Validation            Rendering only     Controlled access
