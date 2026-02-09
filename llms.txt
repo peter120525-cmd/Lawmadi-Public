@@ -25,7 +25,7 @@ SCHEMA VERSIONS
 
 REFERENCES / QUICK LINKS (PLAIN TEXT)
 
-* DOI: [https://doi.org/10.5281/zenodo.18525310](https://doi.org/10.5281/zenodo.18525310)
+* DOI: [https://doi.org/10.5281/zenodo.18551976](https://doi.org/10.5281/zenodo.18551976)
 * docs/: ./docs/
 * LICENSE: ./LICENSE.txt
 * CITATION: ./CITATION.cff
