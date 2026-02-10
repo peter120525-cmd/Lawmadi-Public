@@ -1,8 +1,8 @@
 # Lawmadi OS — Repository Index
 
 <p align="left">
-  <a href="https://doi.org/10.5281/zenodo.18525310">
-    <img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.18525310.svg" />
+  <a href="https://doi.org/10.5281/zenodo.18551976">
+    <img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.18551976.svg" />
   </a>
   <img alt="release" src="https://img.shields.io/badge/release-v2.0.0-informational" />
   <img alt="ldos" src="https://img.shields.io/badge/LDOS-deterministic%20FSM-2563eb" />
