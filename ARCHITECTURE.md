@@ -10,9 +10,9 @@
   <img alt="license" src="https://img.shields.io/badge/license-proprietary%20(no%20reuse)-critical" />
 </p>
 
-**Document Version:** 3.0 *(Public/Sanitized)*
-**Repository Release:** v2.0.0
-**Date:** 2026-02-09
+**Document Version:** 3.1 *(Public/Sanitized)*
+**Repository Release:** v60.0.0
+**Date:** 2026-03-11
 
 > **“Convert Anxiety into Actionable Logic.”**
 > **“불안을 실행 가능한 논리로 전환하다.”**
@@ -25,7 +25,7 @@
   <a href="./llms.txt">
     <img alt="Quick Link: llms.txt" src="https://img.shields.io/badge/Quick%20Link-llms.txt-0ea5e9" />
   </a>
-  <a href="./LICENSE.txt">
+  <a href="./LICENSE">
     <img alt="Quick Link: LICENSE" src="https://img.shields.io/badge/Quick%20Link-LICENSE-22c55e" />
   </a>
   <a href="./CITATION.cff">
@@ -44,7 +44,7 @@ This document provides a **public, sanitized architectural overview** of **Lawma
 * ✅ Generates **reproducible, verifiable decision artifacts (non-binding)** grounded in **live evidence**
 * ✅ Evidence is fetched from designated **SSOT endpoints in real time** (no durable replication of legal texts)
 * 🔗 For LLM integration: **llms.txt** *(Directive v2.1-Unified)*
-* 🔒 For licensing: **LICENSE.txt**
+* 🔒 For licensing: **LICENSE**
 
 ---
 
@@ -450,7 +450,7 @@ Excluded from this public reference:
 <summary><strong>17. Cross-Reference Map (Public Artifacts)</strong></summary>
 
 * **Integration Directive**: llms.txt *(Directive v2.1-Unified)* — canonical guide for AI agents
-* **License Terms**: LICENSE.txt *(v2.0)* — legal terms of use and IP restrictions
+* **License Terms**: LICENSE *(v2.0)* — legal terms of use and IP restrictions
 * **Citation Metadata**: CITATION.cff *(2.0.0)* — standard metadata for citing this system
 
 </details>

@@ -221,15 +221,18 @@ Lawmadi OS is built for the Korean legal system first, but the architecture is *
 
 ---
 
-## Development Roadmap
+## Current Capabilities (v60.0.0)
 
-| Phase | What's Being Built |
-|-------|--------------------|
-| **Phase 1** | Decision OS Kernel — case structuring, routing, issue extraction, FSM runtime |
-| **Phase 2** | Evidence Engine — temporal validity, trust protocol, crypto hashing, provenance tracking |
-| **Phase 3** | Consultation AI — conversational interface, guided workflows |
-| **Phase 4** | Education Platform — case study generation, decision logic visualization |
-| **Future** | Formal mathematical models, blockchain-level provenance |
+| Feature | Status |
+|---------|--------|
+| **60 Domain Expert Leaders** | Active — L01–L60 covering all major Korean legal domains |
+| **4-Stage Legal Pipeline** | Active — Classification + RAG + Gemini Generation + DRF Verification |
+| **Vertex AI Search RAG** | Active — ~14,600 docs (statutes, precedents, constitutional court decisions) |
+| **Real-time DRF Verification** | Active — article-level cross-validation against official sources |
+| **Multilingual (KO/EN)** | Active — full Korean and English support |
+| **Paddle Billing** | Active — credit-based pricing with Email OTP authentication |
+| **Leader Deliberation** | Active — CSO-led multi-expert collaboration for complex questions |
+| **Education Platform** | Planned — case study generation, decision logic visualization |
 
 ---
 
@@ -239,21 +242,20 @@ Lawmadi OS is built for the Korean legal system first, but the architecture is *
 |------|-----------------|
 | [`README.md`](README.md) | Repository overview and quick start |
 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | Detailed architectural reference with diagrams |
-| [`llms.txt`](llms.txt) | Complete LLM integration specification (the canonical reference) |
-| [`LICENSE.txt`](LICENSE.txt) | Comprehensive proprietary license |
+| [`OVERVIEW.md`](OVERVIEW.md) | Non-technical introduction and feature overview |
+| [`llms.txt`](llms.txt) | Complete LLM system specification (the canonical reference) |
+| [`llms.md`](llms.md) | Human-readable LLM integration spec (GitHub-rendered) |
+| [`glossary.md`](glossary.md) | Bilingual glossary of all technical terms |
+| [`LICENSE`](LICENSE) | Comprehensive proprietary license |
 | [`CITATION.cff`](CITATION.cff) | Citation metadata for academic/technical references |
-| `docs/` | Public technical whitepaper (PDF) |
-| `self_test.py` | Local smoke test |
+| Whitepaper PDF | Public technical whitepaper (sanitized) |
 
 ---
 
-## Try It Locally
+## Try It
 
-```bash
-# Requirements: Python 3.10+
-python self_test.py
-# Expected output: "Self test passed"
-```
+**Production:** https://lawmadi.com
+**Firebase:** https://lawmadi-db.web.app
 
 ---
 
@@ -265,7 +267,7 @@ python self_test.py
 - ✅ Academic citation with proper attribution
 - ❌ Production use, redistribution, derivatives, AI/ML training, commercial use
 
-See [`LICENSE.txt`](LICENSE.txt) for full terms.
+See [`LICENSE`](LICENSE) for full terms.
 
 ---
 

@@ -4,13 +4,13 @@
   <a href="https://doi.org/10.5281/zenodo.18551976">
     <img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.18551976.svg" />
   </a>
-  <img alt="release" src="https://img.shields.io/badge/release-v2.0.0-informational" />
+  <img alt="release" src="https://img.shields.io/badge/release-v60.0.0-informational" />
   <img alt="ldos" src="https://img.shields.io/badge/LDOS-deterministic%20FSM-2563eb" />
   <img alt="policy" src="https://img.shields.io/badge/policy-SSOT%20%7C%20Zero%20Inference%20%7C%20Fail--Closed-0ea5e9" />
   <img alt="license" src="https://img.shields.io/badge/license-proprietary-critical" />
 </p>
 
-**Legal Decision Operating System (LDOS) · v2.0.0 (Public / Sanitized)**  
+**Legal Decision Operating System (LDOS) · v60.0.0 (Public / Sanitized)**
 **Copyright © 2026 Jainam Choe (최재남). All rights reserved.**
 
 > **Lawmadi OS is NOT a chatbot, NOT a search engine, NOT a legal database.**  

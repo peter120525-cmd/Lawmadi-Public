@@ -2,9 +2,11 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18551976.svg)](https://doi.org/10.5281/zenodo.18551976)
 
-**Version:** v2.0.1 *(Public / Sanitized Showcase)*
+**Version:** v60.0.0 *(Public / Sanitized Showcase)*
+**Internal Release:** v60.0.0 (2026-03-11)
 **Author:** Jainam Choe (최재남)
 **Tagline:** “Convert Anxiety into Actionable Logic.” / “불안을 실행 가능한 논리로 전환하다”
+**Production:** https://lawmadi.com | https://lawmadi-db.web.app
 
 ---
 
@@ -103,7 +105,23 @@ graph TD
 
 > ∀ `ISSUE_NODE` → ∃ (`LAW_NODE` ∧ `EVIDENCE_NODE`)
 
-### 4.2 Cryptographic Integrity (Reproducibility Trust Chain)
+### 4.2 Swarm Engine — 60 Domain Expert Leaders
+
+Lawmadi OS employs 60 specialized legal domain leaders (L01–L60), each with deep expertise in a specific area of Korean law (civil, criminal, labor, IP, tax, etc.). A multi-layer routing system (NLU regex + keyword matching + Gemini classification) selects the optimal leader for each query. For complex multi-domain questions, a CSO-led deliberation process enables collaborative analysis.
+
+### 4.3 4-Stage Legal Pipeline
+
+Every query flows through a deterministic 4-stage pipeline:
+- **Stage 0+1**: Classification + RAG (parallel) — NLU routing + Vertex AI Search (~14,600 docs)
+- **Stage 2**: LawmadiLM (currently disabled) — fine-tuned Korean legal LLM
+- **Stage 3**: Gemini answer generation — primary LLM with evidence context
+- **Stage 4**: DRF real-time verification — article-level cross-validation against official sources
+
+### 4.4 Multilingual Support
+
+Full Korean and English support — frontend UI, NLU patterns, law cache, DRF verification, and response generation.
+
+### 4.5 Cryptographic Integrity (Reproducibility Trust Chain)
 
 The system ensures reproducibility via a cryptographic chain:
 

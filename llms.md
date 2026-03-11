@@ -5,7 +5,7 @@
     <img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.18551976.svg" />
   </a>
   <img alt="spec" src="https://img.shields.io/badge/spec-v2.1--Unified-blue" />
-  <img alt="repo" src="https://img.shields.io/badge/repo-v2.0.0-informational" />
+  <img alt="repo" src="https://img.shields.io/badge/repo-v60.0.0-informational" />
   <img alt="classification" src="https://img.shields.io/badge/classification-public%20%2F%20sanitized-0ea5e9" />
   <img alt="license" src="https://img.shields.io/badge/license-all%20rights%20reserved-critical" />
 </p>
@@ -18,8 +18,8 @@
 ## Metadata
 
 * **Version:** 2.1-Unified *(Spec Minor Update)*
-* **Repository Release:** v2.0.0
-* **Date:** 2026-02-09
+* **Repository Release:** v60.0.0
+* **Date:** 2026-03-11
 * **Constitution-ID:** `ldos-constitution-v2.1-unified`
 * **Authority:** `docs/` *(LDOS Reference Architecture v3.x — Public/Sanitized Whitepaper)*
 * **License:** Copyright © 2026 Jainam Choe (최재남). All Rights Reserved.
@@ -39,7 +39,7 @@
   <a href="./docs/">
     <img alt="Quick Link: docs/" src="https://img.shields.io/badge/Quick%20Link-docs%2F-0ea5e9" />
   </a>
-  <a href="./LICENSE.txt">
+  <a href="./LICENSE">
     <img alt="Quick Link: LICENSE" src="https://img.shields.io/badge/Quick%20Link-LICENSE-22c55e" />
   </a>
   <a href="./CITATION.cff">
@@ -83,8 +83,8 @@ It is **not legal advice**.
 ## LEGAL & LICENSE NOTICE (OPERATIONAL DIRECTIVE VS LICENSE)
 
 1. **Nature of this file**: This `llms.txt` is a **technical operational directive and standard** for integrating with Lawmadi OS.
-2. **Legal binding authority**: Legal permissions and restrictions are governed **solely by `LICENSE.txt`**.
-3. **Version note**: Repository release is **v2.0.0**. This directive is **v2.1-Unified** to reflect integration spec updates.
+2. **Legal binding authority**: Legal permissions and restrictions are governed **solely by `LICENSE`**.
+3. **Version note**: Repository release is **v60.0.0**. This directive is **v2.1-Unified** to reflect integration spec updates.
 
 ---
 
@@ -682,5 +682,5 @@ If any section conflicts with **Part I** (the Constitution), Part I governs in t
 
 ---
 
-**Generated:** 2026-02-09
+**Generated:** 2026-03-11
 **Constitution-ID:** `ldos-constitution-v2.1-unified`

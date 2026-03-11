@@ -2,9 +2,9 @@ cff-version: 2.0.1
 message: "If you use or reference this software, its architecture, or any covered technologies, please cite it as below."
 type: software
 title: "Lawmadi OS (LDOS) — Legal Decision Operating System"
-version: 2.0.0
-date-released: 2026-02-09
-license-url: "https://github.com/peter120525-cmd/Lawmadi-Public/blob/main/LICENSE.txt"
+version: 60.0.0
+date-released: 2026-03-11
+license-url: "https://github.com/peter120525-cmd/Lawmadi-Public/blob/main/LICENSE"
 url: "https://github.com/peter120525-cmd/Lawmadi-Public"
 repository-code: "https://github.com/peter120525-cmd/Lawmadi-Public"
 
@@ -72,7 +72,7 @@ preferred-citation:
     - family-names: "Choe"
       given-names: "Jainam"
       email: "choepeter@outlook.kr"
-  version: 2.0.0
-  date-released: 2026-02-09
-  license-url: "https://github.com/peter120525-cmd/Lawmadi-Public/blob/main/LICENSE.txt"
+  version: 60.0.0
+  date-released: 2026-03-11
+  license-url: "https://github.com/peter120525-cmd/Lawmadi-Public/blob/main/LICENSE"
   url: "https://github.com/peter120525-cmd/Lawmadi-Public"
