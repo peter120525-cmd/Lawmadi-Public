@@ -4,13 +4,13 @@
   <a href="https://doi.org/10.5281/zenodo.18525310">
     <img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.18525310.svg" />
   </a>
-  <img alt="glossary" src="https://img.shields.io/badge/glossary-v2.0--Unified-0ea5e9" />
-  <img alt="repo" src="https://img.shields.io/badge/repo-v2.0.0-informational" />
+  <img alt="glossary" src="https://img.shields.io/badge/glossary-v60.0.0--Unified-0ea5e9" />
+  <img alt="repo" src="https://img.shields.io/badge/repo-v60.0.0-informational" />
   <img alt="classification" src="https://img.shields.io/badge/classification-public%20%2F%20sanitized-22c55e" />
   <img alt="license" src="https://img.shields.io/badge/license-all%20rights%20reserved-critical" />
 </p>
 
-**Legal Decision Operating System (LDOS) · v2.0-Unified**
+**Legal Decision Operating System (LDOS) · v60.0.0-Unified**
 **Copyright © 2026 Jainam Choe (최재남). All rights reserved.**
 
 This glossary defines every technical term, acronym, and concept used across the Lawmadi OS documentation.
@@ -84,16 +84,20 @@ Not a chatbot, not a search engine, not a legal database — a → **Decision In
 
 The formal system type designation. Lawmadi OS is an instance of an LDOS.
 
+### v60.0.0
+
+Current production version number. Denotes the 60-leader architecture with full pipeline, Vertex AI Search RAG, DRF verification, and bilingual (Korean/English) support.
+
 ### Decision Intelligence Infrastructure / 의사결정 인텔리전스 인프라
 
 A system category that generates reproducible, verifiable decision outputs by assembling and validating live evidence from authoritative sources.
-Distinguished from “AI assistants” by deterministic processing, cryptographic integrity, and → **Fail-Closed** safety.
+Distinguished from "AI assistants" by deterministic processing, cryptographic integrity, and → **Fail-Closed** safety.
 
 ### Computable Trust / 계산 가능한 신뢰
 
 The ability to verify, reproduce, and cryptographically prove that an output was generated correctly from validated evidence—without blind trust.
 
-### “Convert Anxiety into Actionable Logic” / “불안을 실행 가능한 논리로 전환하다"
+### "Convert Anxiety into Actionable Logic" / "불안을 실행 가능한 논리로 전환하다"
 
 The Lawmadi OS tagline. Transform legal uncertainty into structured, evidence-based decision support.
 
@@ -110,12 +114,12 @@ The Lawmadi OS tagline. Transform legal uncertainty into structured, evidence-ba
 
 ### SSOT (Single Source of Truth) / 단일 진실 공급원
 
-All legal evidence must originate from **one designated authoritative source** per jurisdiction (e.g., Korea’s → **DRF Open API**).
+All legal evidence must originate from **one designated authoritative source** per jurisdiction (e.g., Korea's → **DRF Open API**).
 Permanent storage/replication of official datasets is prohibited. Every legal statement must be traceable to SSOT.
 
 ### Zero Inference / 제로 추론 원칙
 
-The system must never fabricate, guess, infer, estimate, or “fill in” legal facts, citations, case numbers, statute refs, dates, parties, amounts, or legal conclusions.
+The system must never fabricate, guess, infer, estimate, or "fill in" legal facts, citations, case numbers, statute refs, dates, parties, amounts, or legal conclusions.
 If evidence is missing: ask for clarification or refuse output.
 
 ### Fail-Closed / 페일 클로즈드 정책
@@ -233,6 +237,18 @@ A modular specialist profile/toolchain for a legal domain. Selected via routing.
 
 Leader metadata schema (weights/formulas proprietary; description only in public builds).
 
+### NLU (Natural Language Understanding) / 자연어 이해
+
+Regex-based Korean/English legal intent pattern matching. 60 leader-specific patterns detect the applicable legal domain from a user query. Routing priority: Name match → NLU intent → Keyword → Fallback (CCO).
+
+### LAW_BOOST / 리더별 핵심 법령
+
+Per-leader curated law article injection. Each of the 60 leaders has pre-mapped core statutes for their domain. These are injected into the generation prompt to ground the LLM output in specific, relevant legal provisions.
+
+### Vertex AI Search / 버텍스 AI 검색
+
+Google Cloud RAG engine used for semantic legal document retrieval. The search corpus contains approximately 14,600 documents including statutes, Supreme Court precedents, and Constitutional Court decisions.
+
 ### Constitution Validator / 헌법 검증기
 
 Enforces → Constitution DSL at runtime.
@@ -331,9 +347,9 @@ Conceptual composite score (formula proprietary): source authority + citation st
 
 ### Temporal Validity / 시간적 유효성
 
-Whether authority is in force at “as-of” time (effective date, repeal, overrule, unconstitutional, etc).
+Whether authority is in force at "as-of" time (effective date, repeal, overrule, unconstitutional, etc).
 
-### “As-of” Validation / 기준일 검증
+### "As-of" Validation / 기준일 검증
 
 Temporal validation against a specific date (now or user-specified).
 
@@ -344,6 +360,14 @@ Audit trail of how evidence was fetched/validated/used.
 ### Reference-Only Mode / 참고용 모드
 
 Policy-permitted degraded mode that provides citations only (no conclusions).
+
+### DRF Verification / DRF 검증
+
+Real-time article-level cross-validation against the official government legal database (→ DRF Open API). Extracts law references (statute article numbers) and precedent case numbers from generated text and verifies each one against the authoritative source. This is the Stage 4 quality gate in the pipeline.
+
+### Fail-Closed Protocol / 페일 클로즈드 프로토콜
+
+If DRF verification finds unverifiable citations exceeding the tolerance threshold, the system halts, retries once with full regeneration, then blocks the response entirely rather than delivering unverified legal information.
 
 <p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
@@ -491,6 +515,22 @@ LLM formats verified evidence & outputs into human-readable language. No decisio
 
 Any LLM can integrate if it follows the contracts.
 
+### Gemini 2.5 Flash
+
+Primary LLM used for classification, answer generation, and deliberation. Single-model configuration with exponential backoff retry on 429 (rate limit) responses. Deployed in the `asia-northeast3` region.
+
+### LawmadiLM
+
+Fine-tuned Korean legal language model (Qwen3-1.7B base, QLoRA fine-tuning). Designed for domain-specific legal generation. Currently disabled in production; Gemini handles all generation stages.
+
+### 4-Stage Pipeline / 4단계 파이프라인
+
+The core processing architecture:
+- **Stage 0+1** — Classification + Vertex AI Search RAG (run in parallel)
+- **Stage 2** — LawmadiLM generation (currently disabled)
+- **Stage 3** — Gemini generation with leader context, LAW_BOOST injection, and deliberation
+- **Stage 4** — DRF verification (article-level cross-validation against official legal database)
+
 ### Integration Contracts / 통합 계약
 
 Required contracts: Prompt / Tool / Evidence / Token / Error Codes / Output Schema / Security / Observability / Evaluation harness.
@@ -552,6 +592,18 @@ Standard disclaimer appended to every output.
 
 Containerized microservice platform used for deployment (autoscaling, isolation).
 
+### Vertex AI Search / 버텍스 AI 검색
+
+Google Cloud managed RAG service for legal document retrieval. Indexes and serves approximately 14,600 documents (statutes, Supreme Court precedents, Constitutional Court decisions) with semantic search, extractive answers, and grounding capabilities.
+
+### Cloud SQL / 클라우드 SQL
+
+PostgreSQL 17 managed database. Maintains 7 tables: `users`, `sessions`, `credit_ledger`, `otp_codes`, `chat_history`, `analytics`, `feedback`. Enterprise edition, `asia-northeast3` region.
+
+### Firebase Hosting / 파이어베이스 호스팅
+
+Static frontend hosting for `lawmadi-db.web.app`. Serves the PWA client and proxies API requests to Cloud Run via Firebase rewrites.
+
 ### VPC / 가상 사설 클라우드
 
 Network isolation for security boundaries.
@@ -603,6 +655,18 @@ Institutional APIs (verification/validation/case structuring), governed by IAM a
 
 Guided, structured, step-by-step experience for non-experts.
 
+### Paddle Billing / 패들 결제
+
+Payment provider for credit-based pricing. Three tiers: Starter (20 credits), Standard (100 credits), Pro (300 credits). Handles subscription management, webhook events, and checkout flows.
+
+### Email OTP / 이메일 OTP
+
+Authentication via 6-digit one-time password sent to the user's email address. Each code has a 5-minute TTL. Codes are SHA-256 hashed at rest.
+
+### Credit System / 크레딧 시스템
+
+Post-response deduction model. Free tier provides 2 general queries per day. Paid users purchase credit packs; credits are deducted after successful response delivery. Leader chat: 5 free per day, then 2 credits per additional 5-query block. Expert analysis: 2 credits per query.
+
 <p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
 </details>
@@ -648,7 +712,7 @@ Higher court reversal (→ `OVERRULES` edge).
 
 ### Conflict of Law / 준거법·법률 충돌
 
-Which jurisdiction’s law applies in multi-jurisdiction cases.
+Which jurisdiction's law applies in multi-jurisdiction cases.
 
 <p align="right"><a href="#lawmadi-os--glossary--용어집">↑ Back to top</a></p>
 
@@ -667,6 +731,10 @@ Which jurisdiction’s law applies in multi-jurisdiction cases.
 * **DSL** — Domain Specific Language / 도메인 특화 언어
 * **DRF** — National Law Info Center API / 국가법령정보센터 API
 * **LLM** — Large Language Model / 대규모 언어 모델
+* **NLU** — Natural Language Understanding / 자연어 이해
+* **OTP** — One-Time Password / 일회용 비밀번호
+* **CSO** — Chief Strategy Officer (서연) / 최고전략책임자
+* **PWA** — Progressive Web App / 프로그레시브 웹 앱
 * **KMS** — Key Management Service / 키 관리 서비스
 * **HSM** — Hardware Security Module / 하드웨어 보안 모듈
 * **IAM** — Identity and Access Management / 신원 및 접근 관리

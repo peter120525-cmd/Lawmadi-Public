@@ -52,6 +52,11 @@
 - **[llms.md](llms.md)** — GitHub 렌더링 최적화 “사람용” LLM 통합 스펙
 - **[llms.txt](llms.txt)** — “기계/에이전트용” Canonical 텍스트 표준 (렌더링 없음)
 
+### Demo Examples (실행 가능한 데모)
+- **[examples/pipeline_demo.py](examples/pipeline_demo.py)** — 4단계 파이프라인 흐름 데모
+- **[examples/nlu_demo.py](examples/nlu_demo.py)** — NLU 분류 시스템 데모 (KO + EN)
+- **[examples/config_validator.py](examples/config_validator.py)** — 헌법 원칙 검증 데모
+
 ### Configuration (구성/배포/통합)
 - **[config.schema.json](config.schema.json)** — 런타임 설정 스키마(전체 계약)
 - **[minimal_config.json](minimal_config.json)** — 바로 실행 가능한 최소 구성 예시(공개/샌드박스)

@@ -155,7 +155,27 @@ This repository serves as a **reference implementation package**.
 
 ---
 
-## 6) Output Contract (JSON Specification)
+## 6) Demo Examples
+
+The [`examples/`](examples/) directory contains sanitized Python demos that illustrate the system's core architecture:
+
+| File | What It Demonstrates |
+|------|---------------------|
+| [`pipeline_demo.py`](examples/pipeline_demo.py) | 4-stage pipeline flow (NLU → RAG → Generation → DRF Verification) |
+| [`nlu_demo.py`](examples/nlu_demo.py) | NLU classification with 60 domain-expert leaders (KO + EN) |
+| [`config_validator.py`](examples/config_validator.py) | Constitutional invariant enforcement and config validation |
+
+```bash
+python examples/pipeline_demo.py
+python examples/nlu_demo.py
+python examples/config_validator.py
+```
+
+These are architectural demos — not production code. No API keys or external services required.
+
+---
+
+## 7) Output Contract (JSON Specification)
 
 All outputs follow strict JSON with **two modes**: **Success** or **Fail-Closed**.
 
@@ -191,7 +211,7 @@ All outputs follow strict JSON with **two modes**: **Success** or **Fail-Closed*
 
 ---
 
-## 7) Competitive Positioning
+## 8) Competitive Positioning
 
 * **Data Model**: Stored / Synced DB → **Live Authoritative Evidence**
 * **Freshness**: Periodic Sync *(Days)* → **Real-Time + Temporal Validation**
@@ -203,7 +223,7 @@ All outputs follow strict JSON with **two modes**: **Success** or **Fail-Closed*
 
 ---
 
-## 8) License & Permissions
+## 9) License & Permissions
 
 **PROPRIETARY / NOT OPEN SOURCE**
 Licensed under the **Lawmadi OS Comprehensive Proprietary License v2.0.0**.
@@ -223,7 +243,7 @@ Licensed under the **Lawmadi OS Comprehensive Proprietary License v2.0.0**.
 
 ---
 
-## 9) Contact & Citation
+## 10) Contact & Citation
 
 **Copyright Holder:** Jainam Choe (최재남)
 **Email:** [choepeter@outlook.kr](mailto:choepeter@outlook.kr)
